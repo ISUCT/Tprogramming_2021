@@ -9,34 +9,57 @@
         {
             double a = 1.2;
             double b = 0.48;
-            double y = 0;
             double xstart = 0.7;
             double xend = 2.2;
             double xdelta = 0.3;
             double[] xArr = { 0.25, 0.36, 0.56, 0.94, 1.28 };
-            Console.WriteLine("Task A");
-            TaskA(a, b, y, xstart, xend, xdelta);
-            Console.WriteLine("Task B");
-            TaskB(a, b, y, xArr);
+            Output(a, b, xstart, xend, xdelta, xArr);
             Console.ReadLine();
         }
 
-        public static void TaskA(double a, double b, double y, double xstart, double xend, double xdelta)
+        public static void Output(double a, double b, double xstart, double xend, double xdelta, double[] xArr)
         {
-            for (double x = xstart; x < xend; x += xdelta)
-            {
-                y = (Pow(b, 3) + Pow(Sin(a * x), 2)) / (Acos(Pow(x, 2) * b) + Exp((-x) / 2));
-                Console.WriteLine($"  y = {y}");
-            }
+            Console.WriteLine("Task A");
+            Console.WriteLine(TaskA(a, b, xstart, xend, xdelta));
+            Console.WriteLine("Task B");
+            Console.WriteLine(TaskB(a, b, xArr));
         }
 
-        public static void TaskB(double a, double b, double y, double[] xArr)
+        public static string TaskA(double a, double b, double xstart, double xend, double xdelta)
         {
-            for (int i = 0; i < xArr.Length; i++)
+            var str = string.Empty;
+            for (double x = xstart; x <= xend; x += xdelta)
             {
-                y = (Pow(b, 3) + Pow(Sin(a * xArr[i]), 2)) / (Acos(Pow(xArr[i], 2) * b) + Exp((-xArr[i]) / 2));
-                Console.WriteLine($"  y = {y}");
+                str += $"  y = {Calc(a, b, x):f3} /";
             }
+
+            return str;
+        }
+
+        public static double Numerator(double a, double b, double x)
+        {
+            return Pow(b, 3) + Pow(Sin(a * x), 2);
+        }
+
+        public static double Denumerator(double a, double b, double x)
+        {
+            return Acos(Pow(x, 2) * b) + Exp((-x) / 2);
+        }
+
+        public static double Calc(double a, double b, double x)
+        {
+            return Numerator(a, b, x) / Denumerator(a, b, x);
+        }
+
+        public static string TaskB(double a, double b, double[] xArr)
+        {
+            var str = string.Empty;
+            foreach (double item in xArr)
+            {
+                str += $"  y = {Calc(a, b, item):f3} /";
+            }
+
+            return str;
         }
     }
 }
