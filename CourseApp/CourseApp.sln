@@ -7,6 +7,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseApp", "CourseApp.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseApp.Tests", "..\CourseApp.Tests\CourseApp.Tests.csproj", "{C348D2ED-C90F-4CE7-A1D8-9E57CBB33BDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkvelonSaga.Client", "..\AkvelonSaga.Client\AkvelonSaga.Client.csproj", "{92E648A2-FDB6-43D5-A552-02C6B889695C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkvelonSaga.Server", "..\AkvelonSaga.Server\AkvelonSaga.Server.csproj", "{FD2B014F-B28D-464F-8BBC-7D1051FACDE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkvelonSaga.Core", "..\AkvelonSaga.Core\AkvelonSaga.Core.csproj", "{416F3A24-EB75-47FA-963D-E148FC13706A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkvelonSaga.DLCs", "..\AkvelonSaga.DLCs\AkvelonSaga.DLCs.csproj", "{73459F7E-BD91-490B-8209-44B4E7E26FFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AkvelonSaga", "AkvelonSaga", "{65095557-C47D-4F68-A8DD-011E383E3165}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CourseApp", "CourseApp", "{BB4C208E-094A-401C-9DBA-A7A1947CED37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +33,35 @@ Global
 		{C348D2ED-C90F-4CE7-A1D8-9E57CBB33BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C348D2ED-C90F-4CE7-A1D8-9E57CBB33BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C348D2ED-C90F-4CE7-A1D8-9E57CBB33BDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92E648A2-FDB6-43D5-A552-02C6B889695C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92E648A2-FDB6-43D5-A552-02C6B889695C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92E648A2-FDB6-43D5-A552-02C6B889695C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92E648A2-FDB6-43D5-A552-02C6B889695C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD2B014F-B28D-464F-8BBC-7D1051FACDE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2B014F-B28D-464F-8BBC-7D1051FACDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2B014F-B28D-464F-8BBC-7D1051FACDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2B014F-B28D-464F-8BBC-7D1051FACDE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{416F3A24-EB75-47FA-963D-E148FC13706A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{416F3A24-EB75-47FA-963D-E148FC13706A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{416F3A24-EB75-47FA-963D-E148FC13706A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{416F3A24-EB75-47FA-963D-E148FC13706A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73459F7E-BD91-490B-8209-44B4E7E26FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73459F7E-BD91-490B-8209-44B4E7E26FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73459F7E-BD91-490B-8209-44B4E7E26FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73459F7E-BD91-490B-8209-44B4E7E26FFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {064E603C-674E-4DB9-A061-4B08C0ACD98C}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{92E648A2-FDB6-43D5-A552-02C6B889695C} = {65095557-C47D-4F68-A8DD-011E383E3165}
+		{416F3A24-EB75-47FA-963D-E148FC13706A} = {65095557-C47D-4F68-A8DD-011E383E3165}
+		{FD2B014F-B28D-464F-8BBC-7D1051FACDE2} = {65095557-C47D-4F68-A8DD-011E383E3165}
+		{73459F7E-BD91-490B-8209-44B4E7E26FFA} = {65095557-C47D-4F68-A8DD-011E383E3165}
+		{9B953FDD-1645-4B1A-B148-5849E7C2D3A7} = {BB4C208E-094A-401C-9DBA-A7A1947CED37}
+		{C348D2ED-C90F-4CE7-A1D8-9E57CBB33BDE} = {BB4C208E-094A-401C-9DBA-A7A1947CED37}
 	EndGlobalSection
 EndGlobal
