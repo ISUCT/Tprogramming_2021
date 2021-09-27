@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using AkvelonSaga.DLCs.Rogue;
 using AkvelonSaga.Server.GameProcess;
 
 namespace AkvelonSaga.Server
@@ -7,7 +8,10 @@ namespace AkvelonSaga.Server
     {
         private static async Task Main(string[] args)
         {
-            await GameHostBuilder.ConfigureAndRunAsync();
+            await GameHostBuilder.ConfigureAndRunAsync(configuration =>
+            {
+                configuration.AddPackage<RoguePackage>();
+            });
         }
     }
 }

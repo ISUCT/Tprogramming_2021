@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services" />
+    <ProjectReference Include="..\AkvelonSaga.Core\AkvelonSaga.Core.csproj" />
+    <ProjectReference Include="..\AkvelonSaga.DLCs\AkvelonSaga.DLCs.csproj" />
   </ItemGroup>
 
 </Project>

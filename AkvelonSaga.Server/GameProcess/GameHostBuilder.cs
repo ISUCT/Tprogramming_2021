@@ -20,7 +20,7 @@ namespace AkvelonSaga.Server.GameProcess
             return _hostBuilder.Build();
         }
 
-        public static async Task ConfigureAndRunAsync(Action? configure = null)
+        public static async Task ConfigureAndRunAsync(Action<GameConfiguration>? configure = null)
         {
             var host = new GameHostBuilder().Build();
             host.Start();
@@ -28,6 +28,12 @@ namespace AkvelonSaga.Server.GameProcess
             if (!host.IsStarted)
             {
                 throw new Exception("Failed to start game");
+            }
+
+            if (configure is not null)
+            {
+                var configuration = host.Services.GetRequiredService<GameConfiguration>();
+                configure.Invoke(configuration);
             }
             
             var game = host.Services.GetRequiredService<Game>();
