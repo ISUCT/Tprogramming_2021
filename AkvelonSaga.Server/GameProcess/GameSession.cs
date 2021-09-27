@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AkvelonSaga.Core;
 
 namespace AkvelonSaga.Server.GameProcess
 {
     public sealed class GameSession
     {
+        private static readonly Random Random = new();
+        
         public GameSession(IReadOnlyList<Player> players)
         {
             Players = players;
@@ -13,11 +17,38 @@ namespace AkvelonSaga.Server.GameProcess
         
         public IReadOnlyList<Player> Players { get; }
 
-        public void Start()
+        public Guid Id { get; } = Guid.NewGuid();
+
+        public async Task StartAsync()
         {
-            foreach (var player in Players)
+            var groups = Players
+                .OrderBy(_ => Random.Next())
+                .Select((s, i) => new { Value = s, Index = i })
+                .GroupBy(o => o.Index / 2)
+                .Select(s => s.Select(x => new PlayerState(x.Value)).ToArray())
+                .ToArray();
+
+            foreach (var group in groups)
             {
-                Console.WriteLine($"[{player.Role}] {player.Name}");
+                var turnManager = new TurnManager(group);
+
+                Console.WriteLine($"{turnManager.Sender} vs {turnManager.Target}");
+                
+                while (group.Count(x => x.Health > 0) != 1)
+                {
+                    await Task.Delay(2000);
+
+                    var (sender, target) = (turnManager.Sender, turnManager.Target);
+
+                    Console.WriteLine($"{sender} наносит {sender.Player.Attack} урона противнику {target}");
+
+                    target.ApplyDamage(sender.Player.Attack);
+                    turnManager.NextTurn();
+                }
+
+                var winner = group.First(x => x.Health > 0);
+                
+                Console.WriteLine($"{winner} побеждает");
             }
         }
     }

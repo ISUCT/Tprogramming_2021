@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.GameProcess
@@ -16,7 +17,7 @@ namespace AkvelonSaga.Server.GameProcess
         
         public IReadOnlyList<GameSession> Sessions => _sessions;
         
-        public void StartSession(byte playerCount)
+        public async Task StartSessionAsync(byte playerCount)
         {
             var players = Enumerable
                 .Range(0, playerCount).Select(_ => _playerFactory.Create())
@@ -25,7 +26,7 @@ namespace AkvelonSaga.Server.GameProcess
             var session = new GameSession(players);
             _sessions.Add(session);
             
-            session.Start();
+            await session.StartAsync();
         }
     }
 }

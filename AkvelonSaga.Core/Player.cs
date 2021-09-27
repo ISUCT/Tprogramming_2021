@@ -17,5 +17,10 @@
         public double Health { get; }
         
         public double Attack { get; }
+
+        public override string ToString()
+        {
+            return $"({Role}) {Name}";
+        }
     }
 }

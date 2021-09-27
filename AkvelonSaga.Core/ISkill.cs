@@ -2,6 +2,6 @@
 {
     public interface ISkill
     {
-        void Apply(Player sender, Player target);
+        void Apply(PlayerState sender, PlayerState target);
     }
 }

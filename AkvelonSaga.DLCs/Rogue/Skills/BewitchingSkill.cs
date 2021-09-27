@@ -5,9 +5,9 @@ namespace AkvelonSaga.DLCs.Rogue.Skills
 {
     public sealed class BewitchingSkill : ISkill
     {
-        public void Apply(Player sender, Player target)
+        public void Apply(PlayerState sender, PlayerState target)
         {
-            Console.WriteLine($"{sender.Name} применяет [Заворожение]");
+            Console.WriteLine($"{sender.Player.Name} применяет [Заворожение]");
         }
     }
 }
