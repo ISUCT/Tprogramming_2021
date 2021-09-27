@@ -12,7 +12,7 @@ namespace AkvelonSaga.Server.GameProcess
 
         public GameHostBuilder()
         {
-            _hostBuilder.Modules.Add<GameConfigurationModule>();
+            _hostBuilder.Modules.Add<GameModule>();
         }
 
         public IManagedHost Build()

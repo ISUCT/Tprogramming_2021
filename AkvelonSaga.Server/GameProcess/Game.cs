@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using AkvelonSaga.Server.Services;
 
@@ -7,24 +6,21 @@ namespace AkvelonSaga.Server.GameProcess
 {
     public sealed class Game
     {
-        private readonly IRoleStorage _roleStorage;
+        private readonly IRandomPlayerFactory _playerFactory;
         private readonly List<GameSession> _sessions = new();
 
-        public Game(IRoleStorage roleStorage)
+        public Game(IRandomPlayerFactory playerFactory)
         {
-            _roleStorage = roleStorage;
+            _playerFactory = playerFactory;
         }
         
         public IReadOnlyList<GameSession> Sessions => _sessions;
         
         public void StartSession(byte playerCount)
         {
-            foreach (var role in _roleStorage.Roles)
-            {
-                Console.WriteLine(role);
-            }
-            
-            var players = Enumerable.Range(0, playerCount).Select(_ => "A").ToList();
+            var players = Enumerable
+                .Range(0, playerCount).Select(_ => _playerFactory.Create())
+                .ToList();
             
             var session = new GameSession(players);
             _sessions.Add(session);

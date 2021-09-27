@@ -1,12 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AkvelonSaga.Server.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Kantaiko.Hosting.Modules;
 using AkvelonSaga.Server.GameProcess;
 using AkvelonSaga.Server.Services;
 using Microsoft.Extensions.Logging;
 
-namespace AkvelonSaga.Server.Configuration
+namespace AkvelonSaga.Server
 {
-    internal sealed class GameConfigurationModule : IModule
+    internal sealed class GameModule : IModule
     {
         public void ConfigureServices(IServiceCollection services)
         {
@@ -16,6 +17,9 @@ namespace AkvelonSaga.Server.Configuration
             services.AddSingleton<GameConfiguration>();
             
             services.AddSingleton<IRoleStorage, RoleStorage>();
+            
+            services.AddSingleton<IRandomNameGenerator, RandomNameGenerator>();
+            services.AddSingleton<IRandomPlayerFactory, RandomPlayerFactory>();
         }
     }
 }
