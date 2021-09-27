@@ -2,6 +2,6 @@
 {
     public interface IGamePackage
     {
-        void Configure(PackageConfiguration configuration);
+        void Configure(IPackageConfiguration configuration);
     }
 }

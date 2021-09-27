@@ -5,7 +5,7 @@ namespace AkvelonSaga.DLCs.Rogue
 {
     public class RoguePackage : IGamePackage
     {
-        public void Configure(PackageConfiguration configuration)
+        public void Configure(IPackageConfiguration configuration)
         {
             configuration.AddRole(nameof(Archer), Archer.Create);
             configuration.AddRole(nameof(Knight), Knight.Create);

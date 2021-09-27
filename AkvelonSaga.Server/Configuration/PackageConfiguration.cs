@@ -1,8 +1,9 @@
-﻿using AkvelonSaga.Core.Roles;
+﻿using AkvelonSaga.Core;
+using AkvelonSaga.Core.Roles;
 
-namespace AkvelonSaga.Core
+namespace AkvelonSaga.Server.Configuration
 {
-    public sealed class PackageConfiguration
+    public sealed class PackageConfiguration : IPackageConfiguration
     {
         private readonly IRoleStorage _roleStorage;
 
