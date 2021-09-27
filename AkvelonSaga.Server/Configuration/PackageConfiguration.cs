@@ -3,7 +3,7 @@ using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.Configuration
 {
-    public sealed class PackageConfiguration : IPackageConfiguration
+    internal sealed class PackageConfiguration : IPackageConfiguration
     {
         private readonly IRoleStorage _roleStorage;
         private readonly ISkillStorage _skillStorage;

@@ -2,7 +2,7 @@
 
 namespace AkvelonSaga.Server.Abstractions
 {
-    public interface IRandomPlayerFactory
+    internal interface IRandomPlayerFactory
     {
         Player Create();
     }

@@ -6,7 +6,7 @@ using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.Services
 {
-    public sealed class SkillStorage : ISkillStorage
+    internal sealed class SkillStorage : ISkillStorage
     {
         private readonly Dictionary<Type, List<ISkill>> _skills = new();
         

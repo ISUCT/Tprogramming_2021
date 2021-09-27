@@ -4,7 +4,7 @@ using AkvelonSaga.Core;
 
 namespace AkvelonSaga.Server.Abstractions
 {
-    public interface ISkillStorage
+    internal interface ISkillStorage
     {
         void AddSkill<TRole, TSkill>()
             where TRole : Player

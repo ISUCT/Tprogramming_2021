@@ -3,7 +3,7 @@ using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.Configuration
 {
-    public sealed class GameConfiguration
+    internal sealed class GameConfiguration
     {
         private readonly IRoleStorage _roleStorage;
         private readonly ISkillStorage _skillStorage;

@@ -3,7 +3,7 @@ using AkvelonSaga.Core;
 
 namespace AkvelonSaga.Server.GameProcess
 {
-    public sealed class TurnManager
+    internal sealed class TurnManager
     {
         private readonly IReadOnlyList<PlayerState> _players;
         private int _position;

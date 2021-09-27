@@ -4,7 +4,7 @@ using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.GameProcess
 {
-    public sealed class Game
+    internal sealed class Game
     {
         private readonly IRandomPlayerFactory _playerFactory;
 

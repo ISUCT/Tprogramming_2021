@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using AkvelonSaga.Core;
 using AkvelonSaga.Server.Abstractions;
 using AkvelonSaga.Server.Extensions;
 
 namespace AkvelonSaga.Server.Services
 {
-    public sealed class RandomPlayerFactory : IRandomPlayerFactory
+    internal sealed class RandomPlayerFactory : IRandomPlayerFactory
     {
         private static readonly Random Random = new();
         

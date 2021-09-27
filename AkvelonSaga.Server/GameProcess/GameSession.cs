@@ -6,7 +6,7 @@ using AkvelonSaga.Core;
 
 namespace AkvelonSaga.Server.GameProcess
 {
-    public sealed class GameSession
+    internal sealed class GameSession
     {
         private static readonly Random Random = new();
         

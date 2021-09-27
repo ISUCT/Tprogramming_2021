@@ -7,7 +7,7 @@ using AkvelonSaga.Server.GameProcess;
 
 namespace AkvelonSaga.Server
 {
-    public static class GameHostBuilder
+    internal static class GameHostBuilder
     {
         public static async Task ConfigureAndRunAsync(Action<GameConfiguration>? configure = null)
         {

@@ -1,10 +1,9 @@
-﻿using System;
-using AkvelonSaga.Server.Abstractions;
+﻿using AkvelonSaga.Server.Abstractions;
 using AkvelonSaga.Server.Extensions;
 
 namespace AkvelonSaga.Server.Services
 {
-    public sealed class RandomNameGenerator : IRandomNameGenerator
+    internal sealed class RandomNameGenerator : IRandomNameGenerator
     {
         private readonly string[] _firstNames = new[]
         {

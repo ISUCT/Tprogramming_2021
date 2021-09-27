@@ -3,7 +3,7 @@ using AkvelonSaga.Core;
 
 namespace AkvelonSaga.Server.Abstractions
 {
-    public interface IRoleStorage
+    internal interface IRoleStorage
     {
         IReadOnlyCollection<string> Roles { get; }
 

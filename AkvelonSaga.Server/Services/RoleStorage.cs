@@ -4,7 +4,7 @@ using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.Services
 {
-    public class RoleStorage : IRoleStorage
+    internal sealed class RoleStorage : IRoleStorage
     {
         private readonly Dictionary<string, RoleFactory> _roleFactories = new();
 
