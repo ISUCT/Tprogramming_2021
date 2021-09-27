@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AkvelonSaga.Core.Roles;
 
-namespace AkvelonSaga.Server.Services
+namespace AkvelonSaga.Server.Abstractions
 {
     public interface IRoleStorage
     {

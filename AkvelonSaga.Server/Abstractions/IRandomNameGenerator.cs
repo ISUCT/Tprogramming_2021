@@ -1,4 +1,4 @@
-﻿namespace AkvelonSaga.Server.Services
+﻿namespace AkvelonSaga.Server.Abstractions
 {
     public interface IRandomNameGenerator
     {

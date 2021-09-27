@@ -1,6 +1,6 @@
 ﻿using AkvelonSaga.Core;
 
-namespace AkvelonSaga.Server.Services
+namespace AkvelonSaga.Server.Abstractions
 {
     public interface IRandomPlayerFactory
     {

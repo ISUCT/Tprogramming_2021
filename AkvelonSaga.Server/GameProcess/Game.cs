@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AkvelonSaga.Server.Services;
+using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.GameProcess
 {

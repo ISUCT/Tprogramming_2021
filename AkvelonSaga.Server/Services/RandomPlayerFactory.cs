@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AkvelonSaga.Core;
+using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.Services
 {
