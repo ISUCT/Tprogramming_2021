@@ -1,6 +1,4 @@
-﻿using AkvelonSaga.Core.Roles;
-
-namespace AkvelonSaga.Core
+﻿namespace AkvelonSaga.Core
 {
     public interface IPackageConfiguration
     {

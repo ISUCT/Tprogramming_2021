@@ -1,12 +1,11 @@
 ﻿using System;
 using AkvelonSaga.Server.Abstractions;
+using AkvelonSaga.Server.Extensions;
 
 namespace AkvelonSaga.Server.Services
 {
     public sealed class RandomNameGenerator : IRandomNameGenerator
     {
-        private static readonly Random Random = new();
-        
         private readonly string[] _firstNames = new[]
         {
             "Бандерлог",
@@ -39,8 +38,8 @@ namespace AkvelonSaga.Server.Services
         
         public string Generate()
         {
-            var firstName = _firstNames[Random.Next(0, _firstNames.Length)];
-            var lastName = _lastNames[Random.Next(0, _lastNames.Length)];
+            var firstName = _firstNames.GetRandomValue();
+            var lastName = _lastNames.GetRandomValue();
 
             return $"{firstName} {lastName}";
         }

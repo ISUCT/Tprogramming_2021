@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AkvelonSaga.Core;
 using AkvelonSaga.Server.Abstractions;
+using AkvelonSaga.Server.Extensions;
 
 namespace AkvelonSaga.Server.Services
 {
@@ -25,12 +26,12 @@ namespace AkvelonSaga.Server.Services
             var health = Random.Next(50, 70);
             var attack = Random.Next(10, 20);
 
-            var roleName = _roleStorage.Roles.ElementAt(Random.Next(0, _roleStorage.Roles.Count));
+            var roleName = _roleStorage.Roles.GetRandomValue();
             var roleFactory = _roleStorage.GetRoleFactory(roleName);
 
             if (roleFactory is null)
             {
-                throw new KeyNotFoundException($"Role {roleName} not registered");
+                throw new KeyNotFoundException($"Role {roleName} is not registered");
             }
             
             return roleFactory.Invoke(name, health, attack);

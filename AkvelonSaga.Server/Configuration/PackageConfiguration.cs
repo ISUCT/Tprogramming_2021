@@ -1,5 +1,4 @@
 ﻿using AkvelonSaga.Core;
-using AkvelonSaga.Core.Roles;
 using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.Configuration

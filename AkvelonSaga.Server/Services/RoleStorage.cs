@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using AkvelonSaga.Core.Roles;
+using AkvelonSaga.Core;
 using AkvelonSaga.Server.Abstractions;
 
 namespace AkvelonSaga.Server.Services
