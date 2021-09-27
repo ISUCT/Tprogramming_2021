@@ -21,7 +21,7 @@ namespace AkvelonSaga.Server.GameProcess
             var players = Enumerable
                 .Range(0, playerCount).Select(_ => _playerFactory.Create())
                 .ToList();
-            
+
             var session = new GameSession(players);
             _sessions.Add(session);
             

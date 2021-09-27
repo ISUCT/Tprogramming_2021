@@ -34,6 +34,7 @@ namespace AkvelonSaga.Server.Services
             "Драмнбейс",
             "Курткобейн",
             "Когтевран",
+            "Репликит"
         };
         
         public string Generate()

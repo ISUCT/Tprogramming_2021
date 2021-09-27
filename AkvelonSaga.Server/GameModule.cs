@@ -18,6 +18,7 @@ namespace AkvelonSaga.Server
             services.AddSingleton<GameConfiguration>();
             
             services.AddSingleton<IRoleStorage, RoleStorage>();
+            services.AddSingleton<ISkillStorage, SkillStorage>();
             
             services.AddSingleton<IRandomNameGenerator, RandomNameGenerator>();
             services.AddSingleton<IRandomPlayerFactory, RandomPlayerFactory>();
