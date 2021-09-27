@@ -1,5 +1,5 @@
 ﻿using AkvelonSaga.Core;
-using AkvelonSaga.Core.Roles;
+using AkvelonSaga.Server.Services;
 
 namespace AkvelonSaga.Server.Configuration
 {

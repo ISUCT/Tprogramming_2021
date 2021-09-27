@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AkvelonSaga.Core.Roles;
+using AkvelonSaga.Server.Services;
 
 namespace AkvelonSaga.Server.GameProcess
 {

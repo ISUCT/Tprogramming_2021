@@ -1,5 +1,4 @@
-﻿using AkvelonSaga.Core.Roles;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Kantaiko.Hosting.Modules;
 using AkvelonSaga.Server.GameProcess;
 using AkvelonSaga.Server.Services;
