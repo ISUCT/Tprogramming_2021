@@ -1,4 +1,4 @@
-﻿namespace CourseApp
+﻿namespace CourseApp1
 {
     using System;
 
@@ -6,15 +6,15 @@
     {
         public static void Main(string[] args)
         {
-            const double b = 4.2;
-            const double a = 7.2;
-            var funcalc = new Функция();
-            Console.WriteLine("Calculating task A\n");
-            funcalc.CalculateTaskA(1.81, 5.31, 0.7, a, b);
-            double[] nums = new double[] { 2.4, 2.8, 3.9, 4.7, 3.16 };
-            Console.WriteLine("Calculating task B\n");
-            funcalc.CalculateTaskB(nums, a, b);
-            Console.ReadKey();
+            Console.WriteLine($"Hello world");
+            var position = new ProgramDish("Cheesecake", 130, 200);
+            var position2 = new ProgramDish();
+
+            Console.WriteLine($"Name: {position.Name}, Weight: {position.Weight} g, Price: {position.Price} rub");
+
+            Console.WriteLine($"Name: {position2.Name}, Weight: {position2.Weight} g, Price: {position2.Price} rub");
+
+            Console.ReadLine();
         }
     }
 }
