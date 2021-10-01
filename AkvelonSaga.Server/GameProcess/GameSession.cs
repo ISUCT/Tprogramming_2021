@@ -9,23 +9,25 @@ namespace AkvelonSaga.Server.GameProcess
     internal sealed class GameSession
     {
         private static readonly Random Random = new();
-        
+
         public GameSession(IReadOnlyList<Player> players)
         {
             Players = players;
         }
-        
-        public IReadOnlyList<Player> Players { get; }
 
-        public Guid Id { get; } = Guid.NewGuid();
+        public IReadOnlyList<Player> Players { get; }
 
         public async Task StartAsync()
         {
             var groups = Players
                 .OrderBy(_ => Random.Next())
-                .Select((s, i) => new { Value = s, Index = i })
+                .Select((s, i) => new
+                {
+                    Value = new PlayerState(s),
+                    Index = i
+                })
                 .GroupBy(o => o.Index / 2)
-                .Select(s => s.Select(x => new PlayerState(x.Value)).ToArray())
+                .Select(s => s.Select(x => x.Value).ToArray())
                 .ToArray();
 
             foreach (var group in groups)
@@ -33,7 +35,7 @@ namespace AkvelonSaga.Server.GameProcess
                 var turnManager = new TurnManager(group);
 
                 Console.WriteLine($"{turnManager.Sender} vs {turnManager.Target}");
-                
+
                 while (group.Count(x => x.Health > 0) != 1)
                 {
                     await Task.Delay(2000);
@@ -47,7 +49,7 @@ namespace AkvelonSaga.Server.GameProcess
                 }
 
                 var winner = group.First(x => x.Health > 0);
-                
+
                 Console.WriteLine($"{winner} побеждает");
             }
         }

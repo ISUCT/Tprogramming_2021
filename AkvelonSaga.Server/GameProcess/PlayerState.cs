@@ -1,4 +1,6 @@
-﻿namespace AkvelonSaga.Core
+﻿using AkvelonSaga.Core;
+
+namespace AkvelonSaga.Server.GameProcess
 {
     public sealed class PlayerState
     {

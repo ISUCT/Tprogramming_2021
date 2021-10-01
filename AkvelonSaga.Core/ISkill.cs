@@ -2,6 +2,6 @@
 {
     public interface ISkill
     {
-        void Apply(PlayerState sender, PlayerState target);
+        void Apply(IPlayerState sender, IPlayerState target);
     }
 }

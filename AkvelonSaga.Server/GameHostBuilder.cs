@@ -9,13 +9,18 @@ namespace AkvelonSaga.Server
 {
     internal static class GameHostBuilder
     {
-        public static async Task ConfigureAndRunAsync(Action<GameConfiguration>? configure = null)
+        private static IManagedHost CreateManagedHost()
         {
             var hostBuilder = new ManagedHostBuilder();
-
+            
             hostBuilder.Modules.Add<GameModule>();
 
-            var host = hostBuilder.Build();
+            return hostBuilder.Build();
+        }
+
+        public static async Task ConfigureAndRunAsync(Action<GameConfiguration>? configure = null)
+        {
+            var host = CreateManagedHost();
             await host.StartAsync();
 
             if (!host.IsStarted)

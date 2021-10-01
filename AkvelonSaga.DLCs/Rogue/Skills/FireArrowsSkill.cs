@@ -5,7 +5,7 @@ namespace AkvelonSaga.DLCs.Rogue.Skills
 {
     public sealed class FireArrowsSkill : ISkill
     {
-        public void Apply(PlayerState sender, PlayerState target)
+        public void Apply(IPlayerState sender, IPlayerState target)
         {
             Console.WriteLine($"{sender.Player.Name} применяет [Огненные стрелы]");
         }
