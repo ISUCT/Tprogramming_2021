@@ -70,6 +70,8 @@ ipch/
 *.psess
 *.vsp
 *.vspx
+*.csproj 
+*.sln
 
 # Guidance Automation Toolkit
 *.gpState
@@ -194,6 +196,7 @@ $RECYCLE.BIN/
 
 # Rider
 .idea/
+
 
 **/node_modules/*
 
