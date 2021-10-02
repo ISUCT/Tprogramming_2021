@@ -99,6 +99,9 @@ namespace CourseApp
 
         private void Class()
         {
+            string[] name = { "isuct", "Funny", "Test", "Car", "Page", "IDE", "Game", "Video", "Music", "Work" };
+            string[] extension = { ".txt", ".pdf", ".jpg", ".cs", ".html", ".png", ".abb", ".mp3", ".mp4" };
+            string[] weightModificator = { "B", "KB", "MB", "GB", "TB", "PB" };
             Console.Clear();
             Console.WriteLine("Class tasks");
             Console.WriteLine("File with default values - 1 | File with your values - 2");
@@ -114,8 +117,8 @@ namespace CourseApp
                 case 2:
                 {
                     Console.Clear();
-                    var value = new DocumentValue();
-                    var task = new ClassTask(value.Name(), value.Extension(), value.Weight(), value.WeightModificator());
+                    var value = new FileValues();
+                    var task = new ClassTask(value.FileParam(name), value.FileParam(extension), value.Weight(), value.FileParam(weightModificator));
                     break;
                 }
             }
