@@ -19,9 +19,9 @@ namespace CourseApp.Calculate
             StartValue = 0.11;
             EndValue = 0.36;
             DeltaValue = 0.05;
-            var listTaskOne = new List<double>() { };
             var listTaskTwo = new List<double>() { 0.08, 0.026, 0.35, 0.41, 0.51 };
-            StartCalculate(listTaskOne, listTaskTwo);
+            StartCalculate(ListOfValue());
+            StartCalculate(listTaskTwo);
         }
 
         public CalculateTasks(double aValue, double bValue, double startValue, double endValue, double deltaValue)
@@ -31,9 +31,9 @@ namespace CourseApp.Calculate
             StartValue = startValue;
             EndValue = endValue;
             DeltaValue = deltaValue;
-            var listTaskOne = new List<double>() { };
             var listTaskTwo = new List<double>() { 0.08, 0.026, 0.35, 0.41, 0.51 };
-            StartCalculate(listTaskOne, listTaskTwo);
+            StartCalculate(ListOfValue());
+            StartCalculate(listTaskTwo);
         }
 
         public double StartValue
@@ -108,6 +108,17 @@ namespace CourseApp.Calculate
 
         public string Output { get; set; }
 
+        public List<double> ListOfValue()
+        {
+            List<double> xValues = new List<double>();
+            for (double x = StartValue; x < EndValue; x += DeltaValue)
+            {
+                xValues.Add(x);
+            }
+
+            return xValues;
+        }
+
         public (double, double) CalculateValue(double x)
         {
             var sin = Asin(Pow(x, AValue));
@@ -122,34 +133,13 @@ namespace CourseApp.Calculate
             return sin + cos;
         }
 
-        private void WriteValueInString(double x)
+        private void StartCalculate(List<double> listOvValue)
         {
-            var value = CalculateValue(x);
-            Output += $"x = {value.Item1:f2} y = {value.Item2:f2} | ";
-        }
-
-        private void TaskOneList(List<double> listTaskOne)
-        {
-            for (double x = StartValue; x <= EndValue; x += DeltaValue)
+            Output = "Task :";
+            foreach (double x in listOvValue)
             {
-                listTaskOne.Add(x);
-            }
-        }
-
-        private void StartCalculate(List<double> listTaskOne, List<double> listTaskTwo)
-        {
-            TaskOneList(listTaskOne);
-            Output = "Task One: ";
-            foreach (double x in listTaskOne)
-            {
-                WriteValueInString(x);
-            }
-
-            Console.WriteLine(Output);
-            Output = "Task Two: ";
-            foreach (double x in listTaskTwo)
-            {
-                WriteValueInString(x);
+                var value = CalculateValue(x);
+                Output += $"x = {value.Item1:f2} y = {value.Item2:f2} | ";
             }
 
             Console.WriteLine(Output);
