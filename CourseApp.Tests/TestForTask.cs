@@ -15,7 +15,7 @@ namespace CourseApp.Tests
         public void TestClass(string name, string extension, double weight, string weightModificator)
         {
             var expected = $"{name}{extension} {weight}{weightModificator}";
-            Document file = new FileCreator(name, extension, weight, weightModificator);
+            var file = new FileCreator(name, extension, weight, weightModificator);
             var actual = file.Display();
             Assert.Equal(expected, actual);
         }

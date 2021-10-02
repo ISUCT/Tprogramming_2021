@@ -2,7 +2,7 @@ namespace CourseApp.Class
 {
     using System;
 
-    public abstract class Document
+    public abstract class Document : Exception
     {
         private string _name;
 
@@ -25,11 +25,7 @@ namespace CourseApp.Class
 
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new Exception("Invalid name. Name can not be null or empty.");
-                }
-
+                CheckForException.CheckValueForExeption(value);
                 _name = value;
             }
         }

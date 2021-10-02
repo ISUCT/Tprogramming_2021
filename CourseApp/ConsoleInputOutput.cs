@@ -8,10 +8,7 @@ namespace CourseApp
         public void StartProgram()
         {
             Console.Clear();
-            Console.WriteLine("Hello!");
-            Console.WriteLine("This program can create files with default or your params");
-            Console.WriteLine("File with default params - 1 | File with your params - 2");
-            Console.WriteLine("What you want?");
+            Console.WriteLine("Hello!\nThis program can create files with default or your params\nFile with default params - 1 | File with your params - 2\nWhat you want?");
             Class();
         }
 

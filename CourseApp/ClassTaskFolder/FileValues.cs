@@ -5,25 +5,26 @@ namespace CourseApp.Class
 
     public class FileValues
     {
-        public string FileParam(string[] strValues)
+        public string FileParam(string[] stringValues)
         {
-            Console.WriteLine("Chose:");
-            ConsoleOutput(strValues);
-            return strValues[CheckIntInput(strValues.Length)];
+            Console.Clear();
+            ConsoleOutput(stringValues);
+            return stringValues[CheckIntInput(stringValues.Length) - 1];
         }
 
         public double Weight()
         {
-            Console.WriteLine(" ");
+            Console.Clear();
             Console.Write("Enter weight ( weight > 0 ): ");
             return InputDoubleValue();
         }
 
         private void ConsoleOutput(string[] str)
         {
+            Console.WriteLine("Chose:");
             for (int i = 0; i < str.Length; i++)
             {
-                Console.WriteLine($"{str[i]} - {i + 1}");
+                Console.WriteLine($"{i + 1} - {str[i]}");
             }
         }
 
@@ -54,23 +55,24 @@ namespace CourseApp.Class
             {
                 input = Console.ReadLine();
                 isNumber = double.TryParse(input, out inputValue);
-                if (!isNumber)
+                if (!isNumber || inputValue == 0)
                 {
                     Console.WriteLine($"Value is incorrect. Please enter correct value!");
+                    isNumber = false;
                 }
             }
 
             return inputValue;
         }
 
-        private int CheckIntInput(int strLength)
+        private int CheckIntInput(int stringLength)
         {
             var input = 0;
             var isCorrectNumber = false;
             while (!isCorrectNumber)
             {
                 input = InputIntValue();
-                if (input > strLength || input <= 0)
+                if (input > stringLength || input <= 0)
                 {
                     Console.WriteLine("Value is out of range");
                 }

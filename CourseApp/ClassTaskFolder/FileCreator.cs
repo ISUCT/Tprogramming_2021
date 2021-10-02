@@ -35,11 +35,7 @@ namespace CourseApp.Class
 
             set
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                {
-                    throw new Exception("Invalid extension. Extension can not be null or empty.");
-                }
-
+                CheckForException.CheckValueForExeption(value);
                 _extension = value;
             }
         }
@@ -53,11 +49,7 @@ namespace CourseApp.Class
 
             set
             {
-                if (value <= 0)
-                {
-                    throw new Exception("Invalid weight. Weight can not be below zero.");
-                }
-
+                CheckForException.CheckValueForExeption(value);
                 _weight = value;
             }
         }
@@ -71,11 +63,7 @@ namespace CourseApp.Class
 
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new Exception("Invalid weightModificator. WeightModificator can not be null or empty.");
-                }
-
+                CheckForException.CheckValueForExeption(value);
                 _weightModificator = value;
             }
         }
