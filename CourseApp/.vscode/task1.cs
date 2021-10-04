@@ -10,18 +10,19 @@ namespace CourseApp
             double x_n = 1.25;
             double x_k = 3.25;
             double x_ch = 0.4;
+            double xk = 3.25;
             double[] arr = { 1.84, 2.71, 3.81, 4.56, 5.62 };
             Console.WriteLine($"Task A");
-            CalcA(y, x_n, x_k, x_ch);
+            CalcA(y, xn, xk, xch);
             Console.WriteLine(" ");
             Console.WriteLine($"Task B");
             CalcB(y, arr);
             Console.ReadLine();
         }
 
-        public static void CalcA(double y, double x_n, double x_k, double x_ch)
+        public static void CalcA(double y, double xn, double xk, double xch)
         {
-            for (double x = x_n; x < x_k; x += x_ch)
+            for (double x = xn; x < xk; x += xch)
             {
                 Console.WriteLine($" y={Math.Pow(Math.Abs(Math.Pow(x, 2) - 2.5), 1 / 4.0) + Math.Pow(Math.Log(Math.Pow(x, 2)), 1 / 3.0)}");
             }
