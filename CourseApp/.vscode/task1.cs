@@ -7,10 +7,9 @@ namespace CourseApp
         public static void Main(string[] args)
         {
             double y = 0;
-            double x_n = 1.25;
-            double x_k = 3.25;
-            double x_ch = 0.4;
+            double xn = 1.25;
             double xk = 3.25;
+            double xch = 0.4;
             double[] arr = { 1.84, 2.71, 3.81, 4.56, 5.62 };
             Console.WriteLine($"Task A");
             CalcA(y, xn, xk, xch);
