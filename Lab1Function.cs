@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class Lab1_function_
+    public class Lab1Function
     {
         public void Calculate(double b, double x, double a)
         {
