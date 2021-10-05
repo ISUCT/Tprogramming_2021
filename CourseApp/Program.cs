@@ -6,8 +6,14 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine($"Hello world");
-            Console.ReadLine();
+            // var calc = new Calc();
+            // Console.WriteLine(calc.Multiply(5, 20));
+            // Console.ReadLine();
+
+            // Mouse new_mouse = new Mouse();
+            // Console.WriteLine("Введите возраст мыши:");
+            // new_mouse.Age = Convert.ToInt32(Console.ReadLine());
+            // Console.WriteLine($"Возраст мыши: {new_mouse.Age}.");
         }
     }
 }
