@@ -35,7 +35,7 @@ namespace CourseApp.Class
 
             set
             {
-                CheckForException.CheckValueForExeption(value);
+                CheckValues.CheckValueForNullEmptyOrWhiteSpace(value);
                 _extension = value;
             }
         }
@@ -49,7 +49,7 @@ namespace CourseApp.Class
 
             set
             {
-                CheckForException.CheckValueForExeption(value);
+                CheckValues.CheckValueForNullEmptyOrWhiteSpace(value);
                 _weight = value;
             }
         }
@@ -63,7 +63,7 @@ namespace CourseApp.Class
 
             set
             {
-                CheckForException.CheckValueForExeption(value);
+                CheckValues.CheckValueForNullEmptyOrWhiteSpace(value);
                 _weightModificator = value;
             }
         }

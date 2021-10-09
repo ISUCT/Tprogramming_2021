@@ -5,13 +5,13 @@ namespace CourseApp.Class
 
     public class ClassTask
     {
-        public ClassTask(string name, string extension, double weight, string weightModificator)
+        public void GetCreatedFile(string name, string extension, double weight, string weightModificator)
         {
             Document file = new FileCreator(name, extension, weight, weightModificator);
             Console.WriteLine($"Your file: {file.Display()}");
         }
 
-        public ClassTask()
+        public void GetDefaultFile()
         {
             Document file = new FileCreator();
             Console.WriteLine($"Default file: {file.Display()}");

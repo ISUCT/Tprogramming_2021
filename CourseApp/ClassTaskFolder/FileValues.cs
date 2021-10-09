@@ -74,7 +74,7 @@ namespace CourseApp.Class
                 input = InputIntValue();
                 if (input > stringLength || input <= 0)
                 {
-                    Console.WriteLine("Value is out of range");
+                    Console.WriteLine("Value is out of range. Please enter correct value!");
                 }
                 else
                 {

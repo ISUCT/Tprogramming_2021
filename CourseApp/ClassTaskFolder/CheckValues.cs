@@ -3,9 +3,9 @@ namespace CourseApp.Class
     using System;
     using static System.Math;
 
-    public static class CheckForException
+    public static class CheckValues
     {
-        public static void CheckValueForExeption(string value)
+        public static void CheckValueForNullEmptyOrWhiteSpace(string value)
         {
             if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
             {
@@ -13,7 +13,7 @@ namespace CourseApp.Class
             }
         }
 
-        public static void CheckValueForExeption(double value)
+        public static void CheckValueForNullEmptyOrWhiteSpace(double value)
         {
             if (value <= 0)
             {

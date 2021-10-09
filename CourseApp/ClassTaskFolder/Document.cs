@@ -25,7 +25,7 @@ namespace CourseApp.Class
 
             set
             {
-                CheckForException.CheckValueForExeption(value);
+                CheckValues.CheckValueForNullEmptyOrWhiteSpace(value);
                 _name = value;
             }
         }

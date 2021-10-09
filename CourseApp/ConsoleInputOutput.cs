@@ -23,6 +23,7 @@ namespace CourseApp
                 {
                     Console.Clear();
                     var task = new ClassTask();
+                    task.GetDefaultFile();
                     break;
                 }
 
@@ -30,7 +31,8 @@ namespace CourseApp
                 {
                     Console.Clear();
                     var value = new FileValues();
-                    var task = new ClassTask(value.FileParam(name), value.FileParam(extension), value.Weight(), value.FileParam(weightModificator));
+                    var task = new ClassTask();
+                    task.GetCreatedFile(value.FileParam(name), value.FileParam(extension), value.Weight(), value.FileParam(weightModificator));
                     break;
                 }
             }
@@ -40,34 +42,38 @@ namespace CourseApp
         {
             bool isNumber = false;
             var input = string.Empty;
+            int inputValue = 0;
             while (!isNumber)
             {
                 input = Console.ReadLine();
-                isNumber = int.TryParse(input, out int inputValue);
-                if (!isNumber)
+                isNumber = int.TryParse(input, out inputValue);
+                if (!isNumber || inputValue <= 0 || inputValue > 2)
                 {
-                    Console.WriteLine("Please enter correct value");
+                    Console.WriteLine("Value is out of range. Please enter correct value!");
+                    isNumber = false;
                 }
             }
 
-            return Convert.ToInt32(input);
+            return inputValue;
         }
 
         private double DoubleValue()
         {
             bool isNumber = false;
             var input = string.Empty;
+            double inputValue = 0;
             while (!isNumber)
             {
                 input = Console.ReadLine();
-                isNumber = double.TryParse(input, out double inputValue);
-                if (!isNumber)
+                isNumber = double.TryParse(input, out inputValue);
+                if (!isNumber || inputValue == 0)
                 {
-                    Console.WriteLine("Please enter correct value");
+                    Console.WriteLine("Value is out of range. Please enter correct value!");
+                    isNumber = false;
                 }
             }
 
-            return Convert.ToDouble(input);
+            return inputValue;
         }
     }
 }
