@@ -18,7 +18,7 @@ namespace CourseApp
             var customFile = new List<string>();
             IsFileCreated = false;
             Console.Clear();
-            Console.WriteLine("In this program you can:\n1 - Create default file\n2 - Create custom file\n3 - Exit program\nWhat you want? Enter integer values.");
+            Console.WriteLine("In this program you can:\r\n1 - Create default file\r\n2 - Create custom file\r\n3 - Exit program\r\nWhat you want? Enter integer values.");
             switch (input.InputInt(1, 3))
             {
                 case 1:
@@ -39,7 +39,7 @@ namespace CourseApp
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine("Available actions:\n1 - Get default file\n2 - Back to start page\n3 - Exit program\nWhat you want? Enter integer values.");
+            Console.WriteLine("Available actions:\r\n1 - Get default file\r\n2 - Back to start page\r\n3 - Exit program\r\nWhat you want? Enter integer values.");
             switch (input.InputInt(1, 3))
             {
                 case 1:
@@ -60,7 +60,7 @@ namespace CourseApp
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine("Available actions:\n1 - Get custom files\n2 - Enter custom values\n3 - Back to start page\n4 - Exit program\nWhat you want? Enter integer values.");
+            Console.WriteLine("Available actions:\r\n1 - Get custom files\r\n2 - Enter custom values\r\n3 - Back to start page\r\n4 - Exit program\r\nWhat you want? Enter integer values.");
             switch (input.InputInt(1, 4))
             {
                 case 1:
@@ -86,8 +86,8 @@ namespace CourseApp
             var file = new FileCreator("Program", ".cs", 0.34, "MB");
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine($"Default file:\n{file.Display()}");
-            Console.WriteLine("\nAvailable actions:\n1 - Back to previous page\n2 - Exit program\nWhat you want? Enter integer values.");
+            Console.WriteLine($"Default file:\r\n{file.Display()}");
+            Console.WriteLine("\r\nAvailable actions:\r\n1 - Back to previous page\r\n2 - Exit program\r\nWhat you want? Enter integer values.");
             switch (input.InputInt(1, 2))
             {
                 case 1:
@@ -118,7 +118,7 @@ namespace CourseApp
             Console.Clear();
             CreateCustomFile(customFile);
             Console.Clear();
-            Console.WriteLine("Available actions:\n1 - Create another custom file\n2 - Back to previous page\n3 - Exit program\nWhat you want? Enter integer values.");
+            Console.WriteLine("Available actions:\r\n1 - Create another custom file\r\n2 - Back to previous page\r\n3 - Exit program\r\nWhat you want? Enter integer values.");
             switch (input.InputInt(1, 2))
             {
                 case 1:
@@ -152,7 +152,7 @@ namespace CourseApp
                 Console.WriteLine("You dont create any files");
             }
 
-            Console.WriteLine("\nAvailable actions:\n1 - Create custom file\n2 - Back to previous page\n3 - Exit program\nWhat you want? Enter integer values.");
+            Console.WriteLine("\r\nAvailable actions:\r\n1 - Create custom file\r\n2 - Back to previous page\r\n3 - Exit program\r\nWhat you want? Enter integer values.");
             switch (input.InputInt(1, 3))
             {
                 case 1:
