@@ -8,28 +8,30 @@ namespace CourseApp
         public UserInterface()
         {
             Console.WriteLine("Hello!");
+            IsDateFilled = false;
         }
 
-        public bool IsFileCreated { get; set; }
+        public bool IsDateFilled { get; set; }
+
+        public string Age { get; set; }
 
         public void StartProgram()
         {
             var input = new InputValues();
-            IsFileCreated = false;
             Console.Clear();
-            Console.WriteLine(@"In this program you can:
-1 - 
-2 - 
+            Console.WriteLine(@"Avaible actions:
+1 - Set your birthDay
+2 - Get your age
 3 - Exit program
 What you want? Enter integer values.");
             switch (input.InputInt(1, 3))
             {
                 case 1:
-                    DefaultFilePage();
+                    BirthDayPage();
                     break;
 
                 case 2:
-                    CustomFilePage();
+                    AgePage();
                     break;
 
                 case 3:
@@ -38,56 +40,50 @@ What you want? Enter integer values.");
             }
         }
 
-        private void DefaultFilePage()
+        private void BirthDayPage()
         {
-            var input = new InputValues();
             Console.Clear();
-            Console.WriteLine(@"Available actions:
-1 - 
-2 - Back to start page
-3 - Exit program
-What you want? Enter integer values.");
-            switch (input.InputInt(1, 3))
-            {
-                case 1:
-
-                    break;
-
-                case 2:
-                    StartProgram();
-                    break;
-
-                case 3:
-                    Environment.Exit(0);
-                    break;
-            }
+            var input = new InputValues();
+            Console.WriteLine("Enter your birthday");
+            Console.WriteLine("Year:");
+            var year = input.InputInt(0000, 9999);
+            Console.WriteLine("Month:");
+            var month = input.InputInt(1, 12);
+            Console.WriteLine("Day:");
+            var day = input.InputInt(1, 31);
+            DateTime birthDay = new DateTime(year, month, day);
+            DateTime dateToday = DateTime.Today;
+            var dateClass = new DateClass();
+            var age = dateClass.StringBuilder(dateClass.Age(birthDay, dateToday));
+            Age = $"Your age: {age.Item1}, {age.Item2} and {age.Item3}";
+            IsDateFilled = true;
+            StartProgram();
         }
 
-        private void CustomFilePage()
+        private void AgePage()
         {
-            var input = new InputValues();
             Console.Clear();
-            Console.WriteLine(@"Available actions:
-1 - 
-2 - 
-3 - Back to start page
-4 - Exit program
+            var input = new InputValues();
+            if (IsDateFilled)
+            {
+                Console.WriteLine(Age);
+            }
+            else
+            {
+                Console.WriteLine("You dont enter your birthDay!");
+            }
+
+            Console.WriteLine(@"Avaible actions:
+1 - Return to previous page
+2 - Exit program
 What you want? Enter integer values.");
-            switch (input.InputInt(1, 4))
+            switch (input.InputInt(1, 2))
             {
                 case 1:
-
-                    break;
-
-                case 2:
-
-                    break;
-
-                case 3:
                     StartProgram();
                     break;
 
-                case 4:
+                case 2:
                     Environment.Exit(0);
                     break;
             }
