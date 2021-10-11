@@ -6,8 +6,7 @@ namespace CourseApp
     {
         public static void Main(string[] args)
         {
-            var userInterface = new UserInterface();
-            userInterface.StartProgram();
+            var userInterface = new DateClass();
             Console.ReadLine();
         }
     }
