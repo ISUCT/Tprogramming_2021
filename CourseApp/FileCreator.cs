@@ -1,8 +1,5 @@
 namespace CourseApp
 {
-    using System;
-    using static System.Math;
-
     public class FileCreator
     {
         public FileCreator(string filename, string extension, double weight, string weightModificator)
@@ -23,7 +20,7 @@ namespace CourseApp
 
         public string Display()
         {
-            return $"{FileName}{Extension} {Weight}{WeightModificator}";
+            return $"{FileName}.{Extension} {Weight}{WeightModificator}";
         }
     }
 }

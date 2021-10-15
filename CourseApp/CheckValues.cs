@@ -2,7 +2,7 @@ namespace CourseApp
 {
     using System;
 
-    public class CheckValueForCorrect
+    public class CheckValues
     {
         public bool IsValidString(string item)
         {

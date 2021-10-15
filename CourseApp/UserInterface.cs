@@ -11,6 +11,43 @@ namespace CourseApp
             IsFileCreated = false;
         }
 
+        public enum Name
+        {
+        ISUCT,
+        Funny,
+        Test,
+        Car,
+        Page,
+        IDE,
+        Game,
+        Video,
+        Music,
+        Work,
+        }
+
+        public enum Extension
+        {
+        Txt,
+        Pdf,
+        Jpeg,
+        Cs,
+        Html,
+        Png,
+        Abb,
+        Mp3,
+        Mp4,
+        }
+
+        public enum WeightModificator
+        {
+        B,
+        KB,
+        MB,
+        GB,
+        TB,
+        PB,
+        }
+
         public bool IsFileCreated { get; set; }
 
         public void StartProgram()
@@ -96,10 +133,11 @@ What you want? Enter integer values.");
 
         private void CreateDefaultFile()
         {
-            var file = new FileCreator("Program", ".cs", 0.34, "MB");
+            var file = new FileCreator("Program", "Cs", 0.34, "MB");
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine($"Default file:\r\n{file.Display()}");
+            Console.WriteLine($@"Default file:
+{file.Display()}");
             Console.WriteLine(@"
 Available actions:
 1 - Back to previous page
@@ -120,11 +158,8 @@ What you want? Enter integer values.");
         private void CreateCustomFile(List<string> customFile)
         {
             Console.Clear();
-            string[] fileName = { "isuct", "Funny", "Test", "Car", "Page", "IDE", "Game", "Video", "Music", "Work" };
-            string[] extension = { ".txt", ".pdf", ".jpg", ".cs", ".html", ".png", ".abb", ".mp3", ".mp4" };
-            string[] weightModificator = { "B", "KB", "MB", "GB", "TB", "PB" };
             var input = new InputValues();
-            var file = new FileCreator(EnterValue(fileName), EnterValue(extension), EnterValue(), EnterValue(weightModificator));
+            var file = new FileCreator(EnumValueName(), EnumValueExtension(), EnterValue(), EnumValueWeightModificator());
             customFile.Add(file.Display());
             IsFileCreated = true;
         }
@@ -162,7 +197,7 @@ What you want? Enter integer values.");
             Console.Clear();
             if (IsFileCreated)
             {
-                Console.WriteLine("Your files:");
+                Console.WriteLine($"Your file{((customFile.Count == 1) ? ":" : "s:")}");
                 for (int i = 0; i < customFile.Count; i++)
                 {
                     Console.WriteLine($"{i + 1} - {customFile[i]}");
@@ -195,24 +230,50 @@ What you want? Enter integer values.");
             }
         }
 
-        private string EnterValue(string[] arr)
+        private string EnumValueName()
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine($"Choose value. Enter integer values.");
-            for (int i = 0; i < arr.Length; i++)
+            Console.WriteLine($"Choose name. Enter integer values.");
+            for (int i = 0; i < Enum.GetNames(typeof(Name)).Length; i++)
             {
-                Console.WriteLine($"{i + 1} - {arr[i]}");
+                Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(Name), i)}");
             }
 
-            return arr[input.InputInt(1, arr.Length)];
+            return Enum.GetName(typeof(Name), input.InputInt(1, Enum.GetNames(typeof(Name)).Length) - 1);
+        }
+
+        private string EnumValueExtension()
+        {
+            var input = new InputValues();
+            Console.Clear();
+            Console.WriteLine($"Choose extension. Enter integer values.");
+            for (int i = 0; i < Enum.GetNames(typeof(Extension)).Length; i++)
+            {
+                Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(Extension), i)}");
+            }
+
+            return Enum.GetName(typeof(Extension), input.InputInt(1, Enum.GetNames(typeof(Extension)).Length) - 1);
+        }
+
+        private string EnumValueWeightModificator()
+        {
+            var input = new InputValues();
+            Console.Clear();
+            Console.WriteLine($"Choose weightModificator. Enter integer values.");
+            for (int i = 0; i < Enum.GetNames(typeof(WeightModificator)).Length; i++)
+            {
+                Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(WeightModificator), i)}");
+            }
+
+            return Enum.GetName(typeof(WeightModificator), input.InputInt(1, Enum.GetNames(typeof(WeightModificator)).Length) - 1);
         }
 
         private double EnterValue()
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine($"Enter value. Weight must be positive. Value range is (0.001 to 1023).");
+            Console.WriteLine($"Enter weight. Weight must be positive. Value range is (0.001 to 1023).");
             return input.InputDouble(0.001, 1023);
         }
     }
