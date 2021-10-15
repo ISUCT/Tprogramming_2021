@@ -1,26 +1,14 @@
-﻿namespace CourseApp1
+namespace CourseApp
 {
     using System;
 
-    public class ProgramDish
+    public class DishClass
     {
         private int price;
 
-        public ProgramDish() : this("Maffin", 100, 150)
-        {
-            Console.WriteLine("dish constructor without params");
-        }
-        public ProgramDish(string name, int weight, int price)
-        {
-            Console.WriteLine("dish constructor called");
-            Name = name;
-            Weight = weight;
-            Price = price;
-        }
-
         public string Name { get; set; }
 
-        public int Weight;
+        public int Weight { get; set; }
 
         public int Price
         {
@@ -31,11 +19,20 @@
 
             set
             {
-                if (value > 0 & value < 1000)
+                if (value > 0 & value < 10000)
                 {
                     price = value;
                 }
             }
+        }
+
+        public object ProgramDish(string name, int weight, int price)
+        {
+            Console.WriteLine("dish constructor called");
+            Name = name;
+            Weight = weight;
+            Price = price;
+            return (name, weight, price);
         }
     }
 }
