@@ -1,7 +1,7 @@
-namespace CourseApp
+namespace CourseApp.Program
 {
     using System;
-    using System.Collections.Generic;
+    using CourseApp.Program.Input;
 
     public class UserInterface
     {

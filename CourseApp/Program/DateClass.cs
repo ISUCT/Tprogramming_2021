@@ -1,4 +1,4 @@
-namespace CourseApp
+namespace CourseApp.Program
 {
     using System;
     using static System.Math;
