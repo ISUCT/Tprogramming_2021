@@ -23,7 +23,8 @@ namespace CourseApp
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine(@"Avaible actions:
+            Console.WriteLine(@"
+Avaible actions:
 1 - Set your birthDay
 2 - Get your age
 3 - Get date to your birthDay
@@ -117,7 +118,8 @@ What you want? Enter integer values.");
                 Console.WriteLine("You dont enter your birthDay!");
             }
 
-            Console.WriteLine(@"Avaible actions:
+            Console.WriteLine(@"
+Avaible actions:
 1 - Return to previous page
 2 - Exit program
 What you want? Enter integer values.");
@@ -146,7 +148,8 @@ What you want? Enter integer values.");
                 Console.WriteLine("You dont enter your birthDay!");
             }
 
-            Console.WriteLine(@"Avaible actions:
+            Console.WriteLine(@"
+Avaible actions:
 1 - Return to previous page
 2 - Exit program
 What you want? Enter integer values.");
@@ -167,7 +170,7 @@ What you want? Enter integer values.");
             var dateClass = new DateClass();
             var birthDay = new DateTime(Year, Month, Day);
             var dateToday = DateTime.Today;
-            var date = dateClass.StringBuilder(dateClass.CalculateAge(birthDay, dateToday));
+            var date = dateClass.CreateOutput(dateClass.CalculateAge(birthDay, dateToday));
             return (date.Item1, date.Item2, date.Item3);
         }
 
@@ -176,7 +179,7 @@ What you want? Enter integer values.");
             var dateClass = new DateClass();
             var birthDay = new DateTime(Year, Month, Day);
             var dateToday = DateTime.Today;
-            var date = dateClass.StringBuilder(dateClass.CalculateDaysToBirthDay(birthDay, dateToday));
+            var date = dateClass.CreateOutput(dateClass.CalculateDaysToBirthDay(birthDay, dateToday));
             return (date.Item1, date.Item2, date.Item3);
         }
     }

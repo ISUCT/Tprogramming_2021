@@ -24,7 +24,7 @@ namespace CourseApp
             return (years, months, days);
         }
 
-        public (string, string, string) StringBuilder((int, int, int) age)
+        public (string, string, string) CreateOutput((int, int, int) age)
         {
             var years = $"{age.Item1} year{(age.Item1 % 10 == 1 ? " " : "`s")}";
             var months = $"{age.Item2} month{(age.Item2 % 10 == 1 ? " " : "`s")}";
@@ -32,7 +32,7 @@ namespace CourseApp
             return (years, months, days);
         }
 
-        public (string, string, string) StringBuilder((int, int) age)
+        public (string, string, string) CreateOutput((int, int) age)
         {
             var months = string.Empty;
             var days = string.Empty;
