@@ -2,6 +2,7 @@ namespace CourseApp
 {
     using System;
     using System.Collections.Generic;
+    using CourseApp.Enums;
 
     public class UserInterface
     {
@@ -17,8 +18,8 @@ namespace CourseApp
         {
             var input = new InputValues();
             var customFile = new List<string>();
-            Console.Clear();
-            Console.WriteLine(@"In this program you can:
+            Console.WriteLine(@"
+In this program you can:
 1 - Create default file
 2 - Create custom file
 3 - Exit program
@@ -43,7 +44,8 @@ What you want? Enter integer values.");
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine(@"Available actions:
+            Console.WriteLine(@"
+Available actions:
 1 - Get default file
 2 - Back to start page
 3 - Exit program
@@ -56,6 +58,7 @@ What you want? Enter integer values.");
 
                 case 2:
                     StartProgram();
+                    Console.Clear();
                     break;
 
                 case 3:
@@ -68,7 +71,8 @@ What you want? Enter integer values.");
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine(@"Available actions:
+            Console.WriteLine(@"
+Available actions:
 1 - Get custom files
 2 - Enter custom values
 3 - Back to start page
@@ -86,6 +90,7 @@ What you want? Enter integer values.");
 
                 case 3:
                     StartProgram();
+                    Console.Clear();
                     break;
 
                 case 4:
@@ -133,7 +138,8 @@ What you want? Enter integer values.");
             Console.Clear();
             CreateCustomFile(customFile);
             Console.Clear();
-            Console.WriteLine(@"Available actions:
+            Console.WriteLine(@"
+Available actions:
 1 - Create another custom file
 2 - Back to previous page
 3 - Exit program
@@ -197,12 +203,13 @@ What you want? Enter integer values.");
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine($"Choose name. Enter integer values.");
+            Console.WriteLine($"Choose avaible name. Enter integer values.");
             for (int i = 0; i < Enum.GetNames(typeof(EnumName)).Length; i++)
             {
                 Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumName), i)}");
             }
 
+            Console.WriteLine("Your variant:");
             return Enum.GetName(typeof(EnumName), input.InputInt(1, Enum.GetNames(typeof(EnumName)).Length) - 1);
         }
 
@@ -210,12 +217,13 @@ What you want? Enter integer values.");
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine($"Choose extension. Enter integer values.");
+            Console.WriteLine($"Choose avaible extension. Enter integer values.");
             for (int i = 0; i < Enum.GetNames(typeof(EnumExtension)).Length; i++)
             {
                 Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumExtension), i)}");
             }
 
+            Console.WriteLine("Your variant:");
             return Enum.GetName(typeof(EnumExtension), input.InputInt(1, Enum.GetNames(typeof(EnumExtension)).Length) - 1);
         }
 
@@ -223,12 +231,13 @@ What you want? Enter integer values.");
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine($"Choose weightModificator. Enter integer values.");
+            Console.WriteLine($"Choose avaible weightModificator. Enter integer values.");
             for (int i = 0; i < Enum.GetNames(typeof(EnumWeightModificator)).Length; i++)
             {
                 Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumWeightModificator), i)}");
             }
 
+            Console.WriteLine("Your variant:");
             return Enum.GetName(typeof(EnumWeightModificator), input.InputInt(1, Enum.GetNames(typeof(EnumWeightModificator)).Length) - 1);
         }
 
@@ -236,7 +245,8 @@ What you want? Enter integer values.");
         {
             var input = new InputValues();
             Console.Clear();
-            Console.WriteLine($"Enter weight. Weight must be positive. Value range is (0.001 to 1023).");
+            Console.WriteLine(@"Enter weight. Weight must be positive. Value range is (0.001 to 1023).
+Your value:");
             return input.InputDouble(0.001, 1023);
         }
     }

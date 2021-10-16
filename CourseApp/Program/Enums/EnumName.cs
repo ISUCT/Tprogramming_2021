@@ -1,4 +1,4 @@
-namespace CourseApp
+namespace CourseApp.Enums
 {
     public enum EnumName
     {
@@ -12,5 +12,12 @@ namespace CourseApp
     Video,
     Music,
     Work,
+    Phone,
+    Note,
+    File,
+    Diploma,
+    Peoples,
+    IT,
+    CsharpCourse,
     }
 }

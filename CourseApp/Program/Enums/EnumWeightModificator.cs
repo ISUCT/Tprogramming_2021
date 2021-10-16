@@ -1,4 +1,4 @@
-namespace CourseApp
+namespace CourseApp.Enums
 {
     public enum EnumWeightModificator
     {

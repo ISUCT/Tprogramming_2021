@@ -1,4 +1,4 @@
-namespace CourseApp
+namespace CourseApp.Enums
 {
     public enum EnumExtension
     {
@@ -11,5 +11,11 @@ namespace CourseApp
     Abb,
     Mp3,
     Mp4,
+    Apk,
+    Exe,
+    Tif,
+    Gif,
+    Jpg,
+    Bak,
     }
 }
