@@ -11,43 +11,6 @@ namespace CourseApp
             IsFileCreated = false;
         }
 
-        public enum Name
-        {
-        ISUCT,
-        Funny,
-        Test,
-        Car,
-        Page,
-        IDE,
-        Game,
-        Video,
-        Music,
-        Work,
-        }
-
-        public enum Extension
-        {
-        Txt,
-        Pdf,
-        Jpeg,
-        Cs,
-        Html,
-        Png,
-        Abb,
-        Mp3,
-        Mp4,
-        }
-
-        public enum WeightModificator
-        {
-        B,
-        KB,
-        MB,
-        GB,
-        TB,
-        PB,
-        }
-
         public bool IsFileCreated { get; set; }
 
         public void StartProgram()
@@ -235,12 +198,12 @@ What you want? Enter integer values.");
             var input = new InputValues();
             Console.Clear();
             Console.WriteLine($"Choose name. Enter integer values.");
-            for (int i = 0; i < Enum.GetNames(typeof(Name)).Length; i++)
+            for (int i = 0; i < Enum.GetNames(typeof(EnumName)).Length; i++)
             {
-                Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(Name), i)}");
+                Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumName), i)}");
             }
 
-            return Enum.GetName(typeof(Name), input.InputInt(1, Enum.GetNames(typeof(Name)).Length) - 1);
+            return Enum.GetName(typeof(EnumName), input.InputInt(1, Enum.GetNames(typeof(EnumName)).Length) - 1);
         }
 
         private string EnumValueExtension()
@@ -248,12 +211,12 @@ What you want? Enter integer values.");
             var input = new InputValues();
             Console.Clear();
             Console.WriteLine($"Choose extension. Enter integer values.");
-            for (int i = 0; i < Enum.GetNames(typeof(Extension)).Length; i++)
+            for (int i = 0; i < Enum.GetNames(typeof(EnumExtension)).Length; i++)
             {
-                Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(Extension), i)}");
+                Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumExtension), i)}");
             }
 
-            return Enum.GetName(typeof(Extension), input.InputInt(1, Enum.GetNames(typeof(Extension)).Length) - 1);
+            return Enum.GetName(typeof(EnumExtension), input.InputInt(1, Enum.GetNames(typeof(EnumExtension)).Length) - 1);
         }
 
         private string EnumValueWeightModificator()
@@ -261,12 +224,12 @@ What you want? Enter integer values.");
             var input = new InputValues();
             Console.Clear();
             Console.WriteLine($"Choose weightModificator. Enter integer values.");
-            for (int i = 0; i < Enum.GetNames(typeof(WeightModificator)).Length; i++)
+            for (int i = 0; i < Enum.GetNames(typeof(EnumWeightModificator)).Length; i++)
             {
-                Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(WeightModificator), i)}");
+                Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumWeightModificator), i)}");
             }
 
-            return Enum.GetName(typeof(WeightModificator), input.InputInt(1, Enum.GetNames(typeof(WeightModificator)).Length) - 1);
+            return Enum.GetName(typeof(EnumWeightModificator), input.InputInt(1, Enum.GetNames(typeof(EnumWeightModificator)).Length) - 1);
         }
 
         private double EnterValue()
