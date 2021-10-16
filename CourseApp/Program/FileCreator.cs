@@ -1,4 +1,4 @@
-namespace CourseApp
+namespace CourseApp.Program
 {
     public class FileCreator
     {

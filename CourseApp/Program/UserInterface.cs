@@ -1,8 +1,9 @@
-namespace CourseApp
+namespace CourseApp.Program
 {
     using System;
     using System.Collections.Generic;
-    using CourseApp.Enums;
+    using CourseApp.Program.Enums;
+    using CourseApp.Program.Input;
 
     public class UserInterface
     {
@@ -134,8 +135,8 @@ What you want? Enter integer values.");
 
         private void CustomFile(List<string> customFile)
         {
-            var input = new InputValues();
             Console.Clear();
+            var input = new InputValues();
             CreateCustomFile(customFile);
             Console.Clear();
             Console.WriteLine(@"
@@ -162,8 +163,8 @@ What you want? Enter integer values.");
 
         private void GetCustomFiles(List<string> customFile)
         {
-            var input = new InputValues();
             Console.Clear();
+            var input = new InputValues();
             if (IsFileCreated)
             {
                 Console.WriteLine($"Your file{((customFile.Count == 1) ? ":" : "s:")}");
@@ -201,8 +202,8 @@ What you want? Enter integer values.");
 
         private string EnumValueName()
         {
-            var input = new InputValues();
             Console.Clear();
+            var input = new InputValues();
             Console.WriteLine($"Choose avaible name. Enter integer values.");
             for (int i = 0; i < Enum.GetNames(typeof(EnumName)).Length; i++)
             {
@@ -215,10 +216,10 @@ What you want? Enter integer values.");
 
         private string EnumValueExtension()
         {
-            var input = new InputValues();
             Console.Clear();
+            var input = new InputValues();
             Console.WriteLine($"Choose avaible extension. Enter integer values.");
-            for (int i = 0; i < Enum.GetNames(typeof(EnumExtension)).Length; i++)
+            for (var i = 0; i < Enum.GetNames(typeof(EnumExtension)).Length; i++)
             {
                 Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumExtension), i)}");
             }
@@ -232,7 +233,7 @@ What you want? Enter integer values.");
             var input = new InputValues();
             Console.Clear();
             Console.WriteLine($"Choose avaible weightModificator. Enter integer values.");
-            for (int i = 0; i < Enum.GetNames(typeof(EnumWeightModificator)).Length; i++)
+            for (var i = 0; i < Enum.GetNames(typeof(EnumWeightModificator)).Length; i++)
             {
                 Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumWeightModificator), i)}");
             }

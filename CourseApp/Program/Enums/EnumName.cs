@@ -1,4 +1,4 @@
-namespace CourseApp.Enums
+namespace CourseApp.Program.Enums
 {
     public enum EnumName
     {

@@ -1,6 +1,7 @@
 namespace CourseApp
 {
     using System;
+    using CourseApp.Program;
 
     public class MainFile
     {

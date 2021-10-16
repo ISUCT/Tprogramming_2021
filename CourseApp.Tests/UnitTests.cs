@@ -1,6 +1,8 @@
 namespace CourseApp.Tests
 {
     using Xunit;
+    using CourseApp.Program;
+    using CourseApp.Program.Input;
 
     public class UnitTests
     {
