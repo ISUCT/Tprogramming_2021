@@ -1,8 +1,8 @@
 namespace CourseApp.Tests
 {
-    using Xunit;
     using CourseApp.Program;
     using CourseApp.Program.Input;
+    using Xunit;
 
     public class UnitTests
     {
@@ -29,9 +29,6 @@ namespace CourseApp.Tests
         [InlineData(-1, 0, 1, false)]
         [InlineData(-1, -1, -1, true)]
         [InlineData(2, 2, 4, true)]
-        [InlineData(-2, -1, 2, false)]
-        [InlineData(3, 2, 3, true)]
-        [InlineData(-3, -5, 0, true)]
         public void TestCheckValuesInputInt(int input, int min, int max, bool expected)
         {
             var check = new CheckValues();
@@ -47,9 +44,6 @@ namespace CourseApp.Tests
         [InlineData(-1.4, 0, 1, false)]
         [InlineData(-1.7, -1.7, -1, true)]
         [InlineData(2.9, 2, 4, true)]
-        [InlineData(-2.2, -1, 2, false)]
-        [InlineData(3.31, 2, 3.31, true)]
-        [InlineData(-3.8, -4.7, 0.2, true)]
         public void TestCheckValuesInputDouble(double input, double min, double max, bool expected)
         {
             var check = new CheckValues();
