@@ -22,7 +22,6 @@ namespace CourseApp.Program
         public void StartProgram()
         {
             var input = new InputValues();
-            Console.Clear();
             Console.WriteLine(@"
 Avaible actions:
 1 - Set your birthDay
@@ -94,14 +93,32 @@ What you want? Enter integer values.");
         {
             Console.Clear();
             var input = new InputValues();
+            var today = DateTime.Now;
             Console.WriteLine("Enter your birthday");
             Console.WriteLine("Year:");
-            Year = input.InputInt(0000, 9999);
+            Year = input.InputInt(0001, today.Year);
             Console.WriteLine("Month:");
-            Month = input.InputInt(1, 12);
+            if (Year == today.Year)
+            {
+                Month = input.InputInt(1, today.Month);
+            }
+            else
+            {
+                Month = input.InputInt(1, 12);
+            }
+
             Console.WriteLine("Day:");
-            Day = input.InputInt(1, 31);
+            if (Month == today.Month)
+            {
+                Day = input.InputInt(1, today.Day);
+            }
+            else
+            {
+                Day = input.InputInt(1, 31);
+            }
+
             IsDateFilled = true;
+            Console.Clear();
             StartProgram();
         }
 
@@ -126,6 +143,7 @@ What you want? Enter integer values.");
             switch (input.InputInt(1, 2))
             {
                 case 1:
+                    Console.Clear();
                     StartProgram();
                     break;
 
@@ -156,6 +174,7 @@ What you want? Enter integer values.");
             switch (input.InputInt(1, 2))
             {
                 case 1:
+                    Console.Clear();
                     StartProgram();
                     break;
 
