@@ -36,51 +36,32 @@ namespace CourseApp.Program
         {
             var months = string.Empty;
             var days = string.Empty;
-            var mod = string.Empty;
-            switch (age.Item1 + age.Item2)
+            var mod = "Happy birthDay!";
+            if (age.Item1 + age.Item2 != 0)
             {
-                case 0:
-                    months = string.Empty;
-                    days = string.Empty;
-                    mod = "Happy birthDay!";
-                    break;
-
-                default:
-                    switch (age.Item1)
+                months = string.Empty;
+                days = string.Empty;
+                if (age.Item1 != 0)
+                {
+                    months = $"{age.Item1} {(age.Item1 % 10 == 1 ? "month" : "month`s")}";
+                    mod = "to your birthDay";
+                    if (age.Item1 < 0)
                     {
-                        case 0:
-                            months = string.Empty;
-                            break;
-                        default:
-                            months = $"{age.Item1} {(age.Item1 % 10 == 1 ? "month" : "month`s")}";
-                            mod = "to your birthDay";
-                            if (age.Item1 < 0)
-                            {
-                                months = $"{Abs(age.Item1)} {(Abs(age.Item1) % 10 == 1 ? "month" : "month`s")}";
-                                mod = "from your birthDay";
-                            }
-
-                            break;
+                        months = $"{Abs(age.Item1)} {(Abs(age.Item1) % 10 == 1 ? "month" : "month`s")}";
+                        mod = "from your birthDay";
                     }
+                }
 
-                    switch (age.Item2)
+                if (age.Item2 != 0)
+                {
+                    days = $"{age.Item2} {(age.Item2 % 10 == 1 ? "day" : "day`s")}";
+                    mod = "to your birthDay";
+                    if (age.Item2 < 0)
                     {
-                        case 0:
-                            days = string.Empty;
-                            break;
-                        default:
-                            days = $"{age.Item2} {(age.Item2 % 10 == 1 ? "day" : "day`s")}";
-                            mod = "to your birthDay";
-                            if (age.Item2 < 0)
-                            {
-                                days = $"{Abs(age.Item2)} {(Abs(age.Item2) % 10 == 1 ? "day" : "day`s")}";
-                                mod = "from your birthDay";
-                            }
-
-                            break;
+                        days = $"{Abs(age.Item2)} {(Abs(age.Item2) % 10 == 1 ? "day" : "day`s")}";
+                        mod = "from your birthDay";
                     }
-
-                    break;
+                }
             }
 
             return (months, days, mod);
