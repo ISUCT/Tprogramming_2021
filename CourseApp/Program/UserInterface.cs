@@ -58,8 +58,8 @@ What you want? Enter integer values.");
                     break;
 
                 case 2:
-                    StartProgram();
                     Console.Clear();
+                    StartProgram();
                     break;
 
                 case 3:
