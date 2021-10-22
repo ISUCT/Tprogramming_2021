@@ -204,42 +204,48 @@ What you want? Enter integer values.");
         {
             Console.Clear();
             var input = new InputValues();
+            var enumLength = Enum.GetNames(typeof(EnumName)).Length;
             Console.WriteLine($"Choose avaible name. Enter integer values.");
-            for (int i = 0; i < Enum.GetNames(typeof(EnumName)).Length; i++)
+            for (int i = 0; i < enumLength; i++)
             {
                 Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumName), i)}");
             }
 
             Console.WriteLine("Your variant:");
-            return Enum.GetName(typeof(EnumName), input.InputInt(1, Enum.GetNames(typeof(EnumName)).Length) - 1);
+            var id = input.InputInt(1, enumLength) - 1;
+            return Enum.GetName(typeof(EnumName), id);
         }
 
         private string EnumValueExtension()
         {
             Console.Clear();
             var input = new InputValues();
+            var enumLength = Enum.GetNames(typeof(EnumExtension)).Length;
             Console.WriteLine($"Choose avaible extension. Enter integer values.");
-            for (var i = 0; i < Enum.GetNames(typeof(EnumExtension)).Length; i++)
+            for (var i = 0; i < enumLength; i++)
             {
                 Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumExtension), i)}");
             }
 
             Console.WriteLine("Your variant:");
-            return Enum.GetName(typeof(EnumExtension), input.InputInt(1, Enum.GetNames(typeof(EnumExtension)).Length) - 1);
+            var id = input.InputInt(1, enumLength) - 1;
+            return Enum.GetName(typeof(EnumExtension), id);
         }
 
         private string EnumValueWeightModificator()
         {
-            var input = new InputValues();
             Console.Clear();
+            var input = new InputValues();
+            var enumLength = Enum.GetNames(typeof(EnumWeightModificator)).Length;
             Console.WriteLine($"Choose avaible weightModificator. Enter integer values.");
-            for (var i = 0; i < Enum.GetNames(typeof(EnumWeightModificator)).Length; i++)
+            for (var i = 0; i < enumLength; i++)
             {
                 Console.WriteLine($"{i + 1} - {Enum.GetName(typeof(EnumWeightModificator), i)}");
             }
 
             Console.WriteLine("Your variant:");
-            return Enum.GetName(typeof(EnumWeightModificator), input.InputInt(1, Enum.GetNames(typeof(EnumWeightModificator)).Length) - 1);
+            var id = input.InputInt(1, Enum.GetNames(typeof(EnumWeightModificator)).Length) - 1;
+            return Enum.GetName(typeof(EnumWeightModificator), id);
         }
 
         private double EnterValue()
