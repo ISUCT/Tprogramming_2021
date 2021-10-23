@@ -1,7 +1,7 @@
 namespace CourseApp.Tests
 {
-    using Xunit;
     using static System.Math;
+    using Xunit;
 
     public class TaskTest
     {
@@ -14,7 +14,7 @@ namespace CourseApp.Tests
         public void TestCalc(double x, double expected)
         {
             var actual = new CalcTest().Calculate(x);
-            Assert.Equal(expected, Round(actual, 3));
+            Assert.Equal(expected, actual, 3);
         }
     }
 }
