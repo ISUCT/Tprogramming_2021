@@ -8,10 +8,10 @@ namespace CourseApp.Program
         public UserInterface()
         {
             Console.WriteLine("Hello!");
-            IsDateFilled = false;
+            IsValuesEnter = false;
         }
 
-        public bool IsDateFilled { get; set; }
+        public bool IsValuesEnter { get; set; }
 
         public int Year { get; set; }
 
@@ -19,7 +19,7 @@ namespace CourseApp.Program
 
         public int Day { get; set; }
 
-        public void StartProgram()
+        public void StartPage()
         {
             var input = new InputValues();
             Console.WriteLine(@"
@@ -29,18 +29,21 @@ Avaible actions:
 3 - Get date to your birthDay
 4 - Exit program
 What you want? Enter integer values.");
-            switch (input.InputInt(1, 3))
+            switch (input.InputInt(1, 4))
             {
                 case 1:
-                    SetBirthDayPage();
+                    CaseOne();
+                    StartPage();
                     break;
 
                 case 2:
-                    YourAgePage();
+                    CaseTwo();
+                    StartPage();
                     break;
 
                 case 3:
-                    DaysToBirthDay();
+                    CaseThree();
+                    StartPage();
                     break;
 
                 case 4:
@@ -89,7 +92,7 @@ What you want? Enter integer values.");
             }
         }
 
-        private void SetBirthDayPage()
+        private void CaseOne()
         {
             Console.Clear();
             var input = new InputValues();
@@ -117,16 +120,15 @@ What you want? Enter integer values.");
                 Day = input.InputInt(1, 31);
             }
 
-            IsDateFilled = true;
+            IsValuesEnter = true;
             Console.Clear();
-            StartProgram();
         }
 
-        private void YourAgePage()
+        private void CaseTwo()
         {
             Console.Clear();
             var input = new InputValues();
-            if (IsDateFilled)
+            if (IsValuesEnter)
             {
                 Output("age");
             }
@@ -134,53 +136,19 @@ What you want? Enter integer values.");
             {
                 Console.WriteLine("You dont enter your birthDay!");
             }
-
-            Console.WriteLine(@"
-Avaible actions:
-1 - Return to previous page
-2 - Exit program
-What you want? Enter integer values.");
-            switch (input.InputInt(1, 2))
-            {
-                case 1:
-                    Console.Clear();
-                    StartProgram();
-                    break;
-
-                case 2:
-                    Environment.Exit(0);
-                    break;
-            }
         }
 
-        private void DaysToBirthDay()
+        private void CaseThree()
         {
             Console.Clear();
             var input = new InputValues();
-            if (IsDateFilled)
+            if (IsValuesEnter)
             {
                 Output("days");
             }
             else
             {
                 Console.WriteLine("You dont enter your birthDay!");
-            }
-
-            Console.WriteLine(@"
-Avaible actions:
-1 - Return to previous page
-2 - Exit program
-What you want? Enter integer values.");
-            switch (input.InputInt(1, 2))
-            {
-                case 1:
-                    Console.Clear();
-                    StartProgram();
-                    break;
-
-                case 2:
-                    Environment.Exit(0);
-                    break;
             }
         }
 
