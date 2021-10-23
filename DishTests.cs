@@ -7,7 +7,7 @@
         [Fact]
         public void GetNewCake()
         {
-            var food = new DishClass();
+            var food = new Dish();
             var res = food.ProgramDish("Cake", 900, 1500);
             var exp = "Cake";
 
@@ -17,7 +17,7 @@
         [Fact]
         public void GetNewTiramisu()
         {
-            var food = new DishClass();
+            var food = new Dish();
             var res = food.ProgramDish("Tiramisu", 250, 350);
             var exp = 250;
 
@@ -27,7 +27,7 @@
         [Fact]
         public void GetNewPannacotta()
         {
-            var food = new DishClass();
+            var food = new Dish();
             var res = food.ProgramDish("Pannacotta", 200, 300);
             var exp = 300;
 
