@@ -2,7 +2,7 @@ namespace CourseApp
 {
     using System;
 
-    public class DishClass
+    public class Dish
     {
         private int price;
 
