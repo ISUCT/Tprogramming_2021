@@ -7,8 +7,8 @@
         public double[] CalculateTask(double xn, double xk, double xd)
         {
             int k = 0;
-            double[] taskA = new double[5];
-            for (double i = xn; i < xk; i += xd)
+            double[] taskA = new double[6];
+            for (double i = xn; i <= xk; i += xd)
             {
                 taskA[k++] = _function.Calculate(i);
             }
