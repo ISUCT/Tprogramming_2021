@@ -25,26 +25,26 @@ namespace CourseApp.Program.Input
 
         public int InputInt(int minValue, int maxValue)
         {
-            var intInput = 0;
             var isCorrect = false;
-            var check = new CheckValues();
-            while (!isCorrect)
+            var number = 0;
+            while (true)
             {
                 var item = Console.ReadLine();
-                if (int.TryParse(item, out intInput))
+                (number, isCorrect) = InputInt(minValue, maxValue, item);
+                if (isCorrect)
                 {
-                    isCorrect = check.IsValidInt(intInput, minValue, maxValue);
+                    break;
                 }
                 else
                 {
-                    Console.WriteLine($"Value ({item}) is not a integer. Please enter correct value!");
+                    Console.WriteLine($"Please enter correct value!");
                 }
             }
 
-            return intInput;
+            return number;
         }
 
-        public bool InputInt(int minValue, int maxValue, string item)
+        public (int, bool) InputInt(int minValue, int maxValue, string item)
         {
             var intInput = 0;
             var isCorrect = false;
@@ -54,7 +54,7 @@ namespace CourseApp.Program.Input
                 isCorrect = check.IsValidInt(intInput, minValue, maxValue);
             }
 
-            return isCorrect;
+            return (intInput, isCorrect);
         }
 
         public double InputDouble(double maxValue)
@@ -64,26 +64,26 @@ namespace CourseApp.Program.Input
 
         public double InputDouble(double minValue, double maxValue)
         {
-            var doubleInput = 0d;
             var isCorrect = false;
-            var check = new CheckValues();
-            while (!isCorrect)
+            var number = 0d;
+            while (true)
             {
                 var item = Console.ReadLine();
-                if (double.TryParse(item, out doubleInput))
+                (number, isCorrect) = InputDouble(minValue, maxValue, item);
+                if (isCorrect)
                 {
-                    isCorrect = check.IsValidDouble(doubleInput, minValue, maxValue);
+                    break;
                 }
                 else
                 {
-                    Console.WriteLine($"Value ({item}) is not a double. Please enter correct value!");
+                    Console.WriteLine($"Please enter correct value!");
                 }
             }
 
-            return doubleInput;
+            return number;
         }
 
-        public bool InputDouble(double minValue, double maxValue, string item)
+        public (double, bool) InputDouble(double minValue, double maxValue, string item)
         {
             var doubleInput = 0d;
             var isCorrect = false;
@@ -93,7 +93,7 @@ namespace CourseApp.Program.Input
                 isCorrect = check.IsValidDouble(doubleInput, minValue, maxValue);
             }
 
-            return isCorrect;
+            return (doubleInput, isCorrect);
         }
     }
 }

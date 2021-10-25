@@ -24,12 +24,12 @@ What you want? Enter integer values.");
             switch (input.InputInt(1, 3))
             {
                 case 1:
-                    CaseOne();
+                    DefaultFile();
                     StartPage();
                     break;
 
                 case 2:
-                    CaseTwo(CaseThree());
+                    CustomFile(InputCustomValues());
                     StartPage();
                     break;
                 case 3:
@@ -38,7 +38,7 @@ What you want? Enter integer values.");
             }
         }
 
-        private void CaseOne()
+        private void DefaultFile()
         {
             Console.Clear();
             var input = new InputValues();
@@ -47,14 +47,14 @@ What you want? Enter integer values.");
 {file.Display()}");
         }
 
-        private void CaseTwo(List<string> customValues)
+        private void CustomFile(List<string> customValues)
         {
             Console.Clear();
             var file = new FileCreator(customValues);
             Console.WriteLine($"Custom file{file.Display()}");
         }
 
-        private List<string> CaseThree()
+        private List<string> InputCustomValues()
         {
             Console.Clear();
             var customValues = new List<string>();
