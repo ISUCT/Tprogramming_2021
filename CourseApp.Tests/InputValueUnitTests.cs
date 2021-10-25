@@ -39,7 +39,7 @@ namespace CourseApp.Tests
         public void TestInputInt(string item, int minValue, int maxValue, bool expected)
         {
             var input = new InputValues();
-            var actual = input.InputInt(minValue, maxValue, item);
+            var (_, actual) = input.InputInt(minValue, maxValue, item);
             Assert.Equal(expected, actual);
         }
 
@@ -53,7 +53,7 @@ namespace CourseApp.Tests
         public void TestInputDouble(string item, int minValue, int maxValue, bool expected)
         {
             var input = new InputValues();
-            var actual = input.InputDouble(minValue, maxValue, item);
+            var (_, actual) = input.InputDouble(minValue, maxValue, item);
             Assert.Equal(expected, actual);
         }
     }

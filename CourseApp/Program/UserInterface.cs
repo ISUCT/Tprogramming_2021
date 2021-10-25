@@ -32,17 +32,17 @@ What you want? Enter integer values.");
             switch (input.InputInt(1, 4))
             {
                 case 1:
-                    CaseOne();
+                    SetYourBirthDate();
                     StartPage();
                     break;
 
                 case 2:
-                    CaseTwo();
+                    GetAge();
                     StartPage();
                     break;
 
                 case 3:
-                    CaseThree();
+                    GetDateToYourBirth();
                     StartPage();
                     break;
 
@@ -92,7 +92,7 @@ What you want? Enter integer values.");
             }
         }
 
-        private void CaseOne()
+        private void SetYourBirthDate()
         {
             Console.Clear();
             var input = new InputValues();
@@ -124,7 +124,7 @@ What you want? Enter integer values.");
             Console.Clear();
         }
 
-        private void CaseTwo()
+        private void GetAge()
         {
             Console.Clear();
             var input = new InputValues();
@@ -138,7 +138,7 @@ What you want? Enter integer values.");
             }
         }
 
-        private void CaseThree()
+        private void GetDateToYourBirth()
         {
             Console.Clear();
             var input = new InputValues();
