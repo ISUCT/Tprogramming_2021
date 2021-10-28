@@ -1,4 +1,4 @@
-﻿namespace CourseApp
+﻿namespace CourseApp.FunctionTask
 {
     using System;
 
@@ -21,6 +21,8 @@
             }
 
             Console.WriteLine("-----------------------------");
+            Console.Title = "DD";
+            Console.WriteLine(Console.Title);
 
             foreach (double x in taskB)
             {

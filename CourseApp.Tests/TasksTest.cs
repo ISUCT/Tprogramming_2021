@@ -1,6 +1,6 @@
 namespace CourseApp.Tests
 {
-    using CourseApp;
+    using CourseApp.FunctionTask;
     using Xunit;
 
     public class TasksTest

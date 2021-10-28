@@ -1,4 +1,4 @@
-﻿namespace CourseApp
+﻿namespace CourseApp.FunctionTask
 {
     public class Tasks
     {
