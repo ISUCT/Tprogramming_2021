@@ -2,7 +2,7 @@
 
 namespace ClassTask
 {
-    static class ConsoleProcessor
+    public static class ConsoleProcessor
     {
         const string menu = "Что вы хотите сделать?\n" +
 @"1. Показать текущую информацию о стране
@@ -11,13 +11,13 @@ namespace ClassTask
 4. Узнать текущий ВВП на душу населения";
 
 
-        public static void Start(KindDemocraticCountry country_1, EvilTotalitarianCountry country_2)
+        public static void Start(KindDemocraticCountry country1, EvilTotalitarianCountry country2)
         {
             Console.Write($@"Добро пожаловать!
 
 Пожалуйста, выберете страну:
-1. {country_1.Name} ({country_1.PoliticalSystem})
-2. {country_2.Name} ({country_2.PoliticalSystem})
+1. {country1.Name} ({country1.PoliticalSystem})
+2. {country2.Name} ({country2.PoliticalSystem})
 
 Введите номер: ");
                         
@@ -25,18 +25,18 @@ namespace ClassTask
             {
                 case 1:
                     Console.Clear();
-                    DemocraticMenu(country_1, country_2);
+                    DemocraticMenu(country1, country2);
                     break;
                 case 2:
                     Console.Clear();
-                    TotalitarianMenu(country_2, country_1);
+                    TotalitarianMenu(country2, country1);
                     break;
             }               
         }
 
-        public static void CommonMenuRealization(string i, ICountry country, ICountry enemyCountry)
+        public static void CommonMenuRealization(string input, ICountry country, ICountry enemyCountry)
         {
-            switch(i)
+            switch(input)
             {
                 case "1":
                     country.GetInfo();
@@ -52,7 +52,7 @@ namespace ClassTask
 
         public static void DemocraticMenu (KindDemocraticCountry country, ICountry enemyCountry)
         {
-            string i;
+            string input;
             do
             {
                 Console.WriteLine("Здравствуйте, господин Президент!\n");
@@ -61,14 +61,14 @@ namespace ClassTask
 
 Для выхода нажмите Enter
 Введите номер: ");
-                i = Console.ReadLine();
-                switch (i)
+                input = Console.ReadLine();
+                switch (input)
                 {
                     case "1":
                     case "2":
                     case "3":
                         Console.Clear();
-                        CommonMenuRealization(i, country, enemyCountry);
+                        CommonMenuRealization(input, country, enemyCountry);
                         Console.ReadLine();
                         Console.Clear();
                         break;
@@ -86,12 +86,12 @@ namespace ClassTask
                         break;
                 }
             }
-            while (i != "");      
+            while (input != "");      
         }
 
         public static void TotalitarianMenu(EvilTotalitarianCountry country, ICountry enemyCountry)
         {
-            string i;
+            string input;
             do
             {
                 Console.WriteLine($"Приветствую, Вождь {country.ChiefName}!\n");
@@ -100,14 +100,14 @@ namespace ClassTask
 
 Для выхода нажмите Enter
 Введите номер: ");
-                i = Console.ReadLine();
-                switch (i)
+                input = Console.ReadLine();
+                switch (input)
                 {
                     case "1":
                     case "2":
                     case "3":
                         Console.Clear();
-                        CommonMenuRealization(i, country, enemyCountry);
+                        CommonMenuRealization(input, country, enemyCountry);
                         Console.ReadLine();
                         Console.Clear();
                         break;
@@ -126,7 +126,7 @@ namespace ClassTask
                         break;
                 }               
             }
-            while (i != "");
+            while (input != "");
         }
     }
 }

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionTask", "FunctionTas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionTask.Tests", "..\CourseApp.Tests\FunctionTask.Tests.csproj", "{C348D2ED-C90F-4CE7-A1D8-9E57CBB33BDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassTask", "..\ClassTask\ClassTask.csproj", "{56846178-7652-43B7-9891-987817686CED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassTask", "..\ClassTask\ClassTask.csproj", "{FC3EE323-1A9E-45FF-BFD8-C3B047F6B4DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{C348D2ED-C90F-4CE7-A1D8-9E57CBB33BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C348D2ED-C90F-4CE7-A1D8-9E57CBB33BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C348D2ED-C90F-4CE7-A1D8-9E57CBB33BDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56846178-7652-43B7-9891-987817686CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56846178-7652-43B7-9891-987817686CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56846178-7652-43B7-9891-987817686CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56846178-7652-43B7-9891-987817686CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC3EE323-1A9E-45FF-BFD8-C3B047F6B4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC3EE323-1A9E-45FF-BFD8-C3B047F6B4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC3EE323-1A9E-45FF-BFD8-C3B047F6B4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC3EE323-1A9E-45FF-BFD8-C3B047F6B4DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
