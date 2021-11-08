@@ -4,59 +4,43 @@ namespace CourseApp.Tests
 
     public class DemoTest
     {
-        [Fact]
-        public void Test()
-        {
-            Assert.True(true);
-        }
-
-        [Fact]
-        public void TestIntSum()
-        {
-            int firstNumber = 2;
-            int secondNumber = 3;
-            int expected = 5;
-            var calc = new Calculator();
-            var actual = calc.GetSum(firstNumber, secondNumber);
-
-            Assert.Equal(expected, actual);
-        }
-
-        [Fact]
-        public void TestIntProduct()
-        {
-            int firstNumber = 2;
-            int secondNumber = 3;
-            int expected = 6;
-            var calc = new Calculator();
-            var actual = calc.GetProduct(firstNumber, secondNumber);
-
-            Assert.Equal(expected, actual);
-        }
-
-        [Fact]
-        public void TestDoubleQuotient()
-        {
-            double firstNumber = 5;
-            double secondNumber = 2;
-            double expected = 2.5;
-            var calc = new Calculator();
-            var actual = calc.GetQuotient(firstNumber, secondNumber);
-
-            Assert.Equal(expected, actual);
-        }
-
-        [Fact]
-        public void TestDoubleQuotientNull()
+        [Theory]
+        [InlineData(2, 3, 5)]
+        [InlineData(2.2, 2.2, 4.4)]
+        [InlineData(0.25, 0.2, 0.45)]
+        [InlineData(0.56, 0.4, 0.96)]
+        [InlineData(1.28, 0.7, 1.98)]
+        public void TestIntSum(int firstNumber, int secondNumber, int expected)
         {
             var calc = new Calculator();
-            double firstNumber = 5;
-            double secondNumber = 0;
-            double expected = double.PositiveInfinity;
+            var res = calc.GetSum(firstNumber, secondNumber);
+            Assert.Equal(expected, res);
+        }
 
-            var actual = calc.GetQuotient(firstNumber, secondNumber);
+        [Theory]
+        [InlineData(2, 3, 6)]
+        [InlineData(2, 10, 20)]
+        [InlineData(0.25, 0.2, 0.05)]
+        [InlineData(0.56, 0.4, 0.224)]
+        [InlineData(1.28, 0.7, 0.896)]
+        public void TestIntProduct(int firstNumber, int secondNumber, int expected)
+        {
+            var calc = new Calculator();
+            var res = calc.GetProduct(firstNumber, secondNumber);
+            Assert.Equal(expected, res);
+        }
 
-            Assert.Equal(expected, actual);
+        [Theory]
+        [InlineData(5, 2, 2.5)]
+        [InlineData(4.4, 2.2, 2)]
+        [InlineData(0.25, 0.2, 1.25)]
+        [InlineData(10, 5, 2)]
+        [InlineData(1.28, 0.8, 1.6)]
+        public void TestDoubleQuotient(int firstNumber, int secondNumber, int expected)
+        {
+            var calc = new Calculator();
+            var res = calc.GetQuotient(firstNumber, secondNumber);
+            Assert.Equal(expected, res);
         }
     }
 }
