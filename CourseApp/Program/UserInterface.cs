@@ -14,28 +14,32 @@ namespace CourseApp.Program
 
         public void StartPage()
         {
-            var input = new InputValues();
-            Console.WriteLine(@"
-In this program you can:
-1 - Get default file
-2 - Get custom file
-4 - Exit program
-What you want? Enter integer values.");
-            switch (input.InputInt(1, 3))
+            var isEnabled = true;
+            while(isEnabled)
             {
-                case 1:
-                    DefaultFile();
-                    StartPage();
-                    break;
+                var input = new InputValues();
+                Console.WriteLine(@"
+    In this program you can:
+    1 - Get default file
+    2 - Get custom file
+    4 - Exit program
+    What you want? Enter integer values.");
+                switch (input.InputInt(1, 3))
+                {
+                    case 1:
+                        DefaultFile();
+                        break;
 
-                case 2:
-                    CustomFile(InputCustomValues());
-                    StartPage();
-                    break;
-                case 3:
-                    Environment.Exit(0);
-                    break;
+                    case 2:
+                        CustomFile(InputCustomValues());
+                        break;
+                    case 3:
+                        isEnabled = false;
+                        break;
+                }
             }
+
+            Environment.Exit(0);
         }
 
         private void DefaultFile()
