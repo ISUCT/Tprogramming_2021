@@ -21,35 +21,38 @@ namespace CourseApp.Program
 
         public void StartPage()
         {
-            var input = new InputValues();
-            Console.WriteLine(@"
+            var isEnabled = true;
+            while (isEnabled)
+            {
+                var input = new InputValues();
+                Console.WriteLine(@"
 Avaible actions:
 1 - Set your birthDay
 2 - Get your age
 3 - Get date to your birthDay
 4 - Exit program
 What you want? Enter integer values.");
-            switch (input.InputInt(1, 4))
-            {
-                case 1:
-                    SetYourBirthDate();
-                    StartPage();
-                    break;
+                switch (input.InputInt(1, 4))
+                {
+                    case 1:
+                        SetYourBirthDate();
+                        break;
 
-                case 2:
-                    GetAge();
-                    StartPage();
-                    break;
+                    case 2:
+                        GetAge();
+                        break;
 
-                case 3:
-                    GetDateToYourBirth();
-                    StartPage();
-                    break;
+                    case 3:
+                        GetDateToYourBirth();
+                        break;
 
-                case 4:
-                    Environment.Exit(0);
-                    break;
+                    case 4:
+                        isEnabled = false;
+                        break;
+                }
             }
+
+            Environment.Exit(0);
         }
 
         public void Output(string message)
