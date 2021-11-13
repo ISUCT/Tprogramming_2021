@@ -45,7 +45,7 @@ namespace CourseApp.Tests
 
         [Theory]
         [InlineData("2,2", 0, 3, true)]
-        [InlineData("-1,5", 0, 3, false)]
+        [InlineData("-1.5", 0, 3, false)]
         [InlineData("r", 0, 3, false)]
         [InlineData("-1", -2, -1, true)]
         [InlineData("4,1", 4, 5, true)]
