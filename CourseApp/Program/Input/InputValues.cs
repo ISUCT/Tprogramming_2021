@@ -46,7 +46,7 @@ namespace CourseApp.Program.Input
 
         public (int, bool) InputInt(int minValue, int maxValue, string item)
         {
-            var intInput = 0;
+            int intInput = 0;
             var isCorrect = false;
             var check = new CheckValues();
             if (int.TryParse(item, out intInput))
