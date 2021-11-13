@@ -34,7 +34,7 @@
         [InlineData(10, 5, 15)]
         [InlineData(40.123675f, 29.812398f, 72.936073f)]
         [InlineData(67.123, 3.002, 70.125)]
-        public void NestCalc3(double a, double b, double exp)
+        public void TestCalc3(double a, double b, double exp)
         {
             var calc = new Calculator();
 
