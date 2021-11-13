@@ -83,7 +83,7 @@ namespace CourseApp.Program.Input
 
         public (double, bool) InputDouble(double minValue, double maxValue, string item)
         {
-            var doubleInput = 0d;
+            double doubleInput = 0;
             var isCorrect = false;
             var check = new CheckValues();
             if (double.TryParse(item, out doubleInput))
