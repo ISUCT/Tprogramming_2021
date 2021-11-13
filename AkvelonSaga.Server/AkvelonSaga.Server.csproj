@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Kantaiko.Hosting" Version="0.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AkvelonSaga.Core\AkvelonSaga.Core.csproj" />
+    <ProjectReference Include="..\AkvelonSaga.DLCs\AkvelonSaga.DLCs.csproj" />
+  </ItemGroup>
+
+</Project>
