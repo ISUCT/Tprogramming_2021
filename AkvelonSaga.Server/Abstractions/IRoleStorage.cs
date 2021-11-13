@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Immutable;
 using AkvelonSaga.Core;
 
 namespace AkvelonSaga.Server.Abstractions
 {
     internal interface IRoleStorage
     {
-        IReadOnlyCollection<string> Roles { get; }
+        ImmutableArray<string> Roles { get; }
 
         void AddRole(string name, RoleFactory factory);
 

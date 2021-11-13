@@ -2,7 +2,7 @@
 
 namespace AkvelonSaga.Server.GameProcess
 {
-    public sealed class PlayerState
+    public sealed class PlayerState : IPlayerState
     {
         public PlayerState(Player player)
         {

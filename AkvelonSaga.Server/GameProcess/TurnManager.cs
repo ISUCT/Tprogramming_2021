@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
-using AkvelonSaga.Core;
+using System.Collections.Immutable;
 
 namespace AkvelonSaga.Server.GameProcess
 {
     internal sealed class TurnManager
     {
-        private readonly IReadOnlyList<PlayerState> _players;
+        private readonly ImmutableArray<PlayerState> _players;
         private int _position;
 
-        public TurnManager(IReadOnlyList<PlayerState> players)
+        public TurnManager(IEnumerable<PlayerState> players)
         {
-            _players = players;
+            _players = ImmutableArray.CreateRange(players);
         }
 
         public PlayerState Sender => Peek(0);
@@ -19,12 +19,12 @@ namespace AkvelonSaga.Server.GameProcess
 
         public void NextTurn()
         {
-            _position = (_position + 1) % _players.Count;
+            _position = (_position + 1) % _players.Length;
         }
 
         private PlayerState Peek(int offset)
         {
-            var index = (_position + offset) % _players.Count;
+            var index = (_position + offset) % _players.Length;
             return _players[index];
         }
     }

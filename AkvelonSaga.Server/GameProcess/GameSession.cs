@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
 using AkvelonSaga.Core;
@@ -10,12 +11,12 @@ namespace AkvelonSaga.Server.GameProcess
     {
         private static readonly Random Random = new();
 
-        public GameSession(IReadOnlyList<Player> players)
+        public GameSession(IEnumerable<Player> players)
         {
-            Players = players;
+            Players = ImmutableArray.CreateRange(players);
         }
 
-        public IReadOnlyList<Player> Players { get; }
+        public ImmutableArray<Player> Players { get; }
 
         public async Task StartAsync()
         {

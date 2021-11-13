@@ -13,11 +13,10 @@ namespace AkvelonSaga.Server.GameProcess
             _playerFactory = playerFactory;
         }
         
-        public async Task StartSessionAsync(byte groupCount)
+        public async Task StartSessionAsync(byte playerCount)
         {
-            var players = Enumerable.Range(0, groupCount * 2)
-                .Select(_ => _playerFactory.Create())
-                .ToList();
+            var players = Enumerable.Range(0, playerCount)
+                .Select(_ => _playerFactory.Create());
 
             var session = new GameSession(players);
             await session.StartAsync();

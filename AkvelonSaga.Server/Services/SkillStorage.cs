@@ -10,7 +10,9 @@ namespace AkvelonSaga.Server.Services
     {
         private readonly Dictionary<Type, List<ISkill>> _skills = new();
         
-        public void AddSkill<TRole, TSkill>() where TRole : Player where TSkill : ISkill, new()
+        public void AddSkill<TRole, TSkill>() 
+            where TRole : Player 
+            where TSkill : ISkill, new()
         {
             var skill = new TSkill();
             

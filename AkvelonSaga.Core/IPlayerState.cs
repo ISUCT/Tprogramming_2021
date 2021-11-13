@@ -2,10 +2,10 @@
 {
     public interface IPlayerState
     {
-        public Player Player { get; }
+        Player Player { get; }
         
-        public double Health { get; }
+        double Health { get; }
 
-        public void ApplyDamage(double damage);
+        void ApplyDamage(double damage);
     }
 }

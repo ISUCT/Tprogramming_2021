@@ -19,7 +19,9 @@ namespace AkvelonSaga.Server.Configuration
             _roleStorage.AddRole(name, factory);
         }
 
-        public void AddSkill<TRole, TSkill>() where TRole : Player where TSkill : ISkill, new()
+        public void AddSkill<TRole, TSkill>() 
+                where TRole : Player 
+                where TSkill : ISkill, new()
         {
             _skillStorage.AddSkill<TRole, TSkill>();
         }

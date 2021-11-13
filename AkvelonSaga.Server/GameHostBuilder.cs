@@ -25,7 +25,7 @@ namespace AkvelonSaga.Server
 
             if (!host.IsStarted)
             {
-                throw new Exception("Failed to start server");
+                throw new Exception("Something went wrong: Server was not started");
             }
 
             if (configure is not null)

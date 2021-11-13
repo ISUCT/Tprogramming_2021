@@ -1,6 +1,6 @@
 name: .NET Core
 
-on: [push,  pull_request]
+on: [ push,  pull_request ]
 
 jobs:
   build:
@@ -8,16 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '5.0.x'
-    - name: Build with dotnet
-      run: |
-        cd CourseApp 
-        dotnet build --configuration Release
-    - name: Run tests
-      run: |
-        cd CourseApp.Tests
-        dotnet test
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+          include-prerelease: true
+      - name: Build with dotnet
+        run: |
+          cd CourseApp 
+          dotnet build --configuration Release
+      - name: Run tests
+        run: |
+          cd CourseApp.Tests
+          dotnet test
