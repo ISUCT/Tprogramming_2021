@@ -44,7 +44,7 @@ namespace CourseApp.Program.Input
             return number;
         }
 
-        public (int, bool) InputInt(int minValue, int maxValue, string item)
+        public (int intInput, bool isCorrect) InputInt(int minValue, int maxValue, string item)
         {
             var intInput = 0;
             var isCorrect = false;
@@ -72,18 +72,16 @@ namespace CourseApp.Program.Input
                 (number, isCorrect) = InputDouble(minValue, maxValue, item);
                 if (isCorrect)
                 {
-                    break;
+                    return number;
                 }
                 else
                 {
                     Console.WriteLine($"Please enter correct value!");
                 }
             }
-
-            return number;
         }
 
-        public (double, bool) InputDouble(double minValue, double maxValue, string item)
+        public (double doubleInput, bool isCorrect) InputDouble(double minValue, double maxValue, string item)
         {
             var doubleInput = 0d;
             var isCorrect = false;

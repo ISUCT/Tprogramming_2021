@@ -1,5 +1,6 @@
 namespace CourseApp.Program
 {
+    using System;
     using System.Collections.Generic;
 
     public class FileCreator
@@ -14,6 +15,7 @@ namespace CourseApp.Program
 
         public FileCreator(List<string> customValues)
         {
+            if(customValues.Count != 4) Environment.Exit(0);
             FileName = customValues[0];
             Extension = customValues[1];
             Weight = customValues[2];

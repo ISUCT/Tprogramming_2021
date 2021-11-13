@@ -3,7 +3,7 @@ namespace CourseApp.Tests
     using CourseApp.Program;
     using Xunit;
 
-    public class UnitTests
+    public class UnitTestsClass
     {
         [Theory]
         [InlineData("VSCode", "Exe", "1.56", "GB")]

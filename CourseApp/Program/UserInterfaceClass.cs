@@ -5,9 +5,9 @@ namespace CourseApp.Program
     using CourseApp.Program.Enums;
     using CourseApp.Program.Input;
 
-    public class UserInterface
+    public class UserInterfaceClass
     {
-        public UserInterface()
+        public UserInterfaceClass()
         {
             Console.WriteLine("Hello!");
         }
@@ -15,7 +15,7 @@ namespace CourseApp.Program
         public void StartPage()
         {
             var isEnabled = true;
-            while(isEnabled)
+            while (isEnabled)
             {
                 var input = new InputValues();
                 Console.WriteLine(@"
@@ -31,7 +31,7 @@ namespace CourseApp.Program
                         break;
 
                     case 2:
-                        CustomFile(InputCustomValues());
+                        CustomFile();
                         break;
                     case 3:
                         isEnabled = false;
@@ -51,9 +51,15 @@ namespace CourseApp.Program
 {file.Display()}");
         }
 
-        private void CustomFile(List<string> customValues)
+        private void CustomFile()
         {
             Console.Clear();
+            List<string> customValues = InputCustomValues();
+            while (customValues.Count != 4)
+            {
+                customValues = InputCustomValues();
+            }
+
             var file = new FileCreator(customValues);
             Console.WriteLine($"Custom file{file.Display()}");
         }
