@@ -17,7 +17,7 @@ namespace CourseApp.Program
         {
             if (customValues.Count != 4)
             {
-                throw new NullReferenceException(); 
+                throw new NullReferenceException();
             }
 
             FileName = customValues[0];
