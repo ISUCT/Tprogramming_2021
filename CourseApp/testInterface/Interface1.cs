@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace InterfaceTesting
 {
-    interface Interface1
+    interface IDataProvider
     {
+        string GetDate();
+
+    }
+
+    interface IDateProcessor
+    {
+        void ProcessorDate(IDataProvider dateProvider);
     }
 }

@@ -1,26 +1,18 @@
 ﻿using System;
 
-namespace ConsoleApp1
+namespace testInterface
 
 {
-    interface IDateProvider
-    {
-        string GetDate();
-    }
-    interface IDateProcessor
-    {
-        void ProcessorDate(IDateProvider dateProvider);
-    }
 
     class ConsoleDateProcessor : IDateProcessor
     {
-        void IDateProcessor.ProcessorDate(IDateProvider dateProvider)
+        void IDateProcessor.ProcessorDate(IDataProvider dateProvider)
         {
             Console.WriteLine(dateProvider.GetDate());
         }
     }
 
-    class DbDateProvider : IDateProvider
+    class DbDateProvider : IDataProvider
     {
         public string GetDate()
         {
@@ -28,7 +20,7 @@ namespace ConsoleApp1
         }
     }
 
-    class FileProvider : IDateProvider
+    class FileProvider : IDataProvider
     {
         public string GetDate()
         {
@@ -36,7 +28,7 @@ namespace ConsoleApp1
         }
     }
 
-    class APIDateProvider : IDateProvider
+    class APIDataProvider : IDataProvider
     {
         public string GetDate()
         {
@@ -50,7 +42,7 @@ namespace ConsoleApp1
             IDateProcessor dateProcessor = new ConsoleDateProcessor();
             dateProcessor.ProcessorDate(new DbDateProvider());
             dateProcessor.ProcessorDate(new FileProvider());
-            dateProcessor.ProcessorDate(new APIDateProvider());
+            dateProcessor.ProcessorDate(new APIDataProvider());
         }
     }
 }

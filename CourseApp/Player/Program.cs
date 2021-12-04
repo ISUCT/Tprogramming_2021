@@ -30,7 +30,7 @@ namespace Player1
 
     class Gun : Weapon
     {
-        public override int Damage { get { return 10; } }
+         public override int Damage => 10;
 
         public override void Fire()
         {
@@ -40,7 +40,7 @@ namespace Player1
 
     class LaserGun : Weapon
     {
-        public override int Damage { get { return 20; } }
+        public override int Damage => 20;
 
         public override void Fire()
         {
@@ -50,7 +50,7 @@ namespace Player1
 
     class Bow : Weapon
     {
-        public override int Damage { get { return 7; } }
+        public override int Damage => 7;
 
         public override void Fire()
         {

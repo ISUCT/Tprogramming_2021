@@ -6,7 +6,7 @@ namespace TestsMult
     public class Mult_5in3_Returned15
     {
         [Fact]
-        public void Mult_PosPosPos()
+        public void MultPosPosPos()
         {
             double a = 5;
             double b = 3;
