@@ -35,7 +35,7 @@ namespace RpgSaga.Game{
         }
 
         int checkNumberOfPlayers(int numOfPlayers){
-            if(numOfPlayers % 2 == 0){
+            if(numOfPlayers % 2 == 0 && numOfPlayers > 0){
                 return numOfPlayers;
             }
             return 0;
@@ -73,7 +73,7 @@ namespace RpgSaga.Game{
             return rnd.Next(1, 4);
         }
         
-        public void createRandomPlayer(int numberOfPlayers, List<string> names){
+        public void createRandomPlayers(int numberOfPlayers, List<string> names){
             for(int i = 0; i < numberOfPlayers; i++){
                 int health = generateRandomHealth();
                 int strength = generateRandomStrength();

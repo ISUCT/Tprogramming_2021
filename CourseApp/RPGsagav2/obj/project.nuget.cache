@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eorqkwizwXfvtU0x8V7N3ZrgfqDcqFTc+V6Hv5uHkTZavvL443brrKyN/iqXBTWHxzhNbiY98vVb4eWotb0Ngg==",
+  "dgSpecHash": "SVBYUc9dxjsm67seNrtn8ejJg6ZZDi62NI+0bJefnmP98vKsNqDU9nmbWcAQmxFXCXyJB0Cto0quW+Bw4it7FQ==",
   "success": true,
-  "projectFilePath": "D:\\code\\c#\\CourseApp\\RPGsaga\\RpgSaga.csproj",
+  "projectFilePath": "D:\\code\\c#\\RPGsagav2\\RpgSaga.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
