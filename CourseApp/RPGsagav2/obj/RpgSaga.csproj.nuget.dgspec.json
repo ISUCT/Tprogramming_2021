@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\code\\c#\\CourseApp\\RPGsaga\\RpgSaga.csproj": {}
+    "D:\\code\\c#\\RPGsagav2\\RpgSaga.csproj": {}
   },
   "projects": {
-    "D:\\code\\c#\\CourseApp\\RPGsaga\\RpgSaga.csproj": {
+    "D:\\code\\c#\\RPGsagav2\\RpgSaga.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\c#\\CourseApp\\RPGsaga\\RpgSaga.csproj",
+        "projectUniqueName": "D:\\code\\c#\\RPGsagav2\\RpgSaga.csproj",
         "projectName": "RpgSaga",
-        "projectPath": "D:\\code\\c#\\CourseApp\\RPGsaga\\RpgSaga.csproj",
+        "projectPath": "D:\\code\\c#\\RPGsagav2\\RpgSaga.csproj",
         "packagesPath": "C:\\Users\\swbon\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\c#\\CourseApp\\RPGsaga\\obj\\",
+        "outputPath": "D:\\code\\c#\\RPGsagav2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\swbon\\AppData\\Roaming\\NuGet\\NuGet.Config"
