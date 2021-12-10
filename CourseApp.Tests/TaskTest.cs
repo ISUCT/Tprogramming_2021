@@ -1,6 +1,5 @@
 namespace CourseApp.Tests
 {
-    using static System.Math;
     using Xunit;
 
     public class TaskTest
