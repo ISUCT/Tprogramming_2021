@@ -3,32 +3,30 @@ namespace CourseApp
 {
     public class Program
     {
-        public static double Calc(double a, double b, double x)
+        public static double Calc(double a,double x)
         {
-            var numerator = 1 + Math.Pow(Math.Log(x / a), 2);
-            var denominator = b - Math.Exp(x / a);
-            var y = numerator / denominator;
-            return y;
+           double numenator = Math.Pow(a, x * x - 1) - Math.Log10(x * x - 1) + Math.Pow( x * x - 1, 1 / 3);
+            return numenator;
         }
-        public static (double x, double y)[] TaskA(double a, double b, double xn, double xk, double dx)
+        public static (double x)[] TaskA(double a, double xn, double xk, double dx)
         {
             var res = new(double, double)[(int)Math.Ceiling((xk - xn) / dx) + 1];
             int i = 0;
             for (var x = xn; x <= xk; x += dx)
             {
-                var y = Calc(a, b, x);
+                var y = Calc(a, x);
                 res[i] = (x, y);
                 i++;
             }
             return res;
         }
-        public static (double x, double y)[] TaskB(double a, double b, double[] xItems)
+        public static (double x, double y)[] TaskB(double a,double[] xItems)
         {
             var res = new(double, double)[xItems.Length];
             int i = 0;
             foreach (var x in xItems)
             {
-                var y = Calc(a, b, x);
+                var y = Calc(a, x);
                 res[i] = (x, y);
                 i++;
             }
@@ -36,24 +34,30 @@ namespace CourseApp
         }
         public static void Main(string[] args)
         {
-            const double a = 2.0;
-            const double b = 0.95;
+            const double a = 2.25;
+        
             Console.WriteLine($"--------- TASK A --------------");
-            var taskA = TaskA(a, b, 1.25, 2.75, 0.3);
+            var taskA = TaskA(a, 1.2, 2.7, 0.3);
             foreach (var item in taskA)
             {
                 var(x, y) = item;
                 Console.WriteLine($"x={x}, y={y}");
             }
             Console.WriteLine($"--------- TASK B --------------");
-            double[] xItems = { 2.2, 3.78, 4.51, 6.58, 1.2 };
-            var taskB = TaskB(a, b, xItems);
+            double[] xItems = { 1.31, 1.39, 1.44, 1.56, 1.92 };
+            var taskB = TaskB(a, xItems);
             foreach (var item in taskB)
             {
                 var(x, y) = item;
                 Console.WriteLine($"x={x}, y={y}");
             }
         }
+    Pistol glock = new Pistol("glock", 9, 7);
+            Console.WriteLine(glock.Shot());
+            Console.WriteLine(glock.Clip);
+
+    }
+}
 
     
       
