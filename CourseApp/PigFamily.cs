@@ -3,28 +3,23 @@ namespace CourseApp
     using System;
     using System.Collections.Generic;
 
-    public abstract class Animals
+    public abstract class PigFamily
     {
         private int lard;
         private int weight;
         private int age;
 
-        public Animals()
+        public PigFamily()
         : this("неизвестного животного", 10, 12, 13)
         {
         }
 
-        public Animals(string name, int weight)
-        : this(name, weight, 0, 0)
-        {
-        }
-
-        public Animals(string name, int weight, int lard)
+        public PigFamily(string name, int weight, int lard)
         : this(name, weight, 0, lard)
         {
         }
 
-        public Animals(string name, int weight, int age, int lard)
+        public PigFamily(string name, int weight, int age, int lard)
         {
             Name = name;
             Lard = lard;
@@ -112,6 +107,6 @@ namespace CourseApp
 
         public abstract string Died();
 
-        public abstract string MakePhrase(string[] phraseArray);
+        public abstract string MakePhrase();
     }
 }

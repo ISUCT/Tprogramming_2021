@@ -3,22 +3,12 @@ namespace CourseApp
     using System;
     using System.Collections.Generic;
 
-    public class Boar : Animals
+    public class Boar : PigFamily
     {
         private Random random = new Random();
 
         public Boar()
         : base()
-        {
-        }
-
-        public Boar(string name, int weight)
-        : base(name, weight)
-        {
-        }
-
-        public Boar(string name, int weight, int lard)
-        : base(name, weight, lard)
         {
         }
 
@@ -34,8 +24,9 @@ namespace CourseApp
             return $"{Name} убит\nПолучено {lard} сала\n";
         }
 
-        public override string MakePhrase(string[] phraseArray)
+        public override string MakePhrase()
         {
+            string[] phraseArray = { "Грустно:(", "Как же печально:(", "Жалко животинку:(" };
             int index = random.Next(0, 3);
             string phrase = phraseArray[index];
             return $"{phrase}";

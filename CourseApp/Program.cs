@@ -12,16 +12,16 @@ namespace CourseApp
             Pig pigTwo = new Pig("свинка Пеппа", 9, 99);
             Boar boarOne = new Boar("кабанчик Кабанистый", 1, 5, 7);
             Boar boarTwo = new Boar("кабанчик Крутечок", 3, 2, 8);
-            Animals[] animals = new Animals[] { pigOne, pigTwo, boarOne, boarTwo };
+            PigFamily[] animals = new PigFamily[] { pigOne, pigTwo, boarOne, boarTwo };
             foreach (var animal in animals)
             {
                 Console.WriteLine(animal);
             }
 
             Console.Write(pigTwo.Died());
-            Console.WriteLine(pigTwo.MakePhrase(phraseArray));
+            Console.WriteLine(pigTwo.MakePhrase());
             Console.Write(boarTwo.Died());
-            Console.WriteLine(boarTwo.MakePhrase(phraseArray));
+            Console.WriteLine(boarTwo.MakePhrase());
         }
     }
 }
