@@ -1,12 +1,11 @@
-namespace CourseApp.Program
+namespace CourseApp
 {
     using System;
     using System.Collections.Generic;
-    using CourseApp.Program.Input;
 
-    public class UserInterface
+    public class UserInterfaceCalculate
     {
-        public UserInterface()
+        public UserInterfaceCalculate()
         {
             Console.WriteLine("Hello!");
         }

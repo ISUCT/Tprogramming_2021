@@ -1,14 +1,16 @@
 namespace CourseApp
 {
     using System;
-    using CourseApp.Program;
 
     public class MainFile
     {
         public static void Main(string[] args)
         {
-            var userInterface = new UserInterface();
-            userInterface.StartPage();
+            var userInterfaceZoo = new UserInterfaceZoo();
+            var zoo = new Zoo("Moscow zoo");
+            var userInterfaceCalculate = new UserInterfaceCalculate();
+            userInterfaceZoo.Draw(zoo);
+            userInterfaceCalculate.StartPage();
             Console.ReadLine();
         }
     }
