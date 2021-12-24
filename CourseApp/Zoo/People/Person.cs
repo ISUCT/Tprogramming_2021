@@ -18,8 +18,8 @@ namespace CourseApp
         public string Draw()
         {
             var inform = @$"Работник
-Имя: {(string.IsNullOrEmpty(Name) ? "none" : Name)}
-Должность: {(string.IsNullOrEmpty(Position) ? "none" : Position)}
+Имя: {Name}
+Должность: {Position}
 Возраст: {(Age <= 0 ? "none" : Age)}";
             Console.WriteLine(inform);
             return " ";
