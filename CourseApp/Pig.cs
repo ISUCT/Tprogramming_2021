@@ -20,7 +20,6 @@ namespace CourseApp
         public override string Died()
         {
             int lard = Lard;
-            Lard = 0;
             return $"{Name} зарезана\nПолучено {lard} сала\n";
         }
 
