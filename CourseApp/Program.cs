@@ -7,7 +7,6 @@ namespace CourseApp
     {
         public static void Main(string[] args)
         {
-            string[] phraseArray = { "Грустно:(", "Как же печально:(", "Жалко животинку:(" };
             PigFamily pigOne = new Pig();
             PigFamily pigTwo = new Pig("свинка Пеппа", 9, 99);
             Boar boarOne = new Boar("кабанчик Кабанистый", 1, 5, 7);
