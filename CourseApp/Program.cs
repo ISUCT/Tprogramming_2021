@@ -1,7 +1,7 @@
 namespace CourseApp
 {
     using System;
-    using System.Collections.Generic;
+    using CourseApp.Interfaces;
 
     public class Program
     {
@@ -22,6 +22,10 @@ namespace CourseApp
             Console.WriteLine(pigTwo.MakePhrase());
             Console.Write(boarTwo.Died());
             Console.WriteLine(boarTwo.MakePhrase());
+            Console.WriteLine("\n--------------------Зоопарк-----------------");
+            var zoologicalGarden = new ZoologicalGarden("Ивановский\n");
+            var user = new UserInterface();
+            user.Draw(zoologicalGarden);
         }
     }
 }
