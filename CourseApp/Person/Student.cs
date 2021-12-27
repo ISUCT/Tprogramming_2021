@@ -1,48 +1,51 @@
-namespace CourseApp.Person;
-using System;
-public class Student : Person
+namespace CourseApp.Person
 {
-    public Student()
-    {
-    }
+    using System;
 
-    public Student(string name, int age, string gender)
-        : base(name, age, gender)
+    public class Student : Person
     {
-    }
+        public Student()
+        {
+        }
 
-    public Student(string name, int age, string gender, int height)
-        : base(name, age, gender, height)
-    {
-    }
+        public Student(string name, int age, string gender)
+            : base(name, age, gender)
+        {
+        }
 
-    public Student(string name, int age, int height)
-        : base(name, age, height)
-    {
-    }
+        public Student(string name, int age, string gender, int height)
+            : base(name, age, gender, height)
+        {
+        }
 
-    public Student(string name)
-        : base(name)
-    {
-    }
+        public Student(string name, int age, int height)
+            : base(name, age, height)
+        {
+        }
 
-    public Student(string name, int age)
-        : base(name, age)
-    {
-    }
+        public Student(string name)
+            : base(name)
+        {
+        }
 
-    public override string Walk()
-    {
-        return "I`m walking";
-    }
+        public Student(string name, int age)
+            : base(name, age)
+        {
+        }
 
-    public override string Greeting()
-    {
-        return $"Hello, my name is {Name} and I`m {Age} old.";
-    }
+        public override string Walk()
+        {
+            return "I`m walking";
+        }
 
-    public void Study()
-    {
-        throw new NotImplementedException();
+        public override string Greeting()
+        {
+            return $"Hello, my name is {Name} and I`m {Age} old.";
+        }
+
+        public void Study()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

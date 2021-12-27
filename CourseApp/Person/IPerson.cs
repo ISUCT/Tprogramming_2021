@@ -1,12 +1,13 @@
-namespace CourseApp.Person;
-
-public interface IPerson
+namespace CourseApp.Person
 {
-    string Name { get; set; }
+    public interface IPerson
+    {
+        string Name { get; set; }
 
-    int Age { get; set; }
+        int Age { get; set; }
 
-    string Gender { get; set; }
+        string Gender { get; set; }
 
-    int Height { get; set; }
+        int Height { get; set; }
+    }
 }
