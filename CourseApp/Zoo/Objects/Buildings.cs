@@ -9,7 +9,7 @@ namespace CourseApp.Zoo.Objects
 
         public string Draw()
         {
-            return $"Building {Name} is situated at Zoo";
+            return $"Building {Name} {Type} is situated at Zoo";
         }
     }
 }
