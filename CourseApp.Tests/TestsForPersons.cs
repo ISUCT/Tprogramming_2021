@@ -5,36 +5,27 @@ namespace CourseApp.Tests
 
     public class TestsForPersons
     {
-        [Fact]
-        public void GetNameOfStudent()
+        private Student _student;
+        private Employee _employee;
+
+        [Theory]
+        [InlineData("Vladimir Kozhukhar", 18, "Male", 185, "Student: Vladimir Kozhukhar 18 y.o. Male 185 sm")]
+        [InlineData("Mark Rumyantsev", 19, "Male", 174, "Student: Mark Rumyantsev 19 y.o. Male 174 sm")]
+        [InlineData("Aleksandr Kirillov", 19, "Male", 188, "Student: Aleksandr Kirillov 19 y.o. Male 188 sm")]
+        public void TestStudent(string name, int age, string gender, int height, string expected)
         {
-            var student = new Student("Anatoliy Rumyantsev", 18, "Clown", 192);
-            var expected = "Anatoliy Rumyantsev";
-            Assert.Equal(expected, student.Name);
+            _student = new Student(name, age, gender, height);
+            Assert.Equal(expected, _student.ToString());
         }
 
-        [Fact]
-        public void GetAgeOfStudent()
+        [Theory]
+        [InlineData("Nikita Ryibkin", 18, "Male", 180, "Employee: Nikita Ryibkin 18 y.o. Male 180 sm")]
+        [InlineData("Yaroslav Vdovin", 18, "Male", 174, "Employee: Yaroslav Vdovin 18 y.o. Male 174 sm")]
+        [InlineData("Daniil Golubev", 19, "Male", 175, "Employee: Daniil Golubev 19 y.o. Male 175 sm")]
+        public void TestEmployee(string name, int age, string gender, int height, string expected)
         {
-            var student = new Student("Sergey Vasiliev", 25, "c400", 165);
-            var expected = 25;
-            Assert.Equal(expected, student.Age);
-        }
-
-        [Fact]
-        public void GetGenderOfEmployee()
-        {
-            var employee = new Employee("Stas Tereshenko", 45, "T34", 180);
-            var expected = "T34";
-            Assert.Equal(expected, employee.Gender);
-        }
-
-        [Fact]
-        public void GetHeightOfEmployee()
-        {
-            var employee = new Employee("Anastasiya Kruchevskaya", 33, 174);
-            var expected = 174;
-            Assert.Equal(expected, employee.Height);
+            _employee = new Employee(name, age, gender, height);
+            Assert.Equal(expected, _employee.ToString());
         }
     }
 }

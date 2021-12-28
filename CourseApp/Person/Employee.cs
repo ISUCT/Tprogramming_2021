@@ -44,6 +44,11 @@ namespace CourseApp.Person
             return $"Hi! What`s your name? My my name is {Name} and I`m {Age} old.";
         }
 
+        public override string ToString()
+        {
+            return $"Employee: {Name} {Age} y.o. {Gender} {Height} sm";
+        }
+
         public void Work()
         {
             throw new NotImplementedException();

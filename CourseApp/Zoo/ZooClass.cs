@@ -50,7 +50,7 @@ namespace CourseApp.Zoo
             newInterface.Draw(People());
             newInterface.Draw(Animals());
             newInterface.Draw(Objects());
-            return "That is all our Zoo!";
+            return $"That is all our {Name} Zoo!";
         }
     }
 }

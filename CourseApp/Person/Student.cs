@@ -39,6 +39,11 @@ namespace CourseApp.Person
             return "I`m walking";
         }
 
+        public override string ToString()
+        {
+            return $"Student: {Name} {Age} y.o. {Gender} {Height} sm";
+        }
+
         public override string Greeting()
         {
             return $"Hello, my name is {Name} and I`m {Age} old.";
