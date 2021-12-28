@@ -1,5 +1,6 @@
 namespace CourseApp.Tests
 {
+    using System;
     using System.Collections.Generic;
     using CourseApp.Program;
     using Xunit;
