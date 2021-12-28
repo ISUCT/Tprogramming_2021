@@ -3,9 +3,9 @@ namespace CourseApp.Program
     using System;
     using CourseApp.Program.Input;
 
-    public class UserInterface
+    public class UserInterfaceDate
     {
-        public UserInterface()
+        public UserInterfaceDate()
         {
             Console.WriteLine("Hello!");
             IsValuesEnter = false;
