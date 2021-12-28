@@ -49,7 +49,6 @@ namespace CourseApp.Tests
         [InlineData("r", 0, 3, false)]
         [InlineData("-1", -2, -1, true)]
         [InlineData("4,1", 4, 5, true)]
-        [InlineData(" ", 4, 4, false)]
         public void TestInputDouble(string item, int minValue, int maxValue, bool expected)
         {
             var input = new InputValues();
