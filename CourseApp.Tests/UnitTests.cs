@@ -50,10 +50,10 @@ namespace CourseApp.Tests
         }
 
         [Theory]
-        [InlineData(0,1, 0,5, 0,1, 5)]
+        [InlineData(0.1, 0.5, 0.1, 5)]
         [InlineData(0, 5, 1, 6)]
-        [InlineData(0,25, 0,5, 0,05, 6)]
-        [InlineData(1,2, 2,4, 1,2, 2)]
+        [InlineData(0.25, 0.5, 0.05, 6)]
+        [InlineData(1.2, 2.4, 1.2, 2)]
         public void TestListCount(double start, double end, double delta, int expected)
         {
             var task = new CalculateTasks(start, end, delta);
