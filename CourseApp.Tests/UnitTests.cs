@@ -35,6 +35,7 @@ namespace CourseApp.Tests
           Assert.Equal(expected, actual.ToArray());
         }
   
+        [Theory]
         [InlineData(3, 2, 0.11, 1.56)]
         [InlineData(3, 2, 0.36, 1.488)]
         [InlineData(3, 2, 0.08, 1.565)]
@@ -89,6 +90,7 @@ namespace CourseApp.Tests
             Assert.Equal(expected, actual);
         }
 
+        [Theory]
         [InlineData(2, 3, 0.1, 0.5, 0.1, new double[] { 1.58, 1.603, 1.634, 1.667, 1.698 })]
         [InlineData(2, 3, 3, 9, 3, new double[] { double.NaN, double.NaN, double.NaN })]
         [InlineData(2, 3, 0.5, 2.5, 0.5, new double[] { 1.698, 1.571, double.NaN, double.NaN, double.NaN })]
