@@ -5,6 +5,7 @@ namespace CourseApp.Person
     public class Student : Person
     {
         public Student()
+            : base()
         {
         }
 
