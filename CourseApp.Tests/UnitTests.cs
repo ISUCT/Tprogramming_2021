@@ -33,9 +33,9 @@ namespace CourseApp.Tests
             var dateClass = new DateClass();
             var date = dateClass.CreateOutput(dateClass.CalculateAge(birth, today));
             var actual = $"{date.Item1} {date.Item2} {date.Item3}";
-          Assert.Equal(expected, actual.ToArray());
+            Assert.Equal(expected, actual);
         }
-  
+
         [Theory]
         [InlineData(3, 2, 0.11, 1.56)]
         [InlineData(3, 2, 0.36, 1.488)]
@@ -120,8 +120,8 @@ namespace CourseApp.Tests
             {
                 actual.Add(Round(task.CalculateValue(item).Item2, 3));
             }
-          
-           Assert.Equal(expected, actual.ToArray());
+
+            Assert.Equal(expected, actual.ToArray());
         }
     }
 }
