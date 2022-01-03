@@ -23,10 +23,10 @@ namespace CourseApp {
             var peperA = start.CalculationTask(a, b, xs, xe, dx);
             var peperB = start.CalculationTask(a, b, peperTaskB);
 
-            Console.WriteLine(Colors.FgCyan("----------Раздел A---------").BgMagenta());
+            Console.WriteLine(Colors.FgCyan("-----------Раздел A---------").BgMagenta());
             OutputTask(peperA);
 
-            Console.WriteLine(Colors.FgCyan("----------Раздел B---------").BgMagenta());
+            Console.WriteLine(Colors.FgCyan("-----------Раздел B---------").BgMagenta());
             OutputTask(peperB);
         
 
