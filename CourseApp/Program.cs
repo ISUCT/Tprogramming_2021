@@ -6,7 +6,8 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine($"Hello world");
+            var eshop = new EShop("Mobile");
+            eshop.Present();
             Console.ReadLine();
         }
     }

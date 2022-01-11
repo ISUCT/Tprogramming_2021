@@ -1,0 +1,12 @@
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\bin\Debug\netcoreapp2.1\CourseApp.deps.json
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\bin\Debug\netcoreapp2.1\CourseApp.runtimeconfig.json
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\bin\Debug\netcoreapp2.1\CourseApp.runtimeconfig.dev.json
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\bin\Debug\netcoreapp2.1\CourseApp.dll
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\bin\Debug\netcoreapp2.1\CourseApp.pdb
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\obj\Debug\netcoreapp2.1\CourseApp.csprojAssemblyReference.cache
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\obj\Debug\netcoreapp2.1\CourseApp.AssemblyInfoInputs.cache
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\obj\Debug\netcoreapp2.1\CourseApp.AssemblyInfo.cs
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\obj\Debug\netcoreapp2.1\CourseApp.csproj.CoreCompileInputs.cache
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\obj\Debug\netcoreapp2.1\CourseApp.dll
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\obj\Debug\netcoreapp2.1\CourseApp.pdb
+C:\Users\polin\OneDrive\Рабочий стол\ExamClasses-main\CourseApp\obj\Debug\netcoreapp2.1\CourseApp.genruntimeconfig.cache
