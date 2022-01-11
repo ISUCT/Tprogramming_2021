@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G+Z9/vndGccSyvUg/E7IsAB13NKoiI5oBbQDTI57MfHNhhZonnFgpkNrjOgyG4JSodLdih7oXRqmXVNosL5Sew==",
+  "dgSpecHash": "55oRrCxk93puLUYDT4SbI0knwPHnwnuONtct2cOuaW4yZ+HRq22lbg7ZoILIoChZWx9nrDpBKDWUr0dbrbaOvQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\CourseApp.csproj",
+  "projectFilePath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\CourseApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\polin\\.nuget\\packages\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
     "C:\\Users\\polin\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.1.0\\microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",

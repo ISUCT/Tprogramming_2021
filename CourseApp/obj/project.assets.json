@@ -723,11 +723,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\CourseApp.csproj",
+      "projectUniqueName": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\CourseApp.csproj",
       "projectName": "CourseApp",
-      "projectPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\CourseApp.csproj",
+      "projectPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\CourseApp.csproj",
       "packagesPath": "C:\\Users\\polin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\obj\\",
+      "outputPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\polin\\AppData\\Roaming\\NuGet\\NuGet.Config",

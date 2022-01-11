@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5wDh2ASHZHXy4LjFYhSTjf7WH0tFC3l+nSo5kZZdWQMI3m4P96L76w361gX3gg4JFCvZGPitNHjmwWEVrBfWZQ==",
+  "dgSpecHash": "h5vEGju8dQWeWn+AsN2aONJUk5t7qFQbBKinyoJdPz9Rpslot3sdFR/44UPAsyo3bTIC2qnY2IJekmrqOoncSg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp.Tests\\CourseApp.Tests.csproj",
+  "projectFilePath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp.Tests\\CourseApp.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\polin\\.nuget\\packages\\microsoft.codecoverage\\15.9.0\\microsoft.codecoverage.15.9.0.nupkg.sha512",
     "C:\\Users\\polin\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

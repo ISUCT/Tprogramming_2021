@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp.Tests\\CourseApp.Tests.csproj": {}
+    "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp.Tests\\CourseApp.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp.Tests\\CourseApp.Tests.csproj": {
+    "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp.Tests\\CourseApp.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp.Tests\\CourseApp.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp.Tests\\CourseApp.Tests.csproj",
         "projectName": "CourseApp.Tests",
-        "projectPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp.Tests\\CourseApp.Tests.csproj",
+        "projectPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp.Tests\\CourseApp.Tests.csproj",
         "packagesPath": "C:\\Users\\polin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp.Tests\\obj\\",
+        "outputPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\polin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\CourseApp.csproj": {
-                "projectPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\CourseApp.csproj"
+              "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\CourseApp.csproj": {
+                "projectPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\CourseApp.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\CourseApp.csproj": {
+    "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\CourseApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\CourseApp.csproj",
+        "projectUniqueName": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\CourseApp.csproj",
         "projectName": "CourseApp",
-        "projectPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\CourseApp.csproj",
+        "projectPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\CourseApp.csproj",
         "packagesPath": "C:\\Users\\polin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\c#\\Tprogramming_2021\\CourseApp\\obj\\",
+        "outputPath": "C:\\Users\\polin\\OneDrive\\Рабочий стол\\ExamClasses-main\\CourseApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\polin\\AppData\\Roaming\\NuGet\\NuGet.Config",
