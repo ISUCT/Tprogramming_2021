@@ -1,5 +1,7 @@
-﻿namespace CourseApp
+﻿using System;
+namespace CourseApp
 {
+<<<<<<< HEAD
     using System;
     using CourseApp.Interfaces;
 
