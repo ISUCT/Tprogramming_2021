@@ -6,6 +6,11 @@
     {
         public static void Main(string[] args)
         {
+            TaskTwo a = new TaskTwo();
+            a.InitData("10.12.2044");
+            Console.WriteLine(a.Check());
+            a.InitData("02.03.1554");
+            Console.WriteLine(a.Check());
             double x_s = 1.25;
             double x_f = 2.75;
             double dx = 0.3;
