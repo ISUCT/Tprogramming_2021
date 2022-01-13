@@ -21,7 +21,7 @@
         [InlineData("10.01.1955", "The birthday in the past.")]
         [InlineData("05.11.2030", "The birthday in the future.")]
         [InlineData("01.10.2222", "The birthday in the future.")]
-        [InlineData("31.01.2022", "The birthday today.")]
+        [InlineData("13.01.2022", "The birthday today.")]
         public void RunTest(string s, string expected)
         {
             _taskTwo.InitData(s);

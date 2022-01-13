@@ -7,7 +7,7 @@
         public static void Main(string[] args)
         {
             TaskTwo a = new TaskTwo();
-            a.InitData("10.12.2044");
+            a.InitData("13.01.2022");
             Console.WriteLine(a.Check());
             a.InitData("02.03.1554");
             Console.WriteLine(a.Check());
