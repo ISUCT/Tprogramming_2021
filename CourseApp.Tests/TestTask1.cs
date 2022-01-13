@@ -12,10 +12,11 @@
         }
 
         [Theory]
-        [InlineData(1.4, )]
+        [InlineData(1.4, -0.9626)]
         [InlineData(0, -1)]
         [InlineData(-2.1, -1)]
-        [InlineData()]
+        [InlineData(10, -0.0100)]
+        [InlineData(0.0003, -311.5109)]
         public void RunTest(double x, double expected)
         {
             double ans = _func.Foo(x);

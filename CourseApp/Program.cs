@@ -6,12 +6,6 @@
     {
         public static void Main(string[] args)
         {
-            Func f = new Func();
-            Console.WriteLine(f.Foo(1.4));
-            Console.WriteLine(f.Foo(0));
-            Console.WriteLine(f.Foo(-2.1));
-            Console.WriteLine(f.Foo(10));
-            Console.WriteLine(f.Foo(0.0003));
             double x_s = 1.25;
             double x_f = 2.75;
             double dx = 0.3;
