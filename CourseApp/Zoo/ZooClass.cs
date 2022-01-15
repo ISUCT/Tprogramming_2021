@@ -1,16 +1,32 @@
 namespace CourseApp.Zoo
 {
-    using System;
     using System.Collections.Generic;
-    using CourseApp.Zoo.Animals;
+    using CourseApp.Zoo.Animals.AnimalFactory;
+    using CourseApp.Zoo.Interfaces;
     using CourseApp.Zoo.Objects;
     using CourseApp.Zoo.People;
+    using CourseApp.Zoo.People.PeopleFactory;
 
-    public class ZooClass : IDrawable
+    public class ZooClass : IDrawable, IZoo
     {
+        private readonly RandomDogFactory _dogFactory;
+
+        private readonly RandomCatFactory _catFactory;
+
+        private readonly RandomPonyFactory _ponyFactory;
+
+        private readonly RandomEmployeeFactory _employeeFactory;
+
+        private readonly RandomVisitorFactory _visitorFactory;
+
         public ZooClass(string name)
         {
             Name = name;
+            _dogFactory = new RandomDogFactory();
+            _ponyFactory = new RandomPonyFactory();
+            _catFactory = new RandomCatFactory();
+            _employeeFactory = new RandomEmployeeFactory();
+            _visitorFactory = new RandomVisitorFactory();
         }
 
         public string Name { get; set; }
@@ -18,19 +34,22 @@ namespace CourseApp.Zoo
         public List<IDrawable> Animals()
         {
             var listAnimals = new List<IDrawable>();
-            listAnimals.Add(new Dog("Sharik", 2, "Male"));
-            listAnimals.Add(new Cat("Barsik", 4, "Female"));
-            listAnimals.Add(new Pony("RaindowDash", 7, "Female"));
+            listAnimals.Add(_dogFactory.Create());
+            listAnimals.Add(_catFactory.Create());
+            listAnimals.Add(_ponyFactory.Create());
             return listAnimals;
         }
 
         public List<IDrawable> People()
         {
             var listPeople = new List<IDrawable>();
-            listPeople.Add(new Employee("Vladimir Kozhukhar", 18, "Male", "Administrator"));
-            listPeople.Add(new Employee("Mark Rumyantsev", 19, "Male", "Hard Worker"));
-            listPeople.Add(new Visitor("Aleksei Polekhin", 19, "Male"));
-            listPeople.Add(new Visitor("Varvara Troshina", 19, "Female"));
+            listPeople.Add(_employeeFactory.Create());
+            listPeople.Add(_employeeFactory.Create());
+            listPeople.Add(_employeeFactory.Create());
+            listPeople.Add(_visitorFactory.Create());
+            listPeople.Add(_visitorFactory.Create());
+            listPeople.Add(_visitorFactory.Create());
+            listPeople.Add(_visitorFactory.Create());
             return listPeople;
         }
 

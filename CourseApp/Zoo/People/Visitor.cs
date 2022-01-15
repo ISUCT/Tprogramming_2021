@@ -1,5 +1,7 @@
 namespace CourseApp.Zoo.People
 {
+    using CourseApp.Zoo.Interfaces;
+
     public class Visitor : Person, IDrawable
     {
         public Visitor(string name, int age, string sex)
@@ -7,7 +9,7 @@ namespace CourseApp.Zoo.People
         {
         }
 
-        public string Draw()
+        public override string Draw()
         {
             return $"In zoo has come a new visitor: Name {Name} Age {Age}";
         }

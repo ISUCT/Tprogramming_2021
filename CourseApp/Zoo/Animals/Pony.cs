@@ -1,5 +1,7 @@
 namespace CourseApp.Zoo.Animals
 {
+    using CourseApp.Zoo.Interfaces;
+
     public class Pony : Animal, IDrawable
     {
         public Pony(string name, int age, string sex)
@@ -7,7 +9,7 @@ namespace CourseApp.Zoo.Animals
         {
         }
 
-        public string Draw()
+        public override string Draw()
         {
             return $"Pony: Name {Name} Age {Age} Sex {Sex}";
         }

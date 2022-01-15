@@ -2,6 +2,7 @@ namespace CourseApp.Zoo
 {
     using System;
     using System.Collections.Generic;
+    using CourseApp.Zoo.Interfaces;
 
     public class UserInterface
     {

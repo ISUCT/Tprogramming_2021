@@ -1,4 +1,4 @@
-namespace CourseApp.Zoo.Animals
+namespace CourseApp.Zoo.Interfaces
 {
     public interface IAnimal
     {

@@ -1,5 +1,7 @@
 namespace CourseApp.Zoo.Objects
 {
+    using CourseApp.Zoo.Interfaces;
+
     public class InteriorStaff : Staff, IDrawable
     {
         public InteriorStaff(string name, string type)

@@ -1,4 +1,4 @@
-namespace CourseApp.Zoo
+namespace CourseApp.Zoo.Interfaces
 {
     public interface IDrawable
     {

@@ -1,8 +1,10 @@
 namespace CourseApp.Zoo.Animals
 {
-    public abstract class Animal : IAnimal
+    using CourseApp.Zoo.Interfaces;
+
+    public abstract class Animal : IAnimal, IDrawable
     {
-        private int age;
+        private int _age;
 
         public Animal(string name, int age, string sex)
         {
@@ -15,11 +17,13 @@ namespace CourseApp.Zoo.Animals
 
         public int Age
         {
-            get => age;
+            get => _age;
 
-            set => age = value is >= 0 and < 100 ? value : 0;
+            set => _age = value is >= 0 and < 20 ? value : 0;
         }
 
         public string Sex { get; set; }
+
+        public abstract string Draw();
     }
 }
