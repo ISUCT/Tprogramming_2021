@@ -1,16 +1,12 @@
 ﻿namespace CourseApp
 {
     using System;
+    using CourseApp.Zoo;
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            TaskTwo a = new TaskTwo();
-            a.InitData("13.01.2022");
-            Console.WriteLine(a.Check());
-            a.InitData("02.03.1554");
-            Console.WriteLine(a.Check());
             double x_s = 1.25;
             double x_f = 2.75;
             double dx = 0.3;
@@ -24,6 +20,7 @@
             Console.WriteLine("Task B:");
             ShowUp(ans_b);
             Console.ReadLine();
+            Init.Main_Init();
         }
 
         public static double Foo(double x)
