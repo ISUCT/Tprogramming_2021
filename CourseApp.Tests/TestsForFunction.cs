@@ -2,11 +2,11 @@ namespace CourseApp.Tests
 {
     using Xunit;
 
-    public class Tests
+    public class TestsForFunction
     {
         private readonly Function _function;
 
-        public Tests()
+        public TestsForFunction()
         {
             _function = new Function();
         }

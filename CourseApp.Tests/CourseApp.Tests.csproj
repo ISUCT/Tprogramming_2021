@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp5</TargetFramework>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <IsPackable>false</IsPackable>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
