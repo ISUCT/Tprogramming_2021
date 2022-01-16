@@ -26,6 +26,13 @@
 
             Console.WriteLine("Task B:");
             OutputTask(listB);
+            Console.WriteLine("Hello World!");
+            var ship1 = new Ship(20, 200, 10);
+            ship1.GetInfo();
+            var ship2 = new Ship(10, 100, 5);
+            ship2.GetLength();
+            var ship3 = new Ship();
+            Console.ReadLine();
         }
 
         public static void OutputTask(List<double> listTask)
