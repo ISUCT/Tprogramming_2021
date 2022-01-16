@@ -7,8 +7,7 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine($"Hello world");
-            Console.ReadLine();
+            Console.WriteLine("Задания");
             Function function = new Function();
             var start = new Calculation(function);
 
