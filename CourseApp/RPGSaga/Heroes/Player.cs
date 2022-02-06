@@ -1,5 +1,8 @@
 ﻿namespace CourseApp.RPGSaga.Heroes
 {
+    using System.Collections.Generic;
+    using CourseApp.RPGSaga.Interfaces;
+
     public abstract class Player : IPlayer
     {
         private int _hp;
@@ -53,5 +56,11 @@
                 }
             }
         }
+
+        public abstract void ApplyDamage(int damage);
+
+        public abstract List<IAbility> Abilities();
+
+        public abstract List<IAbility> Effects(IAbility effect);
     }
 }
