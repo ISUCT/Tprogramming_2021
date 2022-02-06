@@ -1,0 +1,15 @@
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\bin\Debug\net6.0\RPG_SAGA.exe
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\bin\Debug\net6.0\RPG_SAGA.deps.json
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\bin\Debug\net6.0\RPG_SAGA.runtimeconfig.json
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\bin\Debug\net6.0\RPG_SAGA.dll
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\bin\Debug\net6.0\ref\RPG_SAGA.dll
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\bin\Debug\net6.0\RPG_SAGA.pdb
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\obj\Debug\net6.0\RPG_SAGA.csproj.AssemblyReference.cache
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\obj\Debug\net6.0\RPG_SAGA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\obj\Debug\net6.0\RPG_SAGA.AssemblyInfoInputs.cache
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\obj\Debug\net6.0\RPG_SAGA.AssemblyInfo.cs
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\obj\Debug\net6.0\RPG_SAGA.csproj.CoreCompileInputs.cache
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\obj\Debug\net6.0\RPG_SAGA.dll
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\obj\Debug\net6.0\ref\RPG_SAGA.dll
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\obj\Debug\net6.0\RPG_SAGA.pdb
+C:\Users\Daniil\Desktop\Разработка\RPG_SAGA\obj\Debug\net6.0\RPG_SAGA.genruntimeconfig.cache
