@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp5</TargetFramework>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
   </PropertyGroup>
 
@@ -17,6 +17,10 @@
 
   <ItemGroup>
     <AdditionalFiles Include="../_stylecop/stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="RPG-Saga\Logger\" />
   </ItemGroup>
 
 </Project>

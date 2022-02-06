@@ -1,15 +1,14 @@
-﻿using System;
-
-namespace ClassTask
+﻿namespace ClassTask
 {
-    static class ConsoleProcessor
+    using System;
+
+    public static class ConsoleProcessor
     {
-        const string menu = "Что вы хотите сделать?\n" +
+        private const string Menu = "Что вы хотите сделать?\n" +
 @"1. Показать текущую информацию о стране
 2. Отметить национальный праздник
 3. Начать войну против другого государства
 4. Узнать текущий ВВП на душу населения";
-
 
         public static void Start(KindDemocraticCountry country_1, EvilTotalitarianCountry country_2)
         {
@@ -20,7 +19,7 @@ namespace ClassTask
 2. {country_2.Name} ({country_2.PoliticalSystem})
 
 Введите номер: ");
-                        
+
             switch (Convert.ToInt32(Console.ReadLine()))
             {
                 case 1:
@@ -31,12 +30,12 @@ namespace ClassTask
                     Console.Clear();
                     TotalitarianMenu(country_2, country_1);
                     break;
-            }               
+            }
         }
 
         public static void CommonMenuRealization(string i, ICountry country, ICountry enemyCountry)
         {
-            switch(i)
+            switch (i)
             {
                 case "1":
                     country.GetInfo();
@@ -50,13 +49,13 @@ namespace ClassTask
             }
         }
 
-        public static void DemocraticMenu (KindDemocraticCountry country, ICountry enemyCountry)
+        public static void DemocraticMenu(KindDemocraticCountry country, ICountry enemyCountry)
         {
             string i;
             do
             {
                 Console.WriteLine("Здравствуйте, господин Президент!\n");
-                Console.WriteLine(menu);
+                Console.WriteLine(Menu);
                 Console.Write(@"5. Сделать страну снова великой
 
 Для выхода нажмите Enter
@@ -86,7 +85,7 @@ namespace ClassTask
                         break;
                 }
             }
-            while (i != "");      
+            while (i != string.Empty);
         }
 
         public static void TotalitarianMenu(EvilTotalitarianCountry country, ICountry enemyCountry)
@@ -95,7 +94,7 @@ namespace ClassTask
             do
             {
                 Console.WriteLine($"Приветствую, Вождь {country.ChiefName}!\n");
-                Console.WriteLine(menu);
+                Console.WriteLine(Menu);
                 Console.Write(@"5. Отправить врагов революции в гулаг
 
 Для выхода нажмите Enter
@@ -124,9 +123,9 @@ namespace ClassTask
                         Console.ReadLine();
                         Console.Clear();
                         break;
-                }               
+                }
             }
-            while (i != "");
+            while (i != string.Empty);
         }
     }
 }
