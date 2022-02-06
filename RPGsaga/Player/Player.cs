@@ -35,7 +35,7 @@ namespace RPGsaga.Player
             {
                 if (value < 0)
                 {
-                    throw new InvalidOperationException("Не верное значение"); 
+                    throw new InvalidOperationException("Не верное значение");
                 }
                 else
                 {
@@ -68,6 +68,6 @@ namespace RPGsaga.Player
 
         public virtual double IsFire { get; set; }
 
-        
+
     }
 }

@@ -1,6 +1,6 @@
 namespace RPGsaga
 {
-    public interface IAbbilities
+    public interface IAbilities
     {
         public void abbility();
     }

@@ -1,6 +1,6 @@
 namespace RPGsaga.Player
 {
-    public class FireArrows : IAbbilities
+    public class FireArrows : IAbilities
     {
         public void abbility()
         {
