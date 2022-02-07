@@ -22,7 +22,7 @@
             Active[0] = null;
             Active[1] = null;
             screen = new Screen(this);
-            int n = screen.RequestNumber();
+            int n = 2;
             string[] m = { "Mag", "Archer", "Knight" };
             bool flag_name = screen.RequestName();
             Random rnd = new Random();

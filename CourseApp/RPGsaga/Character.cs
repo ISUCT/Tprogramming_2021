@@ -44,7 +44,8 @@
         {
             Scale = 1;
             bool flag = false;
-            foreach (Buff b in Buffs)
+            List<Buff> buffs = Buffs;
+            foreach (Buff b in buffs)
             {
                 if (b.SkeepStep)
                 {
