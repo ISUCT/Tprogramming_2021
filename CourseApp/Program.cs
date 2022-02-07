@@ -1,13 +1,13 @@
 ﻿namespace CourseApp
 {
-    using System;
+    using CourseApp.RPGsaga;
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine($"Hello world");
-            Console.ReadLine();
+            Game game = new Game();
+            game.Start();
         }
     }
 }
