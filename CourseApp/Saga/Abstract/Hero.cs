@@ -7,20 +7,16 @@ namespace CourseApp
         private double health;
         private double damage;
         private double stamina;
-        private Random random = new Random();
 
-        public Hero(string name, double health, double damage, double stamina)
-        {
-            health = random.Next(30, 50);
-            damage = random.Next(5, 10);
-            stamina = random.Next(30, 100);
-            this.Name = name;
-            this.Health = health;
-            this.Damage = damage;
-            this.Stamina = stamina;
-        }
+        public string Class { get; set; }
 
         public string Name { get; set; }
+
+        public bool Dead { get; set; }
+
+        public double StartHealth { get; set; }
+
+        public int Ulta { get; set; }
 
         public double Health
         {
