@@ -71,7 +71,6 @@ ipch/
 *.vsp
 *.vspx
 
-
 # Guidance Automation Toolkit
 *.gpState
 
@@ -195,7 +194,6 @@ $RECYCLE.BIN/
 
 # Rider
 .idea/
-
 
 **/node_modules/*
 

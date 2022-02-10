@@ -1,4 +1,4 @@
-namespace RPGsaga.Player
+namespace CourseApp
 {
     public interface IPlayer
     {
@@ -6,6 +6,6 @@ namespace RPGsaga.Player
 
         double Health { get; set; }
 
-        double Strength { get; set; }
+        int Strength { get; set; }
     }
 }

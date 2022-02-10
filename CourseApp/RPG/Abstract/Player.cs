@@ -1,25 +1,24 @@
-namespace RPGsaga.Player
-
+namespace CourseApp
 {
     using System;
 
     public abstract class Player : IPlayer
     {
         private double health;
-        private double strength;
+        private int strength;
         private Random random = new Random();
         private double isFire = 0;
         private double isFrozen = 0;
 
-        public Player(string name, double health, double strength)
+        public Player(string name, double health, int strength)
         {
             health = random.Next(10, 50);
             strength = random.Next(5, 20);
-            this.Name = name;
-            this.Health = health;
-            this.Strength = strength;
-            this.IsFrozen = isFrozen;
-            this.IsFire = isFire;
+            Name = name;
+            Health = health;
+            Strength = strength;
+            IsFrozen = isFrozen;
+            IsFire = isFire;
         }
 
         public string Name { get; set; }
@@ -35,7 +34,7 @@ namespace RPGsaga.Player
             {
                 if (value < 0)
                 {
-                    throw new InvalidOperationException("Не верное значение");
+                    throw new InvalidOperationException("gg wp");
                 }
                 else
                 {
@@ -44,7 +43,7 @@ namespace RPGsaga.Player
             }
         }
 
-        public double Strength
+        public int Strength
         {
             get
             {
@@ -55,7 +54,7 @@ namespace RPGsaga.Player
             {
                 if (value < 0)
                 {
-                    throw new InvalidOperationException("Не верное значение"); // сила не может быть меньше нуля
+                    throw new InvalidOperationException("gg wp");
                 }
                 else
                 {
@@ -67,7 +66,5 @@ namespace RPGsaga.Player
         public virtual double IsFrozen { get; set; }
 
         public virtual double IsFire { get; set; }
-
-
     }
 }

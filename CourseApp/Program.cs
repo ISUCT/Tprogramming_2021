@@ -1,4 +1,4 @@
-namespace CourseApp
+﻿namespace CourseApp
 {
     using System;
 
@@ -6,8 +6,7 @@ namespace CourseApp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine($"Hello world");
-            Console.ReadLine();
+            Console.WriteLine("gg wp");
         }
     }
 }
