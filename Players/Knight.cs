@@ -1,4 +1,7 @@
 namespace RpgSaga.Players;
+using RpgSaga.Abilities;
 public class Knight : Player{
-    public Knight(){}
+    public Knight() : base(){
+        Ability ability = new FireArrows();
+    }
 }

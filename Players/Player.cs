@@ -1,11 +1,14 @@
 namespace RpgSaga.Players;
 using RpgSaga.Abilities;
 public abstract class Player{
-    public Player(){
+    public Player(Ability ability){
         Random rnd = new Random();
-        this.Name = names[rnd.Next(names.Count)];
-        this.HP = rnd.Next(12, 21);
-        this.Strenght = rnd.Next(2, 6);
+        this.name = names[rnd.Next(names.Count)];
+        this.hp = rnd.Next(12, 21);
+        this.strenght = rnd.Next(2, 6);
+        this.buffs = new List<Ability>();
+        this.abilities = new List<Ability>();
+        this.abilities.Add(ability);
     }
 
     public List<string> names = new List<string>{
@@ -13,16 +16,10 @@ public abstract class Player{
         "Kirill",
         "Denzel"};
 
-    public string Name { get; set; }
-    public int HP { get; set; }
-    public int Strenght { get; set; }
+    public List<Ability> abilities;
+    public List<Ability> buffs;
+    public string name { get; set; }
+    public int hp { get; set; }
+    public int strenght { get; set; }
     
-    //public IAbility ability;
-
-    //public void UseAbility(){
-        //ability.Ability();
-    //}
-    //public void SetAbility(IAbility ability){
-        //this.ability = ability;
-    //}
 }

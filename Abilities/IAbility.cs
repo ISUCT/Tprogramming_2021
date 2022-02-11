@@ -1,17 +1,21 @@
 namespace RpgSaga.Abilities;
 
-public interface IAbility {
-    string Damage_Buff { get;}
-    string Strength_Buff { get;}
-    string Name { get;}
-    int Duration { get;}
-    int Damage { get;}
-    bool Stun { get;}
-    void Ability();
+abstract public class Ability {
+
+    public Ability (int damage_buff, int strenght_buff, string name, int duration, int damage, bool stun){
+
+    }
+    private int damage_buff;
+    private int strength_buff;
+    private string name;
+    private int duration;
+    private int damage;
+    private bool stun;
+    private void Ability();
 }
 
-public class FireArrows : IAbility{
-    public FireArrows(){
+public class FireArrows : Ability{
+    public FireArrows() : base(){
         this.Name = "Fire Arrows";
         this.Duration = 9999;
         this.Damage = 2;
