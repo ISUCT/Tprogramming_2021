@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using CourseApp.RPGSaga.GameBuilder;
     using CourseApp.RPGSaga.Heroes;
     using Kantaiko.ConsoleFormatting;
 
@@ -9,7 +10,9 @@
     {
         public static void Main(string[] args)
         {
-            var archer = new Archer("Volodya", 100, 50);
+            var tournam = new GameBuilder();
+            tournam.StartTournament();
+            tournam.GetWinner();
         }
     }
 }

@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using CourseApp.RPGSaga.Abilities;
+    using CourseApp.RPGSaga.GameBuilder;
     using CourseApp.RPGSaga.Interfaces;
 
     public class Wizard : Player
@@ -27,6 +28,13 @@
                 if (effect.IsSkipRound)
                 {
                     _isSkip = true;
+                    Logger.WriteLog($"{GetType()} {Name} is frozen right now, so he miss this step");
+                }
+
+                if (effect.IsFire)
+                {
+                    IsFire = true;
+                    Logger.WriteLog($"{GetType()} {Name} is burning now");
                 }
 
                 if (IsFire)
@@ -35,6 +43,7 @@
                 }
 
                 Hp -= effect.Damage;
+                Logger.WriteLog($"{GetType()} {Name} has {Hp} HP");
                 if (Hp <= 0)
                 {
                     IsDead = true;
@@ -42,6 +51,11 @@
                 }
 
                 effect.ActionDuration -= 1;
+                if (effect.ActionDuration == 0)
+                {
+                    _effects.Remove(effect);
+                    Logger.WriteLog($"Duration of {effect.Name} is ended");
+                }
             }
 
             if (!_isSkip)
@@ -59,10 +73,12 @@
         {
             var randomIndex = Random.Shared.Next(0, _abilities.Count);
             _enemy.AddEffect(_abilities[randomIndex]);
+            Logger.WriteLog($"{GetType()} {Name} used {_abilities[randomIndex].Name} against {GetType()} {_enemy.Name}");
             _abilities[randomIndex].NumOfUses -= 1;
             if (_abilities[randomIndex].NumOfUses == 0)
             {
                 _abilities.RemoveAt(randomIndex);
+                Logger.WriteLog($"{GetType()} {Name} used maximum times of {_abilities[randomIndex].Name}");
             }
         }
 

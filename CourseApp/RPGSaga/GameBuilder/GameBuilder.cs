@@ -27,10 +27,19 @@ namespace CourseApp.RPGSaga.GameBuilder
 
         public List<Player> RunRound(List<Player> players)
         {
+            _winners.Clear();
             for (int i = 1; i < players.Count; i += 2)
             {
                 _fight = new FightBuilder(players[i - 1], players[i]);
+                _winners.Add(_fight.StartFight());
             }
+
+            return RunRound(_winners);
+        }
+
+        public void GetWinner()
+        {
+            Logger.WriteLog($"Winner is {_winners[0].Name} {_winners[0].GetType()}");
         }
     }
 }

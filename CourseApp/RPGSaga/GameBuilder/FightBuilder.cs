@@ -17,7 +17,7 @@ namespace CourseApp.RPGSaga.GameBuilder
 
         public Player StartFight()
         {
-            Logger.WriteLog($"Fight: {_p1} ({_p1.GetType()}) against {_p2} ({_p2.GetType()})");
+            Logger.WriteLog($"Fight: {_p1.ToString()} against {_p2.ToString()}");
             while (!_p1.IsDead && !_p2.IsDead)
             {
                 _p1.SetTarget(_p2);
