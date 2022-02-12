@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using CourseApp.RPGSaga.Interfaces;
 
-    public abstract class Player : IPlayer
+    public abstract class Player : IPlayer, ISetTarget
     {
         private int _hp;
         private int _strength;
@@ -11,13 +11,14 @@
         public Player(string name, int hp, int strength)
         {
             Name = name;
-            HP = hp;
+            Hp = hp;
             Strength = strength;
+            IsDead = false;
         }
 
         public string Name { get; set; }
 
-        public int HP
+        public int Hp
         {
             get
             {
@@ -57,10 +58,16 @@
             }
         }
 
-        public abstract void ApplyDamage(int damage);
+        public bool IsFire { get; set; }
 
-        public abstract List<IAbility> Abilities();
+        public bool IsDead { get; set; }
 
-        public abstract List<IAbility> Effects(IAbility effect);
+        public abstract void MakeAMove();
+
+        public abstract void AddEffect(IAbility effect);
+
+        public abstract void SetTarget(IPlayer enemy);
+
+        public abstract void SetDamage();
     }
 }

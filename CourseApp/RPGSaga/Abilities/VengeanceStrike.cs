@@ -4,29 +4,34 @@
 
     public class VengeanceStrike : IAbility
     {
-        public VengeanceStrike()
+        public VengeanceStrike(int damage)
         {
             Multiplier = 1.3;
+            Damage = (int)(Multiplier * damage);
             Name = "Vengeance Strike";
-            IsPositive = false;
             IsSkipRound = false;
             ActionDuration = 1;
-            NumsPerRound = 1;
             NumOfUses = 1;
+            IsFire = false;
         }
+
+        public int Damage { get; set; }
 
         public string Name { get; }
 
-        public bool IsPositive { get; }
-
         public bool IsSkipRound { get; }
 
-        public int ActionDuration { get; }
+        public int ActionDuration { get; set; }
 
-        public int NumsPerRound { get; }
+        public int NumOfUses { get; set; }
 
-        public int NumOfUses { get; }
+        public bool IsFire { get; }
 
         public double Multiplier { get; }
+
+        public override string ToString()
+        {
+            return $"vengeance strike";
+        }
     }
 }

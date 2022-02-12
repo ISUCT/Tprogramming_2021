@@ -6,14 +6,20 @@
     {
         string Name { get; set; }
 
-        int HP { get; set; }
+        int Hp { get; set; }
 
         int Strength { get; set; }
 
-        void ApplyDamage(int damage);
+        bool IsFire { get; set; }
 
-        List<IAbility> Abilities();
+        bool IsDead { get; set; }
 
-        List<IAbility> Effects(IAbility effect);
+        void MakeAMove();
+
+        void SetTarget(IPlayer enemy);
+
+        void SetDamage();
+
+        void AddEffect(IAbility effect);
     }
 }

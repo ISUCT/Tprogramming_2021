@@ -4,26 +4,31 @@
 
     public class FireArrows : IAbility
     {
-        private bool _isFire;
-
         public FireArrows()
         {
+            Damage = 0;
             Name = "Fire arrows";
-            IsPositive = false;
             IsSkipRound = false;
             ActionDuration = 100000;
             NumOfUses = 1;
-            _isFire = true;
+            IsFire = true;
         }
+
+        public int Damage { get; set; }
 
         public string Name { get; }
 
-        public bool IsPositive { get; }
-
         public bool IsSkipRound { get; }
 
-        public int ActionDuration { get; }
+        public int ActionDuration { get; set; }
 
-        public int NumOfUses { get; }
+        public int NumOfUses { get; set; }
+
+        public bool IsFire { get; }
+
+        public override string ToString()
+        {
+            return $"fire arrows";
+        }
     }
 }

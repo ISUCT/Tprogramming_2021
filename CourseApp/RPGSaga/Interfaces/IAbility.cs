@@ -2,14 +2,16 @@
 {
     public interface IAbility
     {
-        string Name { get; }
+        int Damage { get; set; }
 
-        bool IsPositive { get; }
+        string Name { get; }
 
         bool IsSkipRound { get; }
 
-        int ActionDuration { get; }
+        int ActionDuration { get; set; }
 
-        int NumOfUses { get; }
+        int NumOfUses { get; set; }
+
+        bool IsFire { get; }
     }
 }
