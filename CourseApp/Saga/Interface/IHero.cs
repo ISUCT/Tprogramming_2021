@@ -6,11 +6,9 @@ namespace CourseApp
 
         double Health { get; set; }
 
-        double Damage { get; set; }
+        int Damage { get; set; }
 
         double Stamina { get; set; }
-
-        public bool Dead { get; set; }
 
         double StartHealth { get; set; }
     }
