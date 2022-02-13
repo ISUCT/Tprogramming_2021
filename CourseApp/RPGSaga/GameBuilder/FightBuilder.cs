@@ -15,14 +15,18 @@ namespace CourseApp.RPGSaga.GameBuilder
             _p2 = p2;
         }
 
+        public void SetTragets()
+        {
+            _p1.SetTarget(_p2);
+            _p2.SetTarget(_p1);
+        }
+
         public Player StartFight()
         {
-            Logger.WriteLog($"Fight: {_p1.ToString()} against {_p2.ToString()}");
+            Logger.WriteLog($"Fight: [{_p1.ToString()} {_p1.Hp} HP {_p1.Strength} Strength] against [{_p2.ToString()} {_p2.Hp} HP {_p2.Strength} Strength]");
             while (!_p1.IsDead && !_p2.IsDead)
             {
-                _p1.SetTarget(_p2);
                 _p1.MakeAMove();
-                _p2.SetTarget(_p1);
                 _p2.MakeAMove();
             }
 

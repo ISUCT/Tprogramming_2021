@@ -6,7 +6,7 @@
     {
         string Name { get; set; }
 
-        int Hp { get; set; }
+        int Hp { get; }
 
         int Strength { get; set; }
 

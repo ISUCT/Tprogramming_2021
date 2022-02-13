@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using CourseApp.RPGSaga.Abilities;
     using CourseApp.RPGSaga.GameBuilder;
     using CourseApp.RPGSaga.Interfaces;
@@ -20,26 +21,22 @@
             _effects = new List<IAbility>();
         }
 
-        public override string ToString()
-        {
-            return $"Archer: {Name} HP: {Hp} Strength: {Strength}";
-        }
-
         public override void MakeAMove()
         {
             _isSkip = false;
-            foreach (var effect in _effects)
+            List<IAbility> effects = _effects;
+            foreach (var effect in effects)
             {
                 if (effect.IsSkipRound)
                 {
                     _isSkip = true;
-                    Logger.WriteLog($"{GetType()} {Name} is frozen right now, so he miss this step");
+                    Logger.WriteLog($"{ToString()} is skipping step");
                 }
 
                 if (effect.IsFire)
                 {
                     IsFire = true;
-                    Logger.WriteLog($"{GetType()} {Name} is burning now");
+                    Logger.WriteLog($"{ToString()} is burning");
                 }
 
                 if (IsFire)
@@ -48,7 +45,6 @@
                 }
 
                 Hp -= effect.Damage;
-                Logger.WriteLog($"{GetType()} {Name} has {Hp} HP");
                 if (Hp <= 0)
                 {
                     IsDead = true;
@@ -56,17 +52,29 @@
                 }
 
                 effect.ActionDuration -= 1;
-                if (effect.ActionDuration == 0)
+                if (effect.ActionDuration <= 0)
                 {
                     _effects.Remove(effect);
-                    Logger.WriteLog($"Duration of {effect.Name} is ended");
+                }
+
+                if (effects.Count <= 1)
+                {
+                    break;
                 }
             }
+
+            Logger.WriteLog($"{ToString()} has {Hp} HP");
+            Logger.WriteLog("-------------------------------------------------------");
 
             if (!_isSkip)
             {
                 SetDamage();
             }
+        }
+
+        public override void AddEffect(IAbility effect)
+        {
+            _effects.Add(effect);
         }
 
         public override void SetTarget(IPlayer enemy)
@@ -78,18 +86,18 @@
         {
             var randomIndex = Random.Shared.Next(0, _abilities.Count);
             _enemy.AddEffect(_abilities[randomIndex]);
-            Logger.WriteLog($"{GetType()} {Name} used {_abilities[randomIndex].Name} against {GetType()} {_enemy.Name}");
+            Logger.WriteLog($"{ToString()} used {_abilities[randomIndex].Name} against {_enemy.ToString()}");
             _abilities[randomIndex].NumOfUses -= 1;
             if (_abilities[randomIndex].NumOfUses == 0)
             {
+                Logger.WriteLog($"{ToString()} used maximum times of {_abilities[randomIndex].Name}");
                 _abilities.RemoveAt(randomIndex);
-                Logger.WriteLog($"{GetType()} {Name} used maximum times of {_abilities[randomIndex].Name}");
             }
         }
 
-        public override void AddEffect(IAbility effect)
+        public override string ToString()
         {
-            _effects.Add(effect);
+            return $"Archer: {Name}";
         }
     }
 }

@@ -5,7 +5,6 @@
 
     public abstract class Player : IPlayer, ISetTarget
     {
-        private int _hp;
         private int _strength;
 
         public Player(string name, int hp, int strength)
@@ -18,25 +17,7 @@
 
         public string Name { get; set; }
 
-        public int Hp
-        {
-            get
-            {
-                return _hp;
-            }
-
-            set
-            {
-                if (value > 0)
-                {
-                    _hp = value;
-                }
-                else
-                {
-                    _hp = 10;
-                }
-            }
-        }
+        public int Hp { get; protected set; }
 
         public int Strength
         {
