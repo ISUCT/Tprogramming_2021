@@ -4,7 +4,8 @@ namespace CourseApp
 
     public class GodOfWar : Hero
     {
-        public GodOfWar(string name, double health, double damage, double stamina)
+        public GodOfWar(string name, double health, int damage, double stamina)
+        : base(name, health, damage, stamina)
         {
         }
     }

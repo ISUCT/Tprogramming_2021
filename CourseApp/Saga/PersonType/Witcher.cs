@@ -4,7 +4,8 @@ namespace CourseApp
 
     public class Witcher : Hero
     {
-        public Witcher(string name, double health, double damage, double stamina)
+        public Witcher(string name, double health, int damage, double stamina)
+        : base(name, health, damage, stamina)
         {
         }
     }

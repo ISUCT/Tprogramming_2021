@@ -4,7 +4,8 @@ namespace CourseApp
 
     public class Dragonborn : Hero
     {
-        public Dragonborn(string name, double health, double damage, double stamina)
+        public Dragonborn(string name, double health, int damage, double stamina)
+        : base(name, health, damage, stamina)
         {
         }
     }
