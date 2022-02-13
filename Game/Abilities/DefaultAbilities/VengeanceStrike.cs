@@ -1,18 +1,27 @@
 namespace RpgSaga.Abilities;
 using RpgSaga.Players;
-public class VengeanceStrike : Ability{
-    public VengeanceStrike(){
-        this.name = "VengeanceStrike";
+public class VengeanceStrike : Ability
+{
+    public VengeanceStrike()
+    {
+        this.Name = "VengeanceStrike";
     }
-    public override void useAbility(List<Player> tournamentPair, Logger log){
-        if (active){    
-            int damage = (int)((tournamentPair[0].strenght + rnd.Next(0,5))*1.3);
-            tournamentPair[1].hp -= damage;
-            log.attack(tournamentPair[0], tournamentPair[1], damage, this.name);
+
+    public override void UseAbility(List<Player> tournamentPair, Logger log)
+    {
+        if (Active)
+        {
+            int damage = (int)((tournamentPair[0].Strenght + Rnd.Next(0, 5)) * 1.3);
+            tournamentPair[1].HP -= damage;
+            log.Attack(tournamentPair[0], tournamentPair[1], damage, this.Name);
         }
-        else{
-            attack(tournamentPair, log);
+        else
+        {
+            Attack(tournamentPair, log);
         }
     }
-    public override void useBuff(Player player){}
+
+    public override void UseBuff(Player player)
+    {
+    }
 }

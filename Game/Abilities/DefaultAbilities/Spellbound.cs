@@ -1,22 +1,28 @@
 namespace RpgSaga.Abilities;
 using RpgSaga.Players;
-public class Spellbound : Ability{
-    public Spellbound(){
-        this.name = "Spellbound";
-        this.duration = 1;
-        this.stun = true;
-    }
-    public override void useAbility(List<Player> tournamentPair, Logger log){
-        if (active){
-            tournamentPair[1].buffs.Add(new Spellbound());
-            log.attack(tournamentPair[0], tournamentPair[1], this.name);
-        }
-        else{
-            attack(tournamentPair, log);
-        }
-    }
-    public override void useBuff(Player player)
+public class Spellbound : Ability
+{
+    public Spellbound()
     {
-        throw new NotImplementedException();
+        this.Name = "Spellbound";
+        this.Duration = 1;
+        this.Stun = true;
+    }
+
+    public override void UseAbility(List<Player> tournamentPair, Logger log)
+    {
+        if (Active)
+        {
+            tournamentPair[1].Buffs.Add(new Spellbound());
+            log.Attack(tournamentPair[0], tournamentPair[1], this.Name);
+        }
+        else
+        {
+            Attack(tournamentPair, log);
+        }
+    }
+
+    public override void UseBuff(Player player)
+    {
     }
 }

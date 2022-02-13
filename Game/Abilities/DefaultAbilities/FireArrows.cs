@@ -1,23 +1,30 @@
 namespace RpgSaga.Abilities;
 using RpgSaga.Players;
-public class FireArrows : Ability{
-    public FireArrows(){
-        this.name = "Fire Arrows";
-        this.duration = 9999;
-        this.damage = 2;
-    }
-    public override void useAbility(List<Player> tournamentPair, Logger log){
-        if (active){
-            this.active = false;
-            tournamentPair[1].buffs.Add(new FireArrows());
-            log.attack(tournamentPair[0], tournamentPair[1], this.name);
-        }
-        else{
-            attack(tournamentPair, log);
-        }
-    }
-    public override void useBuff(Player player)
+public class FireArrows : Ability
+{
+    public FireArrows()
     {
-        player.hp -= 2;
+        this.Name = "Fire Arrows";
+        this.Duration = 9999;
+        this.Damage = 2;
+    }
+
+    public override void UseAbility(List<Player> tournamentPair, Logger log)
+    {
+        if (Active)
+        {
+            this.Active = false;
+            tournamentPair[1].Buffs.Add(new FireArrows());
+            log.Attack(tournamentPair[0], tournamentPair[1], this.Name);
+        }
+        else
+        {
+            Attack(tournamentPair, log);
+        }
+    }
+
+    public override void UseBuff(Player player)
+    {
+        player.HP -= 2;
     }
 }

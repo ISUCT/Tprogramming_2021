@@ -1,7 +1,10 @@
 ﻿namespace RpgSaga;
-class Program{
-    public static void Main(string[] args){
+public class Program
+{
+    public void Main(string[] args)
+    {
+        Console.WriteLine("test");
         Game game = new Game();
-        game.startGame();
+        game.StartGame();
     }
 }
