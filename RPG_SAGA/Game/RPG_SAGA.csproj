@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-    <CodeAnalysisRuleSet>_stylecop/stylecop.ruleset</CodeAnalysisRuleSet> 
+    <CodeAnalysisRuleSet>../_stylecop/stylecop.ruleset</CodeAnalysisRuleSet> 
     <GenerateFullPaths>true</GenerateFullPaths>
   </PropertyGroup>
 
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="_stylecop/stylecop.json" />
+    <AdditionalFiles Include="../_stylecop/stylecop.json" />
   </ItemGroup>
 
 </Project>
