@@ -11,8 +11,14 @@ public class Logger{
         public void versus(Player player1, Player player2){
             Console.WriteLine($"({player1.GetType}) {player1.name} vs ({player2.GetType}) {player2.name}");
         }
-        public void attack(Player player1, Player player2){
-            Console.WriteLine($"({player1.GetType}) {player1.name} attack ({player2.GetType}) {player2.name}");
+        public void attack(Player player1, Player player2, int damage){
+            Console.WriteLine($"({player1.GetType}) {player1.name} attack ({player2.GetType}) {player2.name} and deal {damage} damage");
+        }
+        public void attack(Player player1, Player player2, string ability){
+            Console.WriteLine($"({player1.GetType}) {player1.name} use {ability} on ({player2.GetType}) {player2.name}");
+        }
+        public void attack(Player player1, Player player2, int damage, string ability){
+            Console.WriteLine($"({player1.GetType}) {player1.name} attack ({player2.GetType}) {player2.name} with {ability} and deal {damage} damage");
         }
         public void death(Player player){
             Console.WriteLine($"({player.GetType}) {player.name} is dead");

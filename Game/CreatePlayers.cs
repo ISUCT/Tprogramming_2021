@@ -19,7 +19,7 @@ public class CreatePlayers{
         {
             Console.WriteLine("Choose how many heroes you want to create. Enter an even number:");
             Int32.TryParse(Console.ReadLine(), out playersCount);
-        } while(playersCount % 2 != 0);
+        } while((playersCount > 1) && (playersCount % 2 != 0));
 
         Random rnd = new Random();
         int randomClassOfPlayer;

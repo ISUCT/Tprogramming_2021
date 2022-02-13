@@ -1,75 +1,21 @@
 namespace RpgSaga.Abilities;
+using RpgSaga.Players;
 
 abstract public class Ability {
-
-    public Ability (int damage_buff, int strenght_buff, string name, int duration, int damage, bool stun){
-
+    public Ability(){
+        this.name = "blank";
     }
-    private int damage_buff;
-    private int strength_buff;
-    private string name;
-    private int duration;
-    private int damage;
-    private bool stun;
-    //private void ability();
-}
-
-public class FireArrows : Ability{
-    public FireArrows() : base(){
-        this.Name = "Fire Arrows";
-        this.Duration = 9999;
-        this.Damage = 2;
-        this.Stun = false;
-        this.Damage_Buff = "Fire Arrows";
-        this.Strength_Buff = "Fire Arrows";
+    public string name { get; set; }
+    public int duration { get; set; }
+    public int damage { get; set; }
+    public bool stun { get; set; }
+    public bool active = true;
+    public Random rnd = new Random();
+    public abstract void useAbility(List<Player> tournamentPair, Logger log);
+    public void attack(List<Player> tournamentPair, Logger log){
+        int damage = tournamentPair[0].strenght + rnd.Next(0,5);
+        tournamentPair[1].hp -= damage;
+        log.attack(tournamentPair[0], tournamentPair[1], damage);  
     }
-    public string Damage_Buff { get;}
-    public string Strength_Buff { get;}
-    public string Name { get;}
-    public int Duration { get;}
-    public int Damage { get;}
-    public bool Stun { get;}
-    public void Ability(){
-        Console.WriteLine($"{this.Name}");
-    }
-}
-
-public class Spellbound : Ability{
-    public Spellbound() : base(){
-        this.Name = "Fire Arrows";
-        this.Duration = 9999;
-        this.Damage = 2;
-        this.Stun = false;
-        this.Damage_Buff = "Fire Arrows";
-        this.Strength_Buff = "Fire Arrows";
-    }
-    public string Damage_Buff { get;}
-    public string Strength_Buff { get;}
-    public string Name { get;}
-    public int Duration { get;}
-    public int Damage { get;}
-    public bool Stun { get;}
-    public void Ability(){
-        Console.WriteLine($"{this.Name}");
-    }
-}
-
-public class VengeanceStrike : Ability{
-    public VengeanceStrike() : base(){
-        this.Name = "Fire Arrows";
-        this.Duration = 9999;
-        this.Damage = 2;
-        this.Stun = false;
-        this.Damage_Buff = "Fire Arrows";
-        this.Strength_Buff = "Fire Arrows";
-    }
-    public string Damage_Buff { get;}
-    public string Strength_Buff { get;}
-    public string Name { get;}
-    public int Duration { get;}
-    public int Damage { get;}
-    public bool Stun { get;}
-    public void Ability(){
-        Console.WriteLine($"{this.Name}");
-    }
+    public abstract void useBuff(Player player);
 }
