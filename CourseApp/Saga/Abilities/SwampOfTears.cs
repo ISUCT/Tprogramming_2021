@@ -1,6 +1,6 @@
 namespace CourseApp
 {
-    using CourseApp.RPGSaga.Interfaces;
+    using CourseApp.Saga.Interface;
 
     public class SwampOfTears : IAbility
     {

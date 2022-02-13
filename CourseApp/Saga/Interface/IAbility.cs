@@ -1,4 +1,4 @@
-namespace CourseApp.RPGSaga.Interfaces
+namespace CourseApp.Saga.Interface
 {
     public interface IAbility
     {

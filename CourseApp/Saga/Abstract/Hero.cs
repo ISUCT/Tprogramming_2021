@@ -25,15 +25,15 @@ namespace CourseApp
 
         public bool Ulta { get; set; }
 
-        public string PrivetName { get; set; }
+        public string PrimaryName { get; set; }
 
-        public int PrivetDamage { get; set; }
+        public int PrimaryDamage { get; set; }
 
         public double Health { get; set; }
 
         public double Stamina { get; set; }
 
-        public virtual int Privet(Hero player, Hero opp)
+        public virtual int Primary(Hero player, Hero opp)
             {
                 return 0;
             }
@@ -43,7 +43,7 @@ namespace CourseApp
             if (fighter.Ulta)
             {
                 fighter.Ulta = false;
-                return HitInf = fighter.Privet(fighter, fighterOpp);
+                return HitInf = fighter.Primary(fighter, fighterOpp);
             }
             else
             {
@@ -56,7 +56,7 @@ namespace CourseApp
             if (fighter.Ulta)
             {
                 fighter.Ulta = false;
-                return HitInf = fighter.Privet(fighter, fighterOpp);
+                return HitInf = fighter.Primary(fighter, fighterOpp);
             }
             else
             {
