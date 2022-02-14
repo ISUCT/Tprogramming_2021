@@ -35,11 +35,11 @@ public abstract class Player
     {
         if (HP < 1)
         {
+            log.Death(player);
             return false;
         }
         else
         {
-            log.Death(player);
             return true;
         }
     }

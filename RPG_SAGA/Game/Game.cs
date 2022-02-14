@@ -18,7 +18,7 @@ public class Game
         {
             turn += 1;
             log.Turn(turn);
-            while (tournamentBracket.Count != players.Count / 2)
+            while (players.Count != 0)
             {
                 var player1 = players[rnd.Next(players.Count)];
                 players.Remove(player1);

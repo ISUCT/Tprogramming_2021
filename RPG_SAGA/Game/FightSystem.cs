@@ -27,7 +27,7 @@ public class FightSystem
                     }
                 }
 
-                if (tournamentPair[0].Buffs.Find(buff => buff.Stun) != null)
+                if (tournamentPair[0].Buffs.Find(buff => buff.Stun) == null)
                 {
                     log.Versus(tournamentPair[0], tournamentPair[1]);
                     var ability = tournamentPair[0].Abilities[0];

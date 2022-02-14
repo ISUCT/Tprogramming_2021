@@ -18,6 +18,7 @@ public class CreatePlayers
 
     public void AddPlayerToList(Player player)
     {
+        Console.WriteLine(player.Name);
         this.players.Add(player);
     }
 
@@ -53,7 +54,7 @@ public class CreatePlayers
                     break;
             }
 
-            playersCount -= 1;
+            playersCount--;
         }
 
         return players;
