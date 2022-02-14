@@ -27,11 +27,17 @@
 
         public bool IsFire { get; }
 
-        public double Multiplier { get; }
+        private double Multiplier { get; }
+
+        public void SetDefaultValue()
+        {
+            ActionDuration = 1;
+            NumOfUses = 1;
+        }
 
         public override string ToString()
         {
-            return $"vengeance strike";
+            return $"{Name}";
         }
     }
 }

@@ -22,13 +22,15 @@
 
         public int ActionDuration { get; set; }
 
+        public double Multiplier { get; set; }
+
         public int NumOfUses { get; set; }
 
         public bool IsFire { get; }
 
         public override string ToString()
         {
-            return $"base attack";
+            return $"{Name}";
         }
     }
 }

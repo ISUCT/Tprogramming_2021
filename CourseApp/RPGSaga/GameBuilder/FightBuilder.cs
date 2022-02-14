@@ -4,8 +4,8 @@ namespace CourseApp.RPGSaga.GameBuilder
 
     public class FightBuilder
     {
-        private Player _p1;
-        private Player _p2;
+        private readonly Player _p1;
+        private readonly Player _p2;
         private Player _winner;
         private Player _looser;
 
@@ -15,7 +15,7 @@ namespace CourseApp.RPGSaga.GameBuilder
             _p2 = p2;
         }
 
-        public void SetTragets()
+        public void SetTargets()
         {
             _p1.SetTarget(_p2);
             _p2.SetTarget(_p1);
@@ -23,7 +23,7 @@ namespace CourseApp.RPGSaga.GameBuilder
 
         public Player StartFight()
         {
-            Logger.WriteLog($"Fight: [{_p1.ToString()} {_p1.Hp} HP {_p1.Strength} Strength] against [{_p2.ToString()} {_p2.Hp} HP {_p2.Strength} Strength]");
+            Logger.WriteLog($"Fight: [{_p1} {_p1.Hp} HP {_p1.Strength} Strength] against [{_p2} {_p2.Hp} HP {_p2.Strength} Strength]");
             while (!_p1.IsDead && !_p2.IsDead)
             {
                 _p1.MakeAMove();
@@ -41,8 +41,8 @@ namespace CourseApp.RPGSaga.GameBuilder
                 _winner = _p1;
             }
 
-            Logger.WriteLog($"Winner of this match is {_winner.ToString()}");
-            Logger.WriteLog($"Such a good victory against {_looser.ToString()}");
+            Logger.WriteLog($"Winner of this match is {_winner}");
+            Logger.WriteLog($"Such a good victory against {_looser}");
             return _winner;
         }
     }

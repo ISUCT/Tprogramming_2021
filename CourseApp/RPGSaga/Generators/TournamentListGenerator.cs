@@ -2,6 +2,7 @@ namespace CourseApp.RPGSaga.Generators
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using CourseApp.RPGSaga.Heroes;
     using CourseApp.RPGSaga.Interfaces;
 
@@ -18,29 +19,23 @@ namespace CourseApp.RPGSaga.Generators
             _tournamentList = new List<Player>();
         }
 
+        [DefaultValue(2)]
         public int ListSize
         {
-            get
-            {
-                return _listSize;
-            }
+            get => _listSize;
 
             set
             {
-                if (value >= 2 && value % 2 == 0)
+                if (value >= 1)
                 {
-                    _listSize = value;
-                }
-                else
-                {
-                    Console.WriteLine("incorrect value");
+                    _listSize = (int)Math.Pow(2.0, value);
                 }
             }
         }
 
         public List<Player> GenerateTournamentList()
         {
-            for (int i = 0; i < _listSize; i++)
+            for (int i = 0; i < ListSize; i++)
             {
                 _tournamentList.Add(_playerFabric.FactoryMethod());
             }

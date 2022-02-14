@@ -21,34 +21,19 @@ namespace CourseApp.RPGSaga.Generators
             return CreatePlayer();
         }
 
-        private string SetName()
-        {
-            return _name[Random.Shared.Next(0, _name.Count)];
-        }
-
-        private int SetHP()
-        {
-            return Random.Shared.Next(70, 100);
-        }
-
-        private int SetStrength()
-        {
-            return Random.Shared.Next(10, 15);
-        }
-
         private Player CreatePlayer()
         {
             Player hero = null;
             switch (_heroesTypes[Random.Shared.Next(0, _heroesTypes.Count)])
             {
                 case "Archer":
-                    hero = new Archer(SetName(), SetHP(), SetStrength());
+                    hero = new Archer(_name[Random.Shared.Next(0, _name.Count)], 95, 14);
                     break;
                 case "Knight":
-                    hero = new Knight(SetName(), SetHP(), SetStrength());
+                    hero = new Knight(_name[Random.Shared.Next(0, _name.Count)], 90, 15);
                     break;
                 case "Wizard":
-                    hero = new Wizard(SetName(), SetHP(), SetStrength());
+                    hero = new Wizard(_name[Random.Shared.Next(0, _name.Count)], 100, 13);
                     break;
             }
 

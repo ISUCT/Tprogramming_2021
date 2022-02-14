@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using CourseApp.RPGSaga.Abilities;
     using CourseApp.RPGSaga.GameBuilder;
     using CourseApp.RPGSaga.Interfaces;
@@ -17,7 +16,7 @@
         public Knight(string name, int hp, int strength)
             : base(name, hp, strength)
         {
-            _abilities = new List<IAbility>() { new Attack(Strength), new VengeanceStrike(Strength) };
+            _abilities = new List<IAbility>();
             _effects = new List<IAbility>();
         }
 
@@ -86,7 +85,7 @@
         {
             var randomIndex = Random.Shared.Next(0, _abilities.Count);
             _enemy.AddEffect(_abilities[randomIndex]);
-            Logger.WriteLog($"{ToString()} used {_abilities[randomIndex].Name} against {_enemy.ToString()}");
+            Logger.WriteLog($"{ToString()} used {_abilities[randomIndex].Name} against {_enemy}");
             _abilities[randomIndex].NumOfUses -= 1;
             if (_abilities[randomIndex].NumOfUses == 0)
             {
@@ -95,9 +94,24 @@
             }
         }
 
+        public override void SetDefaultValues()
+        {
+            Hp = 90;
+            IsDead = false;
+            IsFire = false;
+            AddAbilities();
+        }
+
         public override string ToString()
         {
             return $"Knight: {Name}";
+        }
+
+        protected override void AddAbilities()
+        {
+            _abilities.Clear();
+            _abilities.Add(new Attack(Strength));
+            _abilities.Add(new VengeanceStrike(Strength));
         }
     }
 }

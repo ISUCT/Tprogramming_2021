@@ -1,45 +1,76 @@
 namespace CourseApp.RPGSaga.GameBuilder
 {
+    using System;
     using System.Collections.Generic;
     using CourseApp.RPGSaga.Generators;
     using CourseApp.RPGSaga.Heroes;
 
     public class GameBuilder
     {
-        private int _listSize = 4;
         private TournamentListGenerator _tournamentListGenerator;
         private List<Player> _tournamentList;
-        private List<Player> _winners;
         private FightBuilder _fight;
+        private int _size;
 
-        public GameBuilder()
+        public GameBuilder(int size)
         {
-            _tournamentListGenerator = new TournamentListGenerator(_listSize);
+            Size = size;
+            _tournamentListGenerator = new TournamentListGenerator(size);
             _tournamentList = new List<Player>();
-            _winners = new List<Player>();
+        }
+
+        public int Size
+        {
+            get => _size;
+
+            set
+            {
+                if (value >= 1)
+                {
+                    _size = value;
+                }
+            }
         }
 
         public void StartTournament()
         {
             _tournamentList = _tournamentListGenerator.GenerateTournamentList();
-            RunRound(_tournamentList);
+            for (int i = 0; i < Size - 1; i++)
+            {
+                RunRound(_tournamentList);
+            }
+
+            foreach (var player in _tournamentList)
+            {
+                Console.WriteLine(player);
+            }
         }
 
         public List<Player> RunRound(List<Player> players)
         {
-            _winners.Clear();
-            for (int i = 1; i < players.Count; i += 2)
+            var playerList = players;
+            _tournamentList.Clear();
+            foreach (var player in playerList)
             {
-                _fight = new FightBuilder(players[i - 1], players[i]);
-                _winners.Add(_fight.StartFight());
+                player.SetDefaultValues();
             }
 
-            return RunRound(_winners);
+            for (int i = 0; i < playerList.Count; i += 2)
+            {
+                _fight = new FightBuilder(playerList[i], playerList[i + 1]);
+                _fight.SetTargets();
+                _tournamentList.Add(_fight.StartFight());
+            }
+
+            return _tournamentList;
         }
 
         public void GetWinner()
         {
-            Logger.WriteLog($"Winner is {_winners[0].Name} {_winners[0].GetType()}");
+            Logger.WriteLog("=======================================");
+            Logger.WriteLog("Winner List");
+            Logger.WriteLog("=======================================");
+            Console.WriteLine(_tournamentList);
         }
     }
 }

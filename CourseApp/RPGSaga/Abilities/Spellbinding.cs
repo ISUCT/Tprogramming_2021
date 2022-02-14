@@ -11,7 +11,6 @@
             IsSkipRound = true;
             ActionDuration = 1;
             NumOfUses = 1;
-            Multiplier = 0;
             IsFire = false;
         }
 
@@ -27,11 +26,9 @@
 
         public bool IsFire { get; }
 
-        public double Multiplier { get; }
-
         public override string ToString()
         {
-            return $"spellbinding";
+            return $"{Name}";
         }
     }
 }

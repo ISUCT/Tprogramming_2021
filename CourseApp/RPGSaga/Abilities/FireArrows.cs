@@ -1,5 +1,6 @@
 ﻿namespace CourseApp.RPGSaga.Abilities
 {
+    using System.ComponentModel;
     using CourseApp.RPGSaga.Interfaces;
 
     public class FireArrows : IAbility
@@ -28,7 +29,7 @@
 
         public override string ToString()
         {
-            return $"fire arrows";
+            return $"{Name}";
         }
     }
 }

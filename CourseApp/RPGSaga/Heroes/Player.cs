@@ -13,6 +13,7 @@
             Hp = hp;
             Strength = strength;
             IsDead = false;
+            IsFire = false;
         }
 
         public string Name { get; set; }
@@ -21,22 +22,9 @@
 
         public int Strength
         {
-            get
-            {
-                return _strength;
-            }
+            get => _strength;
 
-            set
-            {
-                if (value > 0)
-                {
-                    _strength = value;
-                }
-                else
-                {
-                    _strength = 10;
-                }
-            }
+            set => _strength = value > 0 ? value : 50;
         }
 
         public bool IsFire { get; set; }
@@ -50,5 +38,9 @@
         public abstract void SetTarget(IPlayer enemy);
 
         public abstract void SetDamage();
+
+        public abstract void SetDefaultValues();
+
+        protected abstract void AddAbilities();
     }
 }
