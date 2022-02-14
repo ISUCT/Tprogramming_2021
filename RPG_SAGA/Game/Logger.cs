@@ -10,6 +10,7 @@ public class Logger
 
         public void Turn(int turn)
         {
+            Console.WriteLine();
             Console.WriteLine($"Turn {turn}:");
         }
 
@@ -36,6 +37,7 @@ public class Logger
         public void Death(Player player)
         {
             Console.WriteLine($"({player.GetType}) {player.Name} is dead");
+            Console.WriteLine();
         }
 
         public void End(Player player)

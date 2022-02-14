@@ -13,6 +13,7 @@ public class FightSystem
             player.ResetStats();
         }
 
+        log.Versus(tournamentPair[0], tournamentPair[1]);
         while (tournamentPair.Count != 1)
         {
             for (int j = 0; j != 2; j++)
@@ -29,7 +30,6 @@ public class FightSystem
 
                 if (tournamentPair[0].Buffs.Find(buff => buff.Stun) == null)
                 {
-                    log.Versus(tournamentPair[0], tournamentPair[1]);
                     var ability = tournamentPair[0].Abilities[0];
                     tournamentPair[0].Abilities.Remove(ability);
                     attack = rnd.Next(0, 2);
@@ -56,7 +56,6 @@ public class FightSystem
             }
         }
 
-        Console.WriteLine("Произошёл прикол");
         return tournamentPair[0];
     }
 }

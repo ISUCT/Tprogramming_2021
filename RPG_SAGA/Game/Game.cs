@@ -33,9 +33,9 @@ public class Game
             foreach (var tournamentPair in tournamentBracket)
             {
                 players.Add(fs.Fight(tournamentPair, log));
-                tournamentBracket.Remove(tournamentPair);
             }
 
+            tournamentBracket.Clear();
             Console.ReadKey();
         }
         while (players.Count != 1);

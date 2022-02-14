@@ -18,7 +18,6 @@ public class CreatePlayers
 
     public void AddPlayerToList(Player player)
     {
-        Console.WriteLine(player.Name);
         this.players.Add(player);
     }
 

@@ -46,17 +46,23 @@ public abstract class Player
 
     public void RefreshBuffs(Player player)
     {
+        List<Ability> expired = new List<Ability>();
         foreach (var buff in Buffs)
         {
             if (buff.Duration < 1)
             {
-                Buffs.Remove(buff);
+                expired.Add(buff);
             }
             else
             {
                 buff.UseBuff(player);
                 buff.Duration--;
             }
+        }
+
+        foreach (var buff in expired)
+        {
+            Buffs.Remove(buff);
         }
     }
 }
