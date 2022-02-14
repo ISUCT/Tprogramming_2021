@@ -23,17 +23,21 @@ namespace CourseApp.RPGSaga.Generators
 
         private Player CreatePlayer()
         {
+            // Сделать через emum
             Player hero = null;
+            var name = _name[Random.Shared.Next(0, _name.Count)];
+            var healthpoints = Random.Shared.Next(80, 100);
+            var strength = Random.Shared.Next(20, 30);
             switch (_heroesTypes[Random.Shared.Next(0, _heroesTypes.Count)])
             {
                 case "Archer":
-                    hero = new Archer(_name[Random.Shared.Next(0, _name.Count)], 95, 14);
+                    hero = new Archer(name, healthpoints, strength);
                     break;
                 case "Knight":
-                    hero = new Knight(_name[Random.Shared.Next(0, _name.Count)], 90, 15);
+                    hero = new Knight(name, healthpoints, strength);
                     break;
                 case "Wizard":
-                    hero = new Wizard(_name[Random.Shared.Next(0, _name.Count)], 100, 13);
+                    hero = new Wizard(name, healthpoints, strength);
                     break;
             }
 

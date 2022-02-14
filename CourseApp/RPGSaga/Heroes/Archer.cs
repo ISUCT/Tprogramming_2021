@@ -39,11 +39,6 @@
                     Logger.WriteLog($"{ToString()} is burning");
                 }
 
-                if (IsFire)
-                {
-                    Hp -= 2;
-                }
-
                 Hp -= effect.Damage;
                 if (Hp <= 0)
                 {
@@ -65,6 +60,11 @@
 
             Logger.WriteLog($"{ToString()} has {Hp} HP");
             Logger.WriteLog("-------------------------------------------------------");
+
+            if (IsFire)
+            {
+                Hp -= 2;
+            }
 
             if (!_isSkip)
             {

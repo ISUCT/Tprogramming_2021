@@ -57,7 +57,7 @@
                     _effects.Remove(effect);
                 }
 
-                if (_effects.Count <= 1)
+                if (effects.Count <= 1)
                 {
                     break;
                 }

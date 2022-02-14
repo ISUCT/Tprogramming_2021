@@ -16,7 +16,7 @@
         public Knight(string name, int hp, int strength)
             : base(name, hp, strength)
         {
-            _abilities = new List<IAbility>();
+            _abilities = new List<IAbility>() { new Attack(Strength), new VengeanceStrike(Strength) };
             _effects = new List<IAbility>();
         }
 
@@ -56,7 +56,7 @@
                     _effects.Remove(effect);
                 }
 
-                if (_effects.Count <= 1)
+                if (effects.Count <= 1)
                 {
                     break;
                 }
