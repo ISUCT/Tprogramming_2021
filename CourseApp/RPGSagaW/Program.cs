@@ -21,5 +21,8 @@ internal class Program
         var p4 = CreatePlayers.CreatePlayer();
         Console.WriteLine($"{p3.Name} {p3.Damage} {p3.Health} {p3.GetType()}");
         Console.WriteLine($"{p4.Name} {p4.Damage} {p4.Health} {p4.GetType()}");
+
+        Game game = new Game();
+        game.StartGame();
     }
 }

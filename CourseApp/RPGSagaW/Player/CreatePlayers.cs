@@ -2,6 +2,7 @@ namespace RPGSagaW.Players;
 
 public static class CreatePlayers
 {
+    public static List<Player> players = new List<Player>();
     private static List<string> names = new List<string>()
     {
         "Kirill",
@@ -32,6 +33,16 @@ public static class CreatePlayers
             default:
                 return new Archer(RandomName(), RandomDamage(), RandomHealth());
         }
+    }
+
+    public static void AddPlayerToList()
+    {
+        players.Add(CreatePlayer());
+    }
+
+    public static void AddPlayerToList(Player p)
+    {
+        players.Add(p);
     }
 
     private static string RandomName()
