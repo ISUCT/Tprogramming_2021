@@ -27,6 +27,7 @@ public class CreatePlayers
         while (playersCount != 0)
         {
             var name = names[Random.Shared.Next(names.Count)];
+            
             var hp = Random.Shared.Next(12,20);
             var strenght = Random.Shared.Next(2,6);
             object[] arguments = { name, hp, strenght };
