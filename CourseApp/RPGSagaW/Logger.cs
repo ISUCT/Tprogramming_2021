@@ -17,4 +17,9 @@ public static class Logger
     {
         Console.WriteLine($"{p.Name} Won the Game!");
     }
+
+    public static void UseAbility(Player p)
+    {
+        Console.WriteLine($"{p.Name} used {p.PlayerAbility.AbilityName}");
+    }
 }

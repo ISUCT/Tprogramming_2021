@@ -36,18 +36,30 @@ public static class Fight
         }
     }
 
-    public static List<int> SavePlayerHealth(Player p1, Player p2)
+    public static List<object> SavePlayerStats(Player p1, Player p2)
     {
-        List<int> health = new List<int>();
-        health.Add(p1.Health);
-        health.Add(p2.Health);
-        return health;
+        List<object> stats = new List<object>();
+        stats.Add(p1.Health);
+        stats.Add(p1.Damage);
+        stats.Add(p1.UsedAbility);
+        stats.Add(p1.Stun);
+        stats.Add(p2.Health);
+        stats.Add(p2.Damage);
+        stats.Add(p2.UsedAbility);
+        stats.Add(p2.Stun);
+        return stats;
     }
 
-    public static void RestorePlayerHealth(List<int> health, Player p1, Player p2)
+    public static void RestorePlayerStats(List<object> stats, Player p1, Player p2)
     {
-        p1.Health = health[0];
-        p2.Health = health[1];
+        p1.Health = (int)stats[0];
+        p1.Damage = (int)stats[1];
+        p1.UsedAbility = (bool)stats[2];
+        p1.Stun = (bool)stats[3];
+        p2.Health = (int)stats[4];
+        p2.Damage = (int)stats[5];
+        p2.UsedAbility = (bool)stats[6];
+        p2.Stun = (bool)stats[7];
     }
 
     public static void ReturnPlayerToList(Player p)
@@ -72,7 +84,7 @@ public static class Fight
 
     public static void StartFight(List<Player> players)
     {
-        List<int> healthBeforeFight = SavePlayerHealth(players[0], players[1]);
+        List<object> StatsBeforeFight = SavePlayerStats(players[0], players[1]);
 
         int turn = Turn.RandomFirstTurn();
 
@@ -80,17 +92,31 @@ public static class Fight
         {
             if (turn == 0)
             {
-                AtackPlayer(players[0], players[1]);
+                if (FightAbility.CheckAbilityUse(players[0], players[0].UsedAbility) && FightAbility.ChanceToUseAbility())
+                {
+                    FightAbility.UseAbility(players[0]);
+                }
+                else
+                {
+                    AtackPlayer(players[0], players[1]);
+                }
                 Turn.ChangeTurn(ref turn);
             }
             else
             {
-                AtackPlayer(players[1], players[0]);
+                if (FightAbility.CheckAbilityUse(players[1], players[1].UsedAbility) && FightAbility.ChanceToUseAbility())
+                {
+                    FightAbility.UseAbility(players[1]);
+                }
+                else
+                {
+                    AtackPlayer(players[1], players[0]);
+                }
                 Turn.ChangeTurn(ref turn);
             }
         }
 
-        RestorePlayerHealth(healthBeforeFight, players[0], players[1]);
+        RestorePlayerStats(StatsBeforeFight, players[0], players[1]);
 
         ReturnPlayerToList(CheckWinner(players[0], players[1]));
     }
