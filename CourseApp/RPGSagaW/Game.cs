@@ -14,8 +14,9 @@ public class Game
         while (CreatePlayers.Players.Count != 1)
         {
             Fight.StartFight(Fight.SelectPlayersForFight(CreatePlayers.Players));
-            Console.WriteLine(CreatePlayers.Players.Count);
         }
+
+        Logger.WinnerOfGame(CreatePlayers.Players[0]);
     }
 
     private int CreateNumberOfPlayers()

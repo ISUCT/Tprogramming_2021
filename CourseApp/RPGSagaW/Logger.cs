@@ -12,4 +12,9 @@ public static class Logger
     {
         Console.WriteLine($"{p.Name} Won!");
     }
+
+    public static void WinnerOfGame(Player p)
+    {
+        Console.WriteLine($"{p.Name} Won the Game!");
+    }
 }
