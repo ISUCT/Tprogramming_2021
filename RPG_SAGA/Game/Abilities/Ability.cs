@@ -19,13 +19,11 @@ public abstract class Ability
 
     public bool Active { get; set; }
 
-    public Random Rnd { get; } = new Random();
-
     public abstract void UseAbility(List<Player> tournamentPair, Logger log);
 
     public void Attack(List<Player> tournamentPair, Logger log)
     {
-        int damage = tournamentPair[0].Strenght + Rnd.Next(0, 5);
+        int damage = tournamentPair[0].Strenght + Random.Shared.Next(0, 5);
         tournamentPair[1].HP -= damage;
         log.Attack(tournamentPair[0], tournamentPair[1], damage);
     }

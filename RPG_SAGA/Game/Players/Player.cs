@@ -4,11 +4,10 @@ public abstract class Player
 {
     public Player(string name)
     {
-        Random rnd = new Random();
         this.Name = name;
-        this.MaxHP = rnd.Next(12, 21);
+        this.MaxHP = Random.Shared.Next(12, 21);
         this.HP = this.MaxHP;
-        this.Strenght = rnd.Next(2, 6);
+        this.Strenght = Random.Shared.Next(2, 6);
         this.Buffs = new List<Ability>();
         this.Abilities = new List<Ability>();
     }

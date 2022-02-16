@@ -3,7 +3,6 @@ using RpgSaga.Players;
 
 public class FightSystem
 {
-    private Random rnd = new Random();
     private int attack; // 0-default attack
 
     public Player Fight(List<Player> tournamentPair, Logger log)
@@ -32,7 +31,7 @@ public class FightSystem
                 {
                     var ability = tournamentPair[0].Abilities[0];
                     tournamentPair[0].Abilities.Remove(ability);
-                    attack = rnd.Next(0, 2);
+                    attack = Random.Shared.Next(0, 2);
                     if (attack == 0)
                     {
                         ability.Attack(tournamentPair, log);

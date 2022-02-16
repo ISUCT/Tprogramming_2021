@@ -8,15 +8,14 @@ public class Logger
             Console.WriteLine("Welcome to the RPG Saga!");
         }
 
-        public void Turn(int turn)
+        public void Turn(byte turn)
         {
-            Console.WriteLine();
-            Console.WriteLine($"Turn {turn}:");
+            Console.WriteLine($"\nTurn {turn}:");
         }
 
         public void Versus(Player player1, Player player2)
         {
-            Console.WriteLine($"({player1.GetType().Name}) {player1.Name} vs ({player2.GetType().Name}) {player2.Name}");
+            Console.WriteLine($"(\n{player1.GetType().Name}) {player1.Name} vs ({player2.GetType().Name}) {player2.Name}");
         }
 
         public void Attack(Player player1, Player player2, int damage)
@@ -37,11 +36,10 @@ public class Logger
         public void Death(Player player)
         {
             Console.WriteLine($"({player.GetType().Name}) {player.Name} is dead");
-            Console.WriteLine();
         }
 
         public void End(Player player)
         {
-            Console.WriteLine($"The game is over. Winner is ({player.GetType().Name}) {player.Name}");
+            Console.WriteLine($"\nThe game is over. Winner is ({player.GetType().Name}) {player.Name}");
         }
 }

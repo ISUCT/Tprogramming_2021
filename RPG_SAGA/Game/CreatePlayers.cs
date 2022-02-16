@@ -1,4 +1,6 @@
 namespace RpgSaga.Players;
+using System.Reflection;
+using RpgSaga.Players;
 
 public class CreatePlayers
 {
@@ -13,16 +15,6 @@ public class CreatePlayers
 
     public CreatePlayers()
     {
-        List<Player> players = new List<Player>();
-    }
-
-    public void AddPlayerToList(Player player)
-    {
-        this.players.Add(player);
-    }
-
-    public List<Player> CreatePlayersList()
-    {
         int playersCount;
         do
         {
@@ -31,31 +23,22 @@ public class CreatePlayers
         }
         while ((playersCount > 1) && (playersCount % 2 != 0));
 
-        Random rnd = new Random();
-        int randomClassOfPlayer;
-        string randomName;
-
         while (playersCount != 0)
         {
-            randomClassOfPlayer = rnd.Next(0, 3);
-            randomName = names[rnd.Next(names.Count)];
-
-            switch (randomClassOfPlayer)
+            var name = names[Random.Shared.Next(names.Count)];
+            object[] arguments = { name };
+            List<Type> classes = Assembly.GetExecutingAssembly().GetTypes().Where(type => type.IsSubclassOf(typeof(Player))).ToList();
+            Player? nullable_instance = (Player?)Activator.CreateInstance(classes[Random.Shared.Next(classes.Count())], arguments);
+            if (nullable_instance is not null)
             {
-                case 0:
-                    AddPlayerToList(new Archer(randomName));
-                    break;
-                case 1:
-                    AddPlayerToList(new Knight(randomName));
-                    break;
-                case 2:
-                    AddPlayerToList(new Wizard(randomName));
-                    break;
+                players.Add(nullable_instance);
+                playersCount--;
             }
-
-            playersCount--;
         }
+    }
 
+    public List<Player> ReturnPlayers()
+    {
         return players;
     }
 }
