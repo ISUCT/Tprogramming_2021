@@ -56,7 +56,7 @@ public static class Fight
     {
         int turn = Turn.RandomFirstTurn();
 
-        while(CheckPlayerDeath(players[0], players[1]))
+        while (CheckPlayerDeath(players[0], players[1]))
         {
             if (turn == 0)
             {
@@ -70,7 +70,7 @@ public static class Fight
             }
         }
 
-        foreach(Player p in CreatePlayers.players)
+        foreach (Player p in CreatePlayers.Players)
         {
             Console.WriteLine(p);
         }

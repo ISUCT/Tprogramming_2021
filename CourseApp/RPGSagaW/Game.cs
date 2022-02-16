@@ -8,7 +8,17 @@ public class Game
     {
     }
 
-    private int createNumberOfPlayers()
+    public void StartGame()
+    {
+        CreatePlayersList(CreateNumberOfPlayers());
+        while (CreatePlayers.Players.Count != 1)
+        {
+            Fight.StartFight(Fight.SelectPlayersForFight(CreatePlayers.Players));
+            Console.WriteLine(CreatePlayers.Players.Count);
+        }
+    }
+
+    private int CreateNumberOfPlayers()
     {
         int numberOfPlayers;
         while (int.TryParse(Console.ReadLine(), out numberOfPlayers) == false)
@@ -18,29 +28,18 @@ public class Game
 
         if (numberOfPlayers % 2 != 0)
         {
-            return createNumberOfPlayers();
+            return CreateNumberOfPlayers();
         }
 
         return numberOfPlayers;
     }
 
-    private void createPlayersList()
+    private void CreatePlayersList(int numberOfPlayers)
     {
-        int numberOfPlayers = createNumberOfPlayers();
         while (numberOfPlayers != 0)
         {
             CreatePlayers.AddPlayerToList();
             numberOfPlayers -= 1;
-        }
-    }
-
-    public void StartGame()
-    {
-        createPlayersList();
-        while(CreatePlayers.players.Count != 1)
-        {
-            Fight.StartFight(Fight.SelectPlayersForFight(CreatePlayers.players));
-            Console.WriteLine(CreatePlayers.players.Count);
         }
     }
 }

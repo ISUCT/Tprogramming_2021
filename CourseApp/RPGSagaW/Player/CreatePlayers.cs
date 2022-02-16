@@ -2,7 +2,8 @@ namespace RPGSagaW.Players;
 
 public static class CreatePlayers
 {
-    public static List<Player> players = new List<Player>();
+    private static List<Player> players = new List<Player>();
+
     private static List<string> names = new List<string>()
     {
         "Kirill",
@@ -16,6 +17,14 @@ public static class CreatePlayers
         Knight,
         Wizard,
         Count,
+    }
+
+    public static List<Player> Players
+    {
+        get
+        {
+            return players;
+        }
     }
 
     public static Player CreatePlayer()
