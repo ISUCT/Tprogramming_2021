@@ -6,11 +6,6 @@ internal class Program
     internal static void Main(string[] args)
     {
         Console.WriteLine("Hell");
-        
-        if(true && false)
-        {
-            Console.WriteLine("Hell");
-        }
 
         Game game = new Game();
         game.StartGame();

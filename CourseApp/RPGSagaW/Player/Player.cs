@@ -9,6 +9,7 @@ public abstract class Player
         this.Health = health;
         this.UsedAbility = false;
         this.Stun = false;
+        this.PlayerAbility = new FireArrows();
     }
 
     public int Damage { get; set; }
@@ -18,6 +19,7 @@ public abstract class Player
     public string? Name { get; set; }
 
     public bool UsedAbility { get; set; }
+
     public IAbility PlayerAbility { get; set; }
 
     public bool Stun { get; set; }

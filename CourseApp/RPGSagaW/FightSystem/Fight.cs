@@ -84,7 +84,7 @@ public static class Fight
 
     public static void StartFight(List<Player> players)
     {
-        List<object> StatsBeforeFight = SavePlayerStats(players[0], players[1]);
+        List<object> statsBeforeFight = SavePlayerStats(players[0], players[1]);
 
         int turn = Turn.RandomFirstTurn();
 
@@ -96,7 +96,7 @@ public static class Fight
                 {
                     FightAbility.UseAbility(players[0], players[1]);
                     players[0].UsedAbility = true;
-                    if(players[1].Stun)
+                    if (players[1].Stun)
                     {
                         players[1].Stun = false;
                         Turn.ChangeTurn(ref turn);
@@ -106,6 +106,7 @@ public static class Fight
                 {
                     AtackPlayer(players[0], players[1]);
                 }
+
                 Turn.ChangeTurn(ref turn);
             }
             else
@@ -114,7 +115,7 @@ public static class Fight
                 {
                     FightAbility.UseAbility(players[1], players[0]);
                     players[1].UsedAbility = true;
-                    if(players[0].Stun)
+                    if (players[0].Stun)
                     {
                         players[0].Stun = false;
                         Turn.ChangeTurn(ref turn);
@@ -124,11 +125,12 @@ public static class Fight
                 {
                     AtackPlayer(players[1], players[0]);
                 }
+
                 Turn.ChangeTurn(ref turn);
             }
         }
 
-        RestorePlayerStats(StatsBeforeFight, players[0], players[1]);
+        RestorePlayerStats(statsBeforeFight, players[0], players[1]);
 
         ReturnPlayerToList(CheckWinner(players[0], players[1]));
     }
