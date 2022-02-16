@@ -2,12 +2,11 @@ namespace RpgSaga.Players;
 using RpgSaga.Abilities;
 public abstract class Player
 {
-    public Player(string name)
+    public Player(string name, int hp, int strenght)
     {
         this.Name = name;
-        this.MaxHP = Random.Shared.Next(12, 21);
-        this.HP = this.MaxHP;
-        this.Strenght = Random.Shared.Next(2, 6);
+        this.MaxHP = this.HP = hp;
+        this.Strenght = strenght;
         this.Buffs = new List<Ability>();
         this.Abilities = new List<Ability>();
     }
