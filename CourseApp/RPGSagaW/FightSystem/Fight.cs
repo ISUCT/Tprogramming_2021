@@ -1,11 +1,13 @@
 namespace RPGSagaW.FightSystem;
+using RPGSagaW;
 using RPGSagaW.Players;
 
 public static class Fight
 {
-    public static void AtackPlayer(Player attacker, Player getAttack)
+    public static void AtackPlayer(Player atacker, Player getAtack)
     {
-        getAttack.Health -= attacker.Damage;
+        getAtack.Health -= atacker.Damage;
+        Logger.PlayerAttack(atacker, getAtack);
     }
 
     public static bool CheckPlayerDeath(Player p1, Player p2)
@@ -24,12 +26,28 @@ public static class Fight
     {
         if (p1.Health <= 0)
         {
+            Logger.PlayerWin(p2);
             return p2;
         }
         else
         {
+            Logger.PlayerWin(p1);
             return p1;
         }
+    }
+
+    public static List<int> SavePlayerHealth(Player p1, Player p2)
+    {
+        List<int> health = new List<int>();
+        health.Add(p1.Health);
+        health.Add(p2.Health);
+        return health;
+    }
+
+    public static void RestorePlayerHealth(List<int> health, Player p1, Player p2)
+    {
+        p1.Health = health[0];
+        p2.Health = health[1];
     }
 
     public static void ReturnPlayerToList(Player p)
@@ -54,6 +72,8 @@ public static class Fight
 
     public static void StartFight(List<Player> players)
     {
+        List<int> healthBeforeFight = SavePlayerHealth(players[0], players[1]);
+
         int turn = Turn.RandomFirstTurn();
 
         while (CheckPlayerDeath(players[0], players[1]))
@@ -70,10 +90,7 @@ public static class Fight
             }
         }
 
-        foreach (Player p in CreatePlayers.Players)
-        {
-            Console.WriteLine(p);
-        }
+        RestorePlayerHealth(healthBeforeFight, players[0], players[1]);
 
         ReturnPlayerToList(CheckWinner(players[0], players[1]));
     }
