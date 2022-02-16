@@ -8,7 +8,6 @@ public static class FightAbility
     {
         if(abilityUsed == false)
         {
-            p.UsedAbility = true;
             return true;
         }
         else

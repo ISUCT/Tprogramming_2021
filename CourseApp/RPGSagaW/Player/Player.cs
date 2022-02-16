@@ -2,17 +2,16 @@ namespace RPGSagaW.Players;
 
 public abstract class Player
 {
-    public Player(string name, int damage, int health, Ability ability)
+    public Player(string name, int damage, int health)
     {
         this.Name = name;
         this.Damage = damage;
         this.Health = health;
-        this.PlayerAbility = ability;
         this.UsedAbility = false;
         this.Stun = false;
     }
 
-    public double Damage { get; set; }
+    public int Damage { get; set; }
 
     public int Health { get; set; }
 

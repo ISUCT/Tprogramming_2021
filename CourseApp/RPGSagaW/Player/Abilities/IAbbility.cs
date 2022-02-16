@@ -19,7 +19,7 @@ public abstract class Ability : IAbility
 
     public string?AbilityName { get; set; }
 
-    public double IncreaseDamage { get; set; }
+    public int IncreaseDamage { get; set; }
 
     public bool Stun { get; set; }
 
@@ -39,10 +39,10 @@ public class FireArrows : Ability
 
 public class Revenge : Ability
 {
-    public Revenge(Player p)
+    public Revenge(int damage)
     {
         this.AbilityName = "Revenge";
-        this.IncreaseDamage = p.Damage * 0.3;
+        this.IncreaseDamage = (int)(damage * 0.3);
         this.Stun = false;
         this.Duration = 1;
     }

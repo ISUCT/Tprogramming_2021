@@ -95,6 +95,7 @@ public static class Fight
                 if (FightAbility.CheckAbilityUse(players[0], players[0].UsedAbility) && FightAbility.ChanceToUseAbility())
                 {
                     FightAbility.UseAbility(players[0]);
+                    players[0].UsedAbility = true;
                 }
                 else
                 {
@@ -107,6 +108,7 @@ public static class Fight
                 if (FightAbility.CheckAbilityUse(players[1], players[1].UsedAbility) && FightAbility.ChanceToUseAbility())
                 {
                     FightAbility.UseAbility(players[1]);
+                    players[1].UsedAbility = true;
                 }
                 else
                 {

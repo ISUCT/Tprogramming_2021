@@ -34,13 +34,13 @@ public static class CreatePlayers
         switch (randomClass)
         {
             case 0:
-                return new Archer(RandomName(), RandomDamage(), RandomHealth(), new FireArrows());
+                return new Archer(RandomName(), RandomDamage(), RandomHealth());
             case 1:
-                return new Knight(RandomName(), RandomDamage(), RandomHealth(), new FireArrows());
+                return new Knight(RandomName(), RandomDamage(), RandomHealth());
             case 2:
-                return new Wizard(RandomName(), RandomDamage(), RandomHealth(), new FireArrows());
+                return new Wizard(RandomName(), RandomDamage(), RandomHealth());
             default:
-                return new Archer(RandomName(), RandomDamage(), RandomHealth(), new FireArrows());
+                return new Archer(RandomName(), RandomDamage(), RandomHealth());
         }
     }
 
