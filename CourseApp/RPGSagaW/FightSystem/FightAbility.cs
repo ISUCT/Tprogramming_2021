@@ -29,11 +29,11 @@ public static class FightAbility
         }
     }
 
-    public static bool UseAbility(Player p)
+    public static bool UseAbility(Player p1, Player p2)
     {
-            p.Damage += p.PlayerAbility.IncreaseDamage;
-            p.Stun = p.PlayerAbility.Stun;
-            Logger.UseAbility(p);
+            p1.Damage += p1.PlayerAbility.IncreaseDamage;
+            p2.Stun = p1.PlayerAbility.Stun;
+            Logger.UseAbility(p1);
             return true;
     }
 }

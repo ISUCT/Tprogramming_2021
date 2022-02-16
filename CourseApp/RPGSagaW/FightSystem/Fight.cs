@@ -94,8 +94,13 @@ public static class Fight
             {
                 if (FightAbility.CheckAbilityUse(players[0], players[0].UsedAbility) && FightAbility.ChanceToUseAbility())
                 {
-                    FightAbility.UseAbility(players[0]);
+                    FightAbility.UseAbility(players[0], players[1]);
                     players[0].UsedAbility = true;
+                    if(players[1].Stun)
+                    {
+                        players[1].Stun = false;
+                        Turn.ChangeTurn(ref turn);
+                    }
                 }
                 else
                 {
@@ -107,8 +112,13 @@ public static class Fight
             {
                 if (FightAbility.CheckAbilityUse(players[1], players[1].UsedAbility) && FightAbility.ChanceToUseAbility())
                 {
-                    FightAbility.UseAbility(players[1]);
+                    FightAbility.UseAbility(players[1], players[0]);
                     players[1].UsedAbility = true;
+                    if(players[0].Stun)
+                    {
+                        players[0].Stun = false;
+                        Turn.ChangeTurn(ref turn);
+                    }
                 }
                 else
                 {

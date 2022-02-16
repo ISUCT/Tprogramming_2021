@@ -47,3 +47,14 @@ public class Revenge : Ability
         this.Duration = 1;
     }
 }
+
+public class Stun : Ability
+{
+    public Stun()
+    {
+        this.AbilityName = "Stun";
+        this.IncreaseDamage = 0;
+        this.Stun = true;
+        this.Duration = 1;
+    }
+}
