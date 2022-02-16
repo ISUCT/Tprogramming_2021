@@ -43,10 +43,12 @@ public static class Fight
         stats.Add(p1.Damage);
         stats.Add(p1.UsedAbility);
         stats.Add(p1.Stun);
+        stats.Add(p1.PlayerAbility.Duration);
         stats.Add(p2.Health);
         stats.Add(p2.Damage);
         stats.Add(p2.UsedAbility);
         stats.Add(p2.Stun);
+        stats.Add(p2.PlayerAbility.Duration);
         return stats;
     }
 
@@ -56,10 +58,12 @@ public static class Fight
         p1.Damage = (int)stats[1];
         p1.UsedAbility = (bool)stats[2];
         p1.Stun = (bool)stats[3];
-        p2.Health = (int)stats[4];
-        p2.Damage = (int)stats[5];
-        p2.UsedAbility = (bool)stats[6];
-        p2.Stun = (bool)stats[7];
+        p1.PlayerAbility.Duration = (int)stats[4];
+        p2.Health = (int)stats[5];
+        p2.Damage = (int)stats[6];
+        p2.UsedAbility = (bool)stats[7];
+        p2.Stun = (bool)stats[8];
+        p2.PlayerAbility.Duration = (int)stats[9];
     }
 
     public static void ReturnPlayerToList(Player p)
@@ -105,6 +109,10 @@ public static class Fight
                 else
                 {
                     AtackPlayer(players[0], players[1]);
+                    if (players[0].PlayerAbility.Duration == 0)
+                    {
+                        players[0].Damage = (int)statsBeforeFight[1];
+                    }
                 }
 
                 Turn.ChangeTurn(ref turn);
@@ -124,6 +132,10 @@ public static class Fight
                 else
                 {
                     AtackPlayer(players[1], players[0]);
+                    if (players[1].PlayerAbility.Duration == 0)
+                    {
+                        players[1].Damage = (int)statsBeforeFight[6];
+                    }
                 }
 
                 Turn.ChangeTurn(ref turn);

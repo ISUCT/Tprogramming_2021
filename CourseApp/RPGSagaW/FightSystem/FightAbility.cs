@@ -33,6 +33,7 @@ public static class FightAbility
     {
             p1.Damage += p1.PlayerAbility.IncreaseDamage;
             p2.Stun = p1.PlayerAbility.Stun;
+            p1.PlayerAbility.Duration -= 1;
             Logger.UseAbility(p1);
     }
 }
