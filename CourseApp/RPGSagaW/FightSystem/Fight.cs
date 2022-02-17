@@ -142,8 +142,8 @@ public static class Fight
             }
         }
 
-        RestorePlayerStats(statsBeforeFight, players[0], players[1]);
-
         ReturnPlayerToList(CheckWinner(players[0], players[1]));
+
+        RestorePlayerStats(statsBeforeFight, players[0], players[1]);
     }
 }
