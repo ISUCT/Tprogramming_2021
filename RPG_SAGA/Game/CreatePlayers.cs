@@ -8,7 +8,7 @@ public class CreatePlayers
 
     private List<string> names = new List<string>
     {
-    "Nikita",
+    "Nekit",
     "Kirill",
     "Denzel",
     "Rusik",
@@ -27,8 +27,8 @@ public class CreatePlayers
         while (playersCount != 0)
         {
             var name = names[Random.Shared.Next(names.Count)];
-            var hp = Random.Shared.Next(12,20);
-            var strenght = Random.Shared.Next(2,6);
+            var hp = Random.Shared.Next(12, 20);
+            var strenght = Random.Shared.Next(2, 6);
             object[] arguments = { name, hp, strenght };
             List<Type> classes = Assembly.GetExecutingAssembly().GetTypes().Where(type => type.IsSubclassOf(typeof(Player))).ToList();
             Player? nullable_instance = (Player?)Activator.CreateInstance(classes[Random.Shared.Next(classes.Count())], arguments);

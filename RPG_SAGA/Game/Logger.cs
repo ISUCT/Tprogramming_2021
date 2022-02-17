@@ -15,7 +15,7 @@ public class Logger
 
         public void Versus(Player player1, Player player2)
         {
-            Console.WriteLine($"(\n{player1.GetType().Name}) {player1.Name} vs ({player2.GetType().Name}) {player2.Name}");
+            Console.WriteLine($"\n({player1.GetType().Name}) {player1.Name} vs ({player2.GetType().Name}) {player2.Name}");
         }
 
         public void Attack(Player player1, Player player2, int damage)
