@@ -1,14 +1,12 @@
 namespace CourseApp
 {
     using System;
-    using CourseApp.Program;
 
     public class MainFile
     {
         public static void Main(string[] args)
         {
-            var userInterface = new UserInterface();
-            userInterface.StartPage();
+            GameManager.RunGame(16);
             Console.ReadLine();
         }
     }
