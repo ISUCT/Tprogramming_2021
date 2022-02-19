@@ -18,6 +18,7 @@ public class Match
 
     public static List<Player> CreatePlayers()
     {
+        players.Clear();
         int playersCount;
         do
         {

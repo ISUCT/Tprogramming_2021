@@ -1,5 +1,4 @@
 namespace RpgSaga;
-using RpgSaga.Players;
 public class Game
 {
     public Game()

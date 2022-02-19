@@ -10,7 +10,7 @@ public class Logger
 
         public static void ChoseGameMode()
         {
-            Console.WriteLine("Chose gamemode (Tournament or Deathmatch):");
+            Console.WriteLine("\nChose gamemode (Tournament or Deathmatch):");
         }
 
         public static void Turn(byte turn)
