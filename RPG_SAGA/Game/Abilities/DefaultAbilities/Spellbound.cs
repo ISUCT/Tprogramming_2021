@@ -9,7 +9,7 @@ public class Spellbound : Ability
         this.Stun = true;
     }
 
-    public override void UseAbility(List<Player> tournamentPair, Logger log)
+    public override void UseAbility(List<Player> tournamentPair)
     {
         if (Active)
         {
@@ -18,7 +18,7 @@ public class Spellbound : Ability
         }
         else
         {
-            Attack(tournamentPair, log);
+            Attack(tournamentPair);
         }
     }
 

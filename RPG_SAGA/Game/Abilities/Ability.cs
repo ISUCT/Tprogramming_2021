@@ -19,9 +19,9 @@ public abstract class Ability
 
     public bool Active { get; set; }
 
-    public abstract void UseAbility(List<Player> tournamentPair, Logger log);
+    public abstract void UseAbility(List<Player> tournamentPair);
 
-    public void Attack(List<Player> tournamentPair, Logger log)
+    public void Attack(List<Player> tournamentPair)
     {
         int damage = tournamentPair[0].Strenght + Random.Shared.Next(0, 5);
         tournamentPair[1].HP -= damage;

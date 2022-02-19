@@ -10,7 +10,7 @@ public class Logger
 
         public static void ChoseGameMode()
         {
-            Console.WriteLine("Chose gamemode: Tournament or ");
+            Console.WriteLine("Chose gamemode (Tournament or Deathmatch):");
         }
 
         public static void Turn(byte turn)
@@ -46,5 +46,10 @@ public class Logger
         public static void End(Player player)
         {
             Console.WriteLine($"\nThe game is over. Winner is ({player.GetType().Name}) {player.Name}");
+        }
+
+        public static void PlayAgain()
+        {
+            Console.WriteLine("Do you want to play again? Y for Yes.");
         }
 }

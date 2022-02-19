@@ -9,7 +9,7 @@ public class FireArrows : Ability
         this.Damage = 2;
     }
 
-    public override void UseAbility(List<Player> tournamentPair, Logger log)
+    public override void UseAbility(List<Player> tournamentPair)
     {
         if (Active)
         {
@@ -19,7 +19,7 @@ public class FireArrows : Ability
         }
         else
         {
-            Attack(tournamentPair, log);
+            Attack(tournamentPair);
         }
     }
 
