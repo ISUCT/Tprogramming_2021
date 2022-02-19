@@ -13,7 +13,7 @@ public class VengeanceStrike : Ability
         {
             int damage = (int)((tournamentPair[0].Strenght + Random.Shared.Next(0, 5)) * 1.3);
             tournamentPair[1].HP -= damage;
-            log.Attack(tournamentPair[0], tournamentPair[1], damage, this.Name);
+            Logger.Attack(tournamentPair[0], tournamentPair[1], damage, this.Name);
         }
         else
         {

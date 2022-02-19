@@ -15,7 +15,7 @@ public class FireArrows : Ability
         {
             this.Active = false;
             tournamentPair[1].Buffs.Add(new FireArrows());
-            log.Attack(tournamentPair[0], tournamentPair[1], this.Name);
+            Logger.Attack(tournamentPair[0], tournamentPair[1], this.Name);
         }
         else
         {
