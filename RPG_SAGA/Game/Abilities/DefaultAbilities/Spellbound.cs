@@ -14,7 +14,7 @@ public class Spellbound : Ability
         if (Active)
         {
             tournamentPair[1].Buffs.Add(new Spellbound());
-            log.Attack(tournamentPair[0], tournamentPair[1], this.Name);
+            Logger.Attack(tournamentPair[0], tournamentPair[1], this.Name);
         }
         else
         {

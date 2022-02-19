@@ -5,14 +5,9 @@ public class FightSystem
 {
     private int attack; // 0-default attack
 
-    public Player Fight(List<Player> tournamentPair, Logger log)
+    public static Player Fight(List<Player> tournamentPair) // В паре 0-Игрок всегда атакует, а 1-Игрок всегда "защищается"
     {
-        foreach (Player player in tournamentPair)
-        {
-            player.ResetStats();
-        }
-
-        log.Versus(tournamentPair[0], tournamentPair[1]);
+        Logger.Versus(tournamentPair[0], tournamentPair[1]);
         while (tournamentPair.Count != 1)
         {
             for (int j = 0; j != 2; j++)
@@ -20,7 +15,7 @@ public class FightSystem
                 foreach (Player player in tournamentPair)
                 {
                     player.RefreshBuffs(player);
-                    if (!player.CheckAlive(player, log))
+                    if (!player.CheckAlive(player))
                     {
                         tournamentPair.Remove(player);
                         return tournamentPair[0];
@@ -34,17 +29,17 @@ public class FightSystem
                     attack = Random.Shared.Next(0, 2);
                     if (attack == 0)
                     {
-                        ability.Attack(tournamentPair, log);
+                        ability.Attack(tournamentPair);
                     }
                     else
                     {
-                        ability.UseAbility(tournamentPair, log);
+                        ability.UseAbility(tournamentPair);
                     }
 
                     tournamentPair[0].Abilities.Add(ability);
                 }
 
-                if (!tournamentPair[1].CheckAlive(tournamentPair[1], log))
+                if (!tournamentPair[1].CheckAlive(tournamentPair[1]))
                 {
                     return tournamentPair[0];
                 }
@@ -54,7 +49,7 @@ public class FightSystem
                 tournamentPair[1] = temp;
             }
         }
-
+        tournamentPair[0].ResetStats();
         return tournamentPair[0];
     }
 }
