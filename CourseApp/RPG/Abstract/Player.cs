@@ -1,70 +1,81 @@
 namespace CourseApp
 {
-    using System;
-
     public abstract class Player : IPlayer
     {
-        private double health;
-        private int strength;
-        private Random random = new Random();
-        private double isFire = 0;
-        private double isFrozen = 0;
-
         public Player(string name, double health, int strength)
         {
-            health = random.Next(10, 50);
-            strength = random.Next(5, 20);
             Name = name;
             Health = health;
             Strength = strength;
-            IsFrozen = isFrozen;
-            IsFire = isFire;
+            EffectAbility = false;
+            Afk = 0;
+            PrimalHealth = health;
         }
+
+        public int Afk { get; set; }
+
+        public double Health { get; set; }
+
+        public double PrimalHealth { get; set; }
+
+        public int Strength { get; set; }
 
         public string Name { get; set; }
 
-        public double Health
-        {
-            get
-            {
-                return health;
-            }
+        public string NameUlt { get; set; }
 
-            set
+        public int DamageUlt { get; set; }
+
+        public int InfoDamage { get; set; }
+
+        public string ClassHero { get; set; }
+
+        public bool EffectAbility { get; set; }
+
+        public virtual int Ultimate(Player unit, Player rival)
+        {
+            return 0;
+        }
+
+        public int AttackingUnit(Player unit, Player unitRival)
+        {
+            if (unit.EffectAbility)
             {
-                if (value < 0)
-                {
-                    throw new InvalidOperationException("gg wp");
-                }
-                else
-                {
-                    health = value;
-                }
+                unit.EffectAbility = false;
+                return InfoDamage = unit.Ultimate(unit, unitRival);
+            }
+            else
+            {
+                return InfoDamage = Strength;
             }
         }
 
-        public int Strength
+        public int AttackingRival(Player unit, Player unitRival)
         {
-            get
+            if (unitRival.EffectAbility)
             {
-                return strength;
+                unitRival.EffectAbility = false;
+                return InfoDamage = unitRival.Ultimate(unit, unitRival);
             }
-
-            set
+            else
             {
-                if (value < 0)
-                {
-                    throw new InvalidOperationException("gg wp");
-                }
-                else
-                {
-                    strength = value;
-                }
+                return InfoDamage = Strength;
             }
         }
 
-        public virtual double IsFrozen { get; set; }
+        public void GetDamage(int damage)
+        {
+            Health -= damage;
+        }
 
-        public virtual double IsFire { get; set; }
+        public void ResetHealth()
+        {
+            Health = PrimalHealth;
+        }
+
+        public virtual string InfoOutput()
+        {
+            return $"Имя юнита: {Name} ; Здоровье юнита: {Health} ; Сила юнита: {Strength}";
+        }
     }
 }

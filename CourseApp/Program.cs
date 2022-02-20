@@ -6,7 +6,12 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("gg wp");
+            int tournamentParticipants = 0;
+            Game start = new Game();
+            tournamentParticipants = start.StartTheTournament(tournamentParticipants);
+            Scene scene = new Scene();
+            scene.Tournament(tournamentParticipants);
+            Console.ReadLine();
         }
     }
 }
