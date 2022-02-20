@@ -1,14 +1,17 @@
 ﻿namespace CourseApp
 {
    using System;
-   using CourseApp.Interfaces;
+   using System.Collections.Generic;
+  
   public class Program
   {
       public static void Main(string[] args) {
-           Console.WriteLine("\n--------------------Зоопарк-----------------");
-           var zooNatural = new ZooNatural("Конго\n");
-           var user = new UserInterface();
-            user.Draw(zooNatural);
+           int participants = 0;
+            Game start = new Game();
+            participants = start.StartTheTournament(participants);
+            Arena arena = new Arena();
+            arena.Tour(participants);
+            Console.ReadLine();
       }
   }
 }
