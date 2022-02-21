@@ -22,7 +22,7 @@ public class Match
         int playersCount;
         do
         {
-            Console.WriteLine("Choose how many heroes you want to create (power of two):"); // перенести в логгер
+            Logger.ChosePlayersCount();
             int.TryParse(Console.ReadLine(), out playersCount);
         }
         while (((playersCount & (playersCount - 1)) != 0) || (playersCount == 0));

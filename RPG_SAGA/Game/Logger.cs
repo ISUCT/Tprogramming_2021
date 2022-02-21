@@ -13,6 +13,11 @@ public class Logger
             Console.WriteLine("\nChose gamemode (Tournament or Deathmatch):");
         }
 
+        public static void ChosePlayersCount()
+        {
+            Console.WriteLine("\nChoose how many heroes you want to create (power of two):");
+        }
+
         public static void Turn(byte turn)
         {
             Console.WriteLine($"\nTurn {turn}:");
