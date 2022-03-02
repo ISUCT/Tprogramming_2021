@@ -5,11 +5,10 @@ public abstract class Ability
 {
     public Ability()
     {
-        this.Name = "blank";
         this.Active = true;
     }
 
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     public int Duration { get; set; }
 

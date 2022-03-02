@@ -165,4 +165,14 @@ public class Match
         playersPair[0].ResetStats();
         return playersPair[0];
     }
+
+    public void Attack()
+    {
+
+    }
+
+    public void Ability()
+    {
+
+    }
 }

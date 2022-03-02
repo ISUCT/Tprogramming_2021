@@ -33,12 +33,12 @@ public class Logger
             Console.WriteLine($"({player1.GetType().Name}) {player1.Name} attack ({player2.GetType().Name}) {player2.Name} and deal {damage} damage");
         }
 
-        public static void Attack(Player player1, Player player2, string ability)
+        public static void Attack(Player player1, Player player2, string? ability)
         {
             Console.WriteLine($"({player1.GetType().Name}) {player1.Name} use {ability} on ({player2.GetType().Name}) {player2.Name}");
         }
 
-        public static void Attack(Player player1, Player player2, int damage, string ability)
+        public static void Attack(Player player1, Player player2, int damage, string? ability)
         {
             Console.WriteLine($"({player1.GetType().Name}) {player1.Name} attack ({player2.GetType().Name}) {player2.Name} with {ability} and deal {damage} damage");
         }
