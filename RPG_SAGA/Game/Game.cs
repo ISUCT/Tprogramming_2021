@@ -26,7 +26,6 @@ public class Game
 
             if (gamemode != null)
             {
-                Console.WriteLine(gamemode);
                 Logger.End(Match.HostMatch(gamemode));
             }
 

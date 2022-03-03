@@ -154,8 +154,6 @@ public class Match
 
                 if (playersPair[0].Buffs.Find(buff => buff.Stun) == null)
                 {
-                    var ability = playersPair[0].Abilities[0];
-                    playersPair[0].Abilities.Remove(ability);
                     attack = Random.Shared.Next(0, 2);
                     if (attack == 0)
                     {
@@ -165,8 +163,6 @@ public class Match
                     {
                         UseAbility(playersPair);
                     }
-
-                    playersPair[0].Abilities.Add(ability);
                 }
 
                 if (!playersPair[1].CheckAlive(playersPair[1]))
