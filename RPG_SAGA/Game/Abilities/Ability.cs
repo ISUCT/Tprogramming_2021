@@ -1,15 +1,15 @@
 namespace RpgSaga.Abilities;
 using RpgSaga.Players;
 
-public struct ability
+public class ability
 {
     public ability(bool active, Type abilitytype)
     {
         this.Active = active;
         this.AbilityType = abilitytype;
     }
-    bool Active;
-    Type AbilityType;
+    public bool Active { get; set; }
+    public Type AbilityType { get; private set; }
 }
 
 public abstract class Ability

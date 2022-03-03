@@ -7,7 +7,7 @@ public class Match
 {
     private static List<Type> classes = Assembly.GetExecutingAssembly().GetTypes().Where(type => type.IsSubclassOf(typeof(Player))).ToList();
 
-    private static List<Type> abilities = Assembly.GetExecutingAssembly().GetTypes().Where(type => type.IsSubclassOf(typeof(Ability))).ToList();
+    private static List<Ability> abilities = CreateAbilities();
 
     private static List<Player> players = new List<Player>();
 
@@ -18,6 +18,21 @@ public class Match
     "Denzel",
     "Rusik",
     };
+
+    public static List<Ability> CreateAbilities()
+    {
+        List<Ability> abilities = new List<Ability>();
+        List<Type> abilityTypes = Assembly.GetExecutingAssembly().GetTypes().Where(type => type.IsSubclassOf(typeof(Ability))).ToList();
+        foreach (Type ability in abilityTypes)
+        {
+            var nullable_ability = (Ability?)Activator.CreateInstance(ability);
+            if (nullable_ability != null)
+            {
+                abilities.Add(nullable_ability);
+            }
+        }
+        return abilities;
+    }
 
     public static List<Player> CreatePlayers()
     {
@@ -175,10 +190,11 @@ public class Match
         playersPair[1].HP -= damage;
         Logger.Attack(playersPair[0], playersPair[1], damage);
     }
-    
+
 
     public static void UseAbility(List<Player> playersPair)
     {
-
+        Ability ability = abilities.Single(ability1 => ability1.GetType() == playersPair[0].Abilities[0].AbilityType);
+        ability.UseAbility(playersPair);
     }
 }

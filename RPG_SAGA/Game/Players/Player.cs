@@ -12,7 +12,7 @@ public abstract class Player
         this.Abilities = new List<ability>();
     }
 
-    public List<ability> Abilities { get; private set; }
+    public List<ability> Abilities { get; set; }
 
     public List<Ability> Buffs { get; private set; }
 

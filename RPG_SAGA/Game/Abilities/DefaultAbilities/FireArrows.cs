@@ -11,6 +11,7 @@ public class FireArrows : Ability
 
     public override void UseAbility(List<Player> tournamentPair)
     {
+            tournamentPair[0].Abilities[0].Active = false;
             tournamentPair[1].Buffs.Add(new FireArrows());
             Logger.Attack(tournamentPair[0], tournamentPair[1], this.Name);
     }
