@@ -9,10 +9,10 @@ public abstract class Player
         this.MaxHP = this.HP = hp;
         this.Strenght = strenght;
         this.Buffs = new List<Ability>();
-        this.Abilities = new List<ability>();
+        this.Abilities = new List<MyAbility>();
     }
 
-    public List<ability> Abilities { get; set; }
+    public List<MyAbility> Abilities { get; set; }
 
     public List<Ability> Buffs { get; private set; }
 
@@ -20,9 +20,9 @@ public abstract class Player
 
     public int HP { get; set; }
 
-    private int MaxHP { get; set; }
-
     public int Strenght { get; private set; }
+
+    private int MaxHP { get; set; }
 
     public void ResetStats()
     {

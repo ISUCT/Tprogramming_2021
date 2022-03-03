@@ -1,7 +1,7 @@
 namespace RpgSaga;
 public class Game
 {
-    public Game()
+    public static void StartGame()
     {
         List<string> gamemodes = new List<string>
         {
@@ -26,6 +26,7 @@ public class Game
 
             if (gamemode != null)
             {
+                Console.WriteLine(gamemode);
                 Logger.End(Match.HostMatch(gamemode));
             }
 

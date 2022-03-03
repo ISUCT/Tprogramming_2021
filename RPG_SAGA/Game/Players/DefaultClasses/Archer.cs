@@ -5,6 +5,6 @@ public class Archer : Player
     public Archer(string name, int hp, int strenght)
     : base(name, hp, strenght)
     {
-        this.Abilities.Add(new ability(true, typeof(FireArrows)));
+        this.Abilities.Add(new MyAbility(true, typeof(FireArrows)));
     }
 }

@@ -1,14 +1,16 @@
 namespace RpgSaga.Abilities;
 using RpgSaga.Players;
 
-public class ability
+public class MyAbility
 {
-    public ability(bool active, Type abilitytype)
+    public MyAbility(bool active, Type abilitytype)
     {
         this.Active = active;
         this.AbilityType = abilitytype;
     }
+
     public bool Active { get; set; }
+
     public Type AbilityType { get; private set; }
 }
 

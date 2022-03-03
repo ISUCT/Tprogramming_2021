@@ -31,6 +31,7 @@ public class Match
                 abilities.Add(nullable_ability);
             }
         }
+
         return abilities;
     }
 
@@ -190,7 +191,6 @@ public class Match
         playersPair[1].HP -= damage;
         Logger.Attack(playersPair[0], playersPair[1], damage);
     }
-
 
     public static void UseAbility(List<Player> playersPair)
     {
