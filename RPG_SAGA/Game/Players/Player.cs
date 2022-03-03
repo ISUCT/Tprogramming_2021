@@ -1,5 +1,6 @@
 namespace RpgSaga.Players;
 using RpgSaga.Abilities;
+
 public abstract class Player
 {
     public Player(string name, int hp, int strenght)
@@ -8,16 +9,16 @@ public abstract class Player
         this.MaxHP = this.HP = hp;
         this.Strenght = strenght;
         this.Buffs = new List<Ability>();
-        this.Abilities = new List<Type>();
+        this.Abilities = new List<ability>();
     }
 
-    public List<Type> Abilities { get; private set; }
+    public List<ability> Abilities { get; private set; }
 
     public List<Ability> Buffs { get; private set; }
 
     public string Name { get; private set; }
 
-    public int HP { get; private set; }
+    public int HP { get; set; }
 
     private int MaxHP { get; set; }
 

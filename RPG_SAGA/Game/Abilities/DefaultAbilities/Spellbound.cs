@@ -11,15 +11,8 @@ public class Spellbound : Ability
 
     public override void UseAbility(List<Player> tournamentPair)
     {
-        if (Active)
-        {
-            tournamentPair[1].Buffs.Add(new Spellbound());
-            Logger.Attack(tournamentPair[0], tournamentPair[1], this.Name);
-        }
-        else
-        {
-            Attack(tournamentPair);
-        }
+        tournamentPair[1].Buffs.Add(new Spellbound());
+        Logger.Attack(tournamentPair[0], tournamentPair[1], this.Name);
     }
 
     public override void UseBuff(Player player)

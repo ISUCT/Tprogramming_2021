@@ -1,10 +1,13 @@
 namespace RpgSaga;
 using RpgSaga.Players;
+using RpgSaga.Abilities;
 using System.Reflection;
 
 public class Match
 {
     private static List<Type> classes = Assembly.GetExecutingAssembly().GetTypes().Where(type => type.IsSubclassOf(typeof(Player))).ToList();
+
+    private static List<Type> abilities = Assembly.GetExecutingAssembly().GetTypes().Where(type => type.IsSubclassOf(typeof(Ability))).ToList();
 
     private static List<Player> players = new List<Player>();
 
@@ -140,11 +143,11 @@ public class Match
                     attack = Random.Shared.Next(0, 2);
                     if (attack == 0)
                     {
-                        ability.Attack(playersPair);
+                        Attack(playersPair);
                     }
                     else
                     {
-                        ability.UseAbility(playersPair);
+                        UseAbility(playersPair);
                     }
 
                     playersPair[0].Abilities.Add(ability);
@@ -166,12 +169,15 @@ public class Match
         return playersPair[0];
     }
 
-    public void Attack()
+    public static void Attack(List<Player> playersPair)
     {
-
+        int damage = playersPair[0].Strenght + Random.Shared.Next(0, 5);
+        playersPair[1].HP -= damage;
+        Logger.Attack(playersPair[0], playersPair[1], damage);
     }
+    
 
-    public void Ability()
+    public static void UseAbility(List<Player> playersPair)
     {
 
     }

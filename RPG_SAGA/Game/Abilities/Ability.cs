@@ -1,11 +1,21 @@
 namespace RpgSaga.Abilities;
 using RpgSaga.Players;
 
+public struct ability
+{
+    public ability(bool active, Type abilitytype)
+    {
+        this.Active = active;
+        this.AbilityType = abilitytype;
+    }
+    bool Active;
+    Type AbilityType;
+}
+
 public abstract class Ability
 {
     public Ability()
     {
-        this.Active = true;
     }
 
     public string? Name { get; set; }
@@ -16,16 +26,7 @@ public abstract class Ability
 
     public bool Stun { get; set; }
 
-    public bool Active { get; set; }
-
     public abstract void UseAbility(List<Player> tournamentPair);
-
-    public void Attack(List<Player> tournamentPair)
-    {
-        int damage = tournamentPair[0].Strenght + Random.Shared.Next(0, 5);
-        tournamentPair[1].HP -= damage;
-        Logger.Attack(tournamentPair[0], tournamentPair[1], damage);
-    }
 
     public abstract void UseBuff(Player player);
 }
