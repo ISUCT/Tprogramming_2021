@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/CourseApp.csproj",
+                "${workspaceFolder}/RPG_SAGA/RPG_SAGA.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/CourseApp.csproj",
+                "${workspaceFolder}/RPG_SAGA/RPG_SAGA.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,9 +32,8 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/CourseApp.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "--project",
+                "${workspaceFolder}/RPG_SAGA/RPG_SAGA.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

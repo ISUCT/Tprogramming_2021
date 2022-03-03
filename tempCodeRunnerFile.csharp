@@ -1,0 +1,13 @@
+Random rnd = new Random();
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
+Console.WriteLine(rnd.Next(0,10));
