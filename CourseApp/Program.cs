@@ -16,6 +16,7 @@
             System.Console.InputEncoding = enc1251;
 
             Console.WriteLine("Main Starts");
+
             // создаем задачу
             Task task1 = new Task(() =>
             {
