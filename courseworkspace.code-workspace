@@ -7,9 +7,19 @@
 			"path": "CourseApp.Tests"
 		},
 		{
+			"path": "WebApplication"
+		},
+		{
             "name": "Configs (Root)",
             "path": "."
         },
 	],
-	"settings": {}
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"ms-azuretools.vscode-docker",
+			"ms-dotnettools.csharp",
+			"ms-mssql.mssql"
+		]
+	}
 }
