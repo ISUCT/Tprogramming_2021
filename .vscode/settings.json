@@ -5,6 +5,7 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "CourseApp": true,
-        "CourseApp.test":true,
+        "CourseApp.Tests":true,
+        "WebApplication":true
     }
 }
