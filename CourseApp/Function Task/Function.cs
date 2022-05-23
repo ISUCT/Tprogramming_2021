@@ -1,4 +1,4 @@
-﻿namespace CourseApp.FunctionTask
+﻿namespace FunctionTask
 {
     using static System.Math;
 

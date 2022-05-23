@@ -4,8 +4,16 @@
     {
         string Name { get; set; }
 
-        int Damage { get; set; }
+        double Damage { get; set; }
 
-        int Duration { get; set; }
+        int BasicDuration { get; set; }
+
+        int CurrentDuration { get; set; }
+
+        bool IsUsed { get; set; }
+
+        bool IsAvailable { get; set; }
+
+        void Cast(Player source, Player target);
     }
 }

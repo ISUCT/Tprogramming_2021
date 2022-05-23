@@ -19,8 +19,4 @@
     <AdditionalFiles Include="../_stylecop/stylecop.json" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="RPG-Saga\Logger\" />
-  </ItemGroup>
-
 </Project>

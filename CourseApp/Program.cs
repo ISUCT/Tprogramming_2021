@@ -1,33 +1,21 @@
-﻿namespace CourseApp.FunctionTask
+﻿namespace CourseApp.RPG_Saga
 {
     using System;
+    using CourseApp.RPG_Saga.GameLogic;
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            double xn = 0.08;
-            double xk = 1.08;
-            double xd = 0.2;
-            double[] values = { 0.1, 0.3, 0.4, 0.45, 0.65 };
-            Tasks tasksAB = new Tasks();
+            Console.WriteLine("Введите количество игроков (доступны значения 2, 4, 8, 16, 32, 64..):");
 
-            double[] taskA = tasksAB.CalculateTask(xn, xk, xd);
-            double[] taskB = tasksAB.CalculateTask(values);
+            int numOfPlayers = int.Parse(Console.ReadLine());
 
-            foreach (double x in taskA)
-            {
-                Console.WriteLine(x);
-            }
+            Console.WriteLine($"+--------------------------------------------------------------+\n" +
+                $"Игра началась с количеством игроков {numOfPlayers}!\n" +
+                $"+--------------------------------------------------------------+\n");
 
-            Console.WriteLine("-----------------------------");
-            Console.Title = "DD";
-            Console.WriteLine(Console.Title);
-
-            foreach (double x in taskB)
-            {
-                Console.WriteLine(x);
-            }
+            Game.StartGame(numOfPlayers);
         }
     }
 }
