@@ -1,6 +1,7 @@
 ﻿namespace CourseApp.RPG_Saga
 {
     using CourseApp.RPG_Saga.Interfaces;
+    using System.Collections.Generic;
     using CourseApp.RPG_Saga.Logger_;
 
     public abstract class Player
@@ -17,7 +18,9 @@
 
         public bool IsStunned { get; set; }
 
-        public IAbility Ability { get; set; }
+        public List<IAbility> Ability { get; set; }
+
+        public List<IAbility> Debuffs { get; set; }
 
         public void ApplyDamage(Player player)
         {

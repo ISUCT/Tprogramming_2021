@@ -43,6 +43,7 @@
                 target.RecivedDamage += Damage;
                 CurrentDuration -= 1;
                 Logger.AbilityLog(source.Name, source.RoleName, target.Name, target.RoleName, Name, Damage);
+                source.ApplyDamage(target);
             }
         }
     }

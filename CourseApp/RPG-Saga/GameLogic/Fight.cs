@@ -11,14 +11,14 @@
             while (true)
             {
                 // 1ый игрок ходит
-                if (player_1.Ability.IsUsed)
+                if (player_1.Ability.IsUsed == true)
                 {
                     player_1.Ability.Cast(player_1, player_2);
                 }
 
-                if (!player_1.IsStunned)
+                if (player_1.IsStunned != true)
                 {
-                    if (!player_1.Ability.IsUsed && rnd.Next(100) > 70)
+                    if (player_1.Ability.IsUsed != true && rnd.Next(100) > 70)
                     {
                         player_1.Ability.Cast(player_1, player_2);
                     }
@@ -37,14 +37,14 @@
                 }
 
                 // 2ой игрок ходит
-                if (player_2.Ability.IsUsed)
+                if (player_2.Ability.IsUsed == true)
                 {
                     player_2.Ability.Cast(player_2, player_1);
                 }
 
-                if (!player_2.IsStunned)
+                if (player_2.IsStunned != true)
                 {
-                    if (!player_2.Ability.IsUsed && rnd.Next(100) > 70)
+                    if (player_2.Ability.IsUsed != true && rnd.Next(100) > 70)
                     {
                         player_2.Ability.Cast(player_2, player_1);
                     }
