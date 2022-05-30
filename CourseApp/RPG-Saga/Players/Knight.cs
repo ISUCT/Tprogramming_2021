@@ -1,10 +1,11 @@
 ﻿namespace CourseApp.RPG_Saga
 {
+    using System.Collections.Generic;
     using CourseApp.RPG_Saga.Interfaces;
 
     public class Knight : Player
     {
-        public Knight(string name, double health, double strenght, IAbility ability)
+        public Knight(string name, double health, double strenght, List<IAbility> abilities)
         {
             Name = name;
             RoleName = "Knight";
@@ -12,7 +13,8 @@
             RecivedDamage = 0;
             Strenght = strenght;
             IsStunned = false;
-            Ability = ability;
+            Abilities = abilities;
+            Effects = new List<IAbility>();
         }
     }
 }

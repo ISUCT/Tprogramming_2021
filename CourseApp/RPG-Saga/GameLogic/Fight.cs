@@ -11,22 +11,9 @@
             while (true)
             {
                 // 1ый игрок ходит
-                if (player_1.Ability.IsUsed == true)
-                {
-                    player_1.Ability.Cast(player_1, player_2);
-                }
+                player_1.MakeMove(player_2);
 
-                if (player_1.IsStunned != true)
-                {
-                    if (player_1.Ability.IsUsed != true && rnd.Next(100) > 70)
-                    {
-                        player_1.Ability.Cast(player_1, player_2);
-                    }
-                    else
-                    {
-                        player_1.ApplyDamage(player_2);
-                    }
-                }
+                BattleManager.CheckPlayer(player_2);
 
                 if (player_2.Health <= 0)
                 {
@@ -37,22 +24,9 @@
                 }
 
                 // 2ой игрок ходит
-                if (player_2.Ability.IsUsed == true)
-                {
-                    player_2.Ability.Cast(player_2, player_1);
-                }
+                player_2.MakeMove(player_1);
 
-                if (player_2.IsStunned != true)
-                {
-                    if (player_2.Ability.IsUsed != true && rnd.Next(100) > 70)
-                    {
-                        player_2.Ability.Cast(player_2, player_1);
-                    }
-                    else
-                    {
-                        player_2.ApplyDamage(player_1);
-                    }
-                }
+                BattleManager.CheckPlayer(player_1);
 
                 if (player_1.Health <= 0)
                 {

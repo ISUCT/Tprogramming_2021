@@ -21,22 +21,25 @@
             Console.WriteLine($"{sourceName}({sourceRole}) наносит {targetName}({targetRole}) {damage} урона!\n");
         }
 
-        public static void AbilityLog(string sourceName, string sourceRole, string targetName, string targetRole, string abilityName, double damage)
+        public static void AbilityLog(string sourceName, string sourceRole, string targetName, string targetRole, string abilityName)
         {
-            if (damage > 0)
-            {
-                Console.WriteLine($"{sourceName}({sourceRole}) применяет способность {abilityName} и наносит {targetName}({targetRole}) {damage} урона!\n");
-            }
-            else
-            {
                 Console.WriteLine($"{sourceName}({sourceRole}) применяет способность {abilityName} против {targetName}({targetRole})!\n");
-            }
+        }
+
+        public static void GettingDamage(string name, string role, string abilityName, double damage)
+        {
+            Console.WriteLine($"Игрок {name}({role}) получает {damage} урона от способности {abilityName}!\n");
         }
 
         public static void Death(string looser, string looserRole, string winner, string winnerRole)
         {
             Console.WriteLine($"Игрок {looser}({looserRole}) убит, побеждает игрок {winner}({winnerRole})!\n" +
                 $"+--------------------------------------------------------------+\n");
+        }
+
+        public static void IsStunned(string name, string role)
+        {
+            Console.WriteLine($"Игрок {name}({role}) пропускает ход!\n");
         }
     }
 }

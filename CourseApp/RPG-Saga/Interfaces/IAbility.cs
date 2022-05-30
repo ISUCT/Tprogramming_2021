@@ -6,14 +6,22 @@
 
         double Damage { get; set; }
 
+        double DamagePerTurn { get; set; }
+
+        double DamageMultiplyer { get; set; }
+
         int BasicDuration { get; set; }
 
         int CurrentDuration { get; set; }
 
+        int NumberOfUses { get; set; }
+
+        int BasicNumberOfUses { get; set; }
+
+        bool IsStunning { get; set; }
+
         bool IsUsed { get; set; }
 
-        bool IsAvailable { get; set; }
-
-        void Cast(Player source, Player target);
+        bool DoesWasteMove { get; set; }
     }
 }

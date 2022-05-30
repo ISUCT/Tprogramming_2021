@@ -1,47 +1,44 @@
 ﻿namespace CourseApp.RPG_Saga.Abilities
 {
     using CourseApp.RPG_Saga.Interfaces;
-    using CourseApp.RPG_Saga.Logger_;
 
     public class Retribution : IAbility
     {
-        public Retribution()
+        public Retribution(double strenght)
         {
             Name = "Retribution";
-            Damage = 0;
+            Damage = strenght;
+            DamagePerTurn = 0;
             BasicDuration = 1;
+            DamageMultiplyer = 1.3;
             CurrentDuration = BasicDuration;
+            BasicNumberOfUses = -1;
+            NumberOfUses = BasicNumberOfUses;
+            IsStunning = false;
             IsUsed = false;
-            IsAvailable = true;
+            DoesWasteMove = true;
         }
 
         public string Name { get; set; }
 
         public double Damage { get; set; }
 
+        public double DamagePerTurn { get; set; }
+
+        public double DamageMultiplyer { get; set; }
+
         public int BasicDuration { get; set; }
 
         public int CurrentDuration { get; set; }
 
+        public int NumberOfUses { get; set; }
+
+        public int BasicNumberOfUses { get; set; }
+
+        public bool IsStunning { get; set; }
+
         public bool IsUsed { get; set; }
 
-        public bool IsAvailable { get; set; }
-
-        public void Cast(Player source, Player target)
-        {
-            if (CurrentDuration <= 0)
-            {
-                IsUsed = false;
-                CurrentDuration = BasicDuration;
-            }
-            else
-            {
-                IsUsed = true;
-                target.Health -= source.Strenght * 1.3;
-                target.RecivedDamage += source.Strenght * 1.3;
-                CurrentDuration -= 1;
-                Logger.AbilityLog(source.Name, source.RoleName, target.Name, target.RoleName, Name, source.Strenght * 1.3);
-            }
-        }
+        public bool DoesWasteMove { get; set; }
     }
 }

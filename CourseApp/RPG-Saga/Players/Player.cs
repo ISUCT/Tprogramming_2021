@@ -1,7 +1,8 @@
 ﻿namespace CourseApp.RPG_Saga
 {
-    using CourseApp.RPG_Saga.Interfaces;
+    using System;
     using System.Collections.Generic;
+    using CourseApp.RPG_Saga.Interfaces;
     using CourseApp.RPG_Saga.Logger_;
 
     public abstract class Player
@@ -18,29 +19,59 @@
 
         public bool IsStunned { get; set; }
 
-        public List<IAbility> Ability { get; set; }
+        public List<IAbility> Abilities { get; set; }
 
-        public List<IAbility> Debuffs { get; set; }
+        public List<IAbility> Effects { get; set; }
 
-        public void ApplyDamage(Player player)
+        public void MakeMove(Player enemyPlayer)
         {
-            player.Health -= Strenght;
-            player.RecivedDamage += Strenght;
-            Logger.DamageLog(Name, RoleName, player.Name, player.RoleName, Strenght);
+            Random rnd = new Random();
+
+            if (!IsStunned)
+            {
+                if (rnd.Next(100) > 70)
+                {
+                    int index = rnd.Next(Abilities.Count);
+                    if (Abilities[index].NumberOfUses > 0 || Abilities[index].NumberOfUses == -1)
+                    {
+                        List<IAbility> abilities = new List<IAbility>(Abilities);
+                        enemyPlayer.Effects.Add(abilities[index]);
+                        Abilities[index].NumberOfUses -= 1;
+                        Logger.AbilityLog(Name, RoleName, enemyPlayer.Name, enemyPlayer.RoleName, Abilities[index].Name);
+                        if (abilities[index].DoesWasteMove)
+                        {
+                            return;
+                        }
+                    }
+                }
+
+                ApplyDamage(enemyPlayer);
+            }
+            else
+            {
+                Logger.IsStunned(Name, RoleName);
+                return;
+            }
         }
 
-        public void UseAbility(Player source, Player target)
+        public void ApplyDamage(Player enemy)
         {
-            Ability.Cast(source, target);
+            enemy.Health -= Strenght;
+            enemy.RecivedDamage += Strenght;
+            Logger.DamageLog(Name, RoleName, enemy.Name, enemy.RoleName, Strenght);
         }
 
         public void Reset()
         {
             Health += RecivedDamage;
+            RecivedDamage = 0;
             IsStunned = false;
-            Ability.IsAvailable = true;
-            Ability.IsUsed = false;
-            Ability.CurrentDuration = Ability.BasicDuration;
+            Effects.Clear();
+            foreach (IAbility ability in Abilities)
+            {
+                ability.CurrentDuration = ability.BasicDuration;
+                ability.NumberOfUses = ability.BasicNumberOfUses;
+            }
         }
     }
 }
