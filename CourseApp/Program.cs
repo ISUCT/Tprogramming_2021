@@ -1,20 +1,16 @@
-﻿using System;
-namespace CourseApp
-{
-<<<<<<< HEAD
-    using System;
-    using CourseApp.Interfaces;
+namespace CourseApp{
+   using System;
+   using System.Collections.Generic;
 
-    public class Program
-    {
-       public static void Main(string[] args)
-       {
-            Console.WriteLine(pigTwo.MakePhrase());
-            Console.Write(boarTwo.Died());
-            Console.WriteLine(boarTwo.MakePhrase());
-            Console.WriteLine("\n--------------------Зоопарк-----------------");
-            var zoologicalGarden = new ZoologicalGarden("Фурмановский\n");
-            var user = new UserInterface();
-            user.Draw(zoologicalGarden);
-        }
-    }
+  public class Program
+  {
+      public static void Main(string[] args) {
+           int participants = 0;
+            Game start = new Game();
+            participants = start.StartTheTournament(participants);
+            Arena arena = new Arena();
+            arena.Tour(participants);
+            Console.ReadLine();
+      }
+  }
+}
